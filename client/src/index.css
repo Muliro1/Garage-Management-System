@@ -15,3 +15,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.adminlogin{
+  background-image: url(./admin/images/car.jpeg);
+  background-position:0% 70%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+}
+
+.adminlogo{
+font-family: Saira Stencil One;
+font-size: 36px;
+font-weight: 400;
+line-height: 57px;
+letter-spacing: 0em;
+text-align: left;
+
+}
+
+.adminlogobg{
+  background-color: rgba(211, 211, 211, 0.356);
+}
+.adminloginbtn{
+  font-family: Saira Stencil One;
+}
