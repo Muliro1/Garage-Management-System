@@ -40,3 +40,14 @@ text-align: left;
 .adminloginbtn{
   font-family: Saira Stencil One;
 }
+.dashdiv{
+  background-color: rgba(67, 67, 67, 1);
+}
+.dashdivbtn{
+  background: linear-gradient(180deg, rgba(254, 254, 254, 0.25) 0%, rgba(120, 120, 120, 0.25) 100%);
+
+}
+.adminnavuser{
+  background:linear-gradient(0deg, rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.88));
+
+}
