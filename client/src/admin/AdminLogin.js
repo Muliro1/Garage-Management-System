@@ -1,5 +1,4 @@
 import React from 'react'
-import car from './images/car.jpeg'
 
 function AdminLogin() {
     return (
