@@ -6,9 +6,22 @@ function Login() {
     
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(email, password);
-    };
-    
+        fetch('/api/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                email,
+                password
+            })
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+        })
+    }
+
     return (
         <div className='Login'>
         <h1>Login</h1>
