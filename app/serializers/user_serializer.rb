@@ -7,5 +7,5 @@
 
 class UserSerializer < ActiveModel::Serializer
   has_many :vehicles
-  attributes :id
+  attributes :id, :username
 end
