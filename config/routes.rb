@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   #admin login route
   post "admins/login", to: "admin_sessions#create"
 
-  #admin logout
+  #admin logout route
   delete "admins/logout", to: "admin_sessions#destroy"
   
   #user logout route
