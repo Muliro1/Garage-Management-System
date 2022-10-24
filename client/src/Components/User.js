@@ -1,11 +1,12 @@
 import React from 'react';
 
-const Comment = () => {
+const User = () => {
     return (
         <div>
-            <h1>Comment page</h1>
+           
+            <h1>User</h1>
         </div>
     );
 };
 
-export default Comment;
+export default User;
