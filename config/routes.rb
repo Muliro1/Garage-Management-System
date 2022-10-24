@@ -6,16 +6,20 @@
 
 
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  # resources for users
   resources :users , only: [:index,:show, :create, :update, :destroy] do
+
+    #nested resource for vehicles
     resources :vehicles, only: [:create, :update, :destroy] do
     end
   end
+
+  # user signup route
   post "/signup", to: "users#create"
+
+  #user login route
   post "/login", to: "sessions#create"
-  #post "/vehicle", to: "vehicles#create"
+  
+  #user logout route
   delete "/logout", to: "sessions#destroy"
 end
