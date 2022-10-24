@@ -7,15 +7,23 @@ function NavBar() {
     
     <div className='NavBar'>
         <NavLink to="/">
-        <button className="button">Home</button>
+            <button className="button">Home</button>
+        </NavLink>
+
+        <NavLink to="/user">
+            <button className="button">User</button>
         </NavLink>
 
         <NavLink to="/guard">
             <button className="button">Guard</button>
         </NavLink>
 
-        <NavLink to="/Services">
-            <button className="button">Services</button>
+        <NavLink to="/admin">
+            <button className="button">Admin</button>
+        </NavLink>
+
+        <NavLink to="/technician">
+            <button className="button">Technician</button>
         </NavLink>
 
         <NavLink to="/contact">
