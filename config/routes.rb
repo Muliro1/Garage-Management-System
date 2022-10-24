@@ -22,6 +22,9 @@ Rails.application.routes.draw do
 
   #admin signup route
   post "/admins/signup", to: "admins#create"
+
+  #admin login route
+  post "admins/login", to: "admin_sessions#create"
   
   #user logout route
   delete "/logout", to: "sessions#destroy"
