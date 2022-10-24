@@ -23,6 +23,16 @@ class VehiclesController < ApplicationController
         end
     end
 
+    def update
+        vehicle = Vehicle.find_by(id: params[:id])
+        if vehicle
+          vehicle.update(vehicle_params)
+          render json: vehicle
+        else
+          render json: { error: "Vehicle not found" }, status: :not_found
+        end
+    end
+
     private
 
     def vehicle_params
