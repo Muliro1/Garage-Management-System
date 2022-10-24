@@ -10,8 +10,8 @@ function NavBar() {
         <button className="button">Home</button>
         </NavLink>
 
-        <NavLink to="/about">
-            <button className="button">About</button>
+        <NavLink to="/guard">
+            <button className="button">Guard</button>
         </NavLink>
 
         <NavLink to="/Services">
