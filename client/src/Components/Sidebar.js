@@ -3,8 +3,8 @@ import {
     FaTh,
     FaBars,
     FaUserAlt,
-    FaRegChartBar,
-    FaCommentAlt,
+    // FaRegChartBar,
+    // FaCommentAlt,
     FaShoppingBag,
     FaThList
 } from 'react-icons/fa'
@@ -25,16 +25,16 @@ const Sidebar = ({children}) => {
             name:"Repair",
             icon:<FaUserAlt/>
         },
-        {
-            path:"/invoices",
-            name:"Invoices",
-            icon:<FaRegChartBar/>
-        },
-        {
-            path:"/user",
-            name:"User",
-            icon:<FaCommentAlt/>
-        },
+        // {
+        //     path:"/invoices",
+        //     name:"Invoices",
+        //     icon:<FaRegChartBar/>
+        // },
+        // {
+        //     path:"/user",
+        //     name:"User",
+        //     icon:<FaCommentAlt/>
+        // },
         {
             path:"/servicing",
             name:"servicing",
