@@ -6,6 +6,7 @@ function NavBar() {
   return (
     
     <div className='NavBar'>
+        <h1>PBMW</h1>
         <NavLink to="/">
             <button className="button">Home</button>
         </NavLink>
