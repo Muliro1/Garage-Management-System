@@ -20,6 +20,8 @@ Rails.application.routes.draw do
     #nested routes for parts
   resources :parts, only: [:index, :show, :create, :update, :destroy]
 
+  get "/vehicles", to: "vehicles#index"
+
   # user signup route
   post "/signup", to: "users#create"
 
