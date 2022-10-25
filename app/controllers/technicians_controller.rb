@@ -10,7 +10,7 @@ class TechniciansController < ApplicationController
   
     def create
       technician = Technician.create!(technician_params)
-      #session[:technician_id] = technician.id
+      session[:technician_id] = technician.id
       render json: technician, status: :created
     end
 

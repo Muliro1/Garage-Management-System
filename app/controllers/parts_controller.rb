@@ -10,7 +10,6 @@ class PartsController < ApplicationController
   
     def create
       part = Part.create!(part_params)
-      #session[:part_id] = part.id
       render json: part, status: :created
     end
 
