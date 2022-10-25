@@ -22,6 +22,16 @@ class TechniciansController < ApplicationController
     def show
       render json: @current_technician
     end
+
+    def update
+        technician = Technician.find_by(id: params[:id])
+        if technician
+          technician.update(technician_params)
+          render json: technician
+        else
+          render json: { error: "Technician not found" }, status: :not_found
+        end
+    end
   
     private
   
