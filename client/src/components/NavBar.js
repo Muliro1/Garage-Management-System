@@ -65,7 +65,7 @@ const Navbar = () => {
   return (
     <>
       <nav className='navbar'>
-        <h3 className='logo'>Logo</h3>
+        <h3 className='logo'>PBMW</h3>
         {/*
         if large screen ma xa bhane Mobile add huxa
         if mobile screen ma xa bhane nav-links-mobile add huxa
