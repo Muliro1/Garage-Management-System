@@ -24,6 +24,10 @@ function App() {
           <Route path="/footer" element={<Footer />} />
         </Routes>
       </BrowserRouter>
+      <img
+          alt="Truck being serviced"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBKxL9QziNIeQQ3ZrG0anoUH89r9R0KVgH9g&usqp=CAU"
+        />
     </div>
   );
 }
