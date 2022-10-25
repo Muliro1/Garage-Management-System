@@ -36,6 +36,6 @@ class VehiclesController < ApplicationController
     private
 
     def vehicle_params
-        params.permit(:make, :plate_number, :user_id, :id)
+        params.permit(:make, :plate_number, :user_id, :id, :price, :type, :speed, :image, :billing, :approved)
     end
 end
