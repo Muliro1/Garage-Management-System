@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_25_210946) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_25_215211) do
   create_table "admins", force: :cascade do |t|
     t.string "full_name"
     t.string "password"
@@ -55,7 +55,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_25_210946) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.float "price"
-    t.string "type"
+    t.string "vehicle_type"
     t.integer "speed"
     t.string "image"
     t.integer "billing"
