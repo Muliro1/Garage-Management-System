@@ -18,3 +18,19 @@
 };
 
 /* put equal spaces between .NavBar buttons */
+
+
+img {
+    border-radius: 0px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    border-style: none;
+    border-width: 0px;
+    border-color: none;
+    border-radius: 10px;
+};
