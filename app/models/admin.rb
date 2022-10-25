@@ -10,5 +10,6 @@ class Admin < ApplicationRecord
     validates :password, presence: true, uniqueness: true
 
     has_many :users
+    has_many :vehicles
 
 end
