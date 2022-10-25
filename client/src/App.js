@@ -9,7 +9,6 @@ import NavBar from './components/NavBar';
 function App() {
   return (
     <div className="App">
-      <h1>PBMW</h1>
       <BrowserRouter>
         <Routes>
           {/* render NavBar.js */}
