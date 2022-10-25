@@ -32,6 +32,16 @@ class TechniciansController < ApplicationController
           render json: { error: "Technician not found" }, status: :not_found
         end
     end
+
+    def destroy
+        technician = Technician.find_by(id: params[:id])
+        if technician
+          technician.destroy
+          head :no_content
+        else
+          render json: { error: "technician not found" }, status: :not_found
+        end
+    end
   
     private
   
