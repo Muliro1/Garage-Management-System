@@ -15,11 +15,10 @@ Rails.application.routes.draw do
   end
 
   # technician resources
-  resources :technicians, only: [:index,:show, :create, :update, :destroy] do
+  resources :technicians, only: [:index,:show, :create, :update, :destroy] 
 
     #nested routes for parts
-    resources :parts, only: [:index, :show, :create, :update, :destroy]
-  end
+  resources :parts, only: [:index, :show, :create, :update, :destroy]
 
   # user signup route
   post "/signup", to: "users#create"
