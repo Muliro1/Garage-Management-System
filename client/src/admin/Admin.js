@@ -1,7 +1,9 @@
 // import AdminLogin from './AdminLogin';
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import AdminClients from './adminDashboard/AdminClients';
 import AdminDashboard from './adminDashboard/AdminDashboard';
+import AdminMechanics from './adminDashboard/AdminMechanics';
 import Aside from './adminDashboard/aside/Aside';
 
 function Admin() {
@@ -21,13 +23,13 @@ function Admin() {
             />
             <Route path="/clients" element={
               <div className='col-span-6'>
-                  <h1>clients</h1>
+                  <AdminClients/>
               </div>}
             />
             
             <Route path="/mechanics" element={
               <div className='col-span-6'>
-                  <h1>mechanics</h1>
+                  <AdminMechanics/>
               </div>
             } />
 

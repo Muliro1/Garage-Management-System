@@ -51,3 +51,27 @@ text-align: left;
   background:linear-gradient(0deg, rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.88));
 
 }
+
+::placeholder{
+  font-style: italic;
+}
+
+.adminclient{
+  background: rgba(67, 67, 67, 1);
+
+}
+
+.adminmechanicfalse{
+  display: none;
+}
+
+.adminmechanictrue {
+  position: fixed;
+  top: 30;
+  left: 20em;
+  z-index: 1040;
+  width: 40vw;
+  height: 58vh;
+  background-color: rgba(0, 0, 0, 0.818);
+  /* opacity: .85; */
+}
