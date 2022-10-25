@@ -35,7 +35,7 @@
   .content .reserve_btn {
     align-items: center;
     display: inline-block;
-    background: #000d6b;
+    background: black;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -115,13 +115,17 @@
 }
 
 .sect1 button#sect3{
-    padding: 10px;
-    border-left: 15px;
-    background-color:black;
-    color:white;
-    border-radius:  15px 0px;
-    font-size: 20px;
-    cursor: pointer;
+  align-items: center;
+  display: inline-block;
+  background: black;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
     
 }
 

@@ -1,7 +1,7 @@
 import React from "react";
-// import Footer from '../Footer/Footer'
+import Footer from '../Footer/Footer'
 import mechanic from "../assets/images/mechanic/mechanics.jpg";
-// import Testimonial from "../UI/Testimonials/Testimonial"
+import Testimonial from "../UI/Testimonals/Testimonial"
 import {BsTools, BsHeadset} from "react-icons/bs"
 import {FaMoneyBillAlt} from "react-icons/fa"
 import {AiFillSafetyCertificate} from "react-icons/ai"
@@ -56,10 +56,10 @@ const Home = () => {
       <section>
         <Container>
               <h2 className="section_title">Testimonials</h2>
-            {/* <Testimonial /> */}
+            <Testimonial />
         </Container>
       </section>
-      {/* <Footer/> */}
+      <Footer/>
     </section>
   );
 };
