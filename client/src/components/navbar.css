@@ -16,7 +16,8 @@ li {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 10vh;
+  height: 7vh;
+  background-color: #4267B2;
   box-shadow: rgba(50, 50, 93, 0.23) 0px 30px 30px -20px;
 
   /*box-shadow: rgba(50, 50, 93, 0.23) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;*/
@@ -31,13 +32,19 @@ li {
 }
 
 .nav-links li {
-  color: black;
+  color: white;
   font-size: 20px;
   padding: 10px 20px;
   margin: 0 10px;
   cursor: pointer;
   text-transform: capitalize;
 }
+
+.nav-links li:hover {
+  background-color: orangered;
+  border-radius: 4.5px;
+}
+
 .hero {
   text-align: center;
   margin-top: 15%;
