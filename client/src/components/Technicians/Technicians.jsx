@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react'
-import Mechanic from "../Mechanic/Mechanic"
+import Mechanic from "../Team/Mechanic"
 import "./technicians.css"
 
 const Technicians = () => {
