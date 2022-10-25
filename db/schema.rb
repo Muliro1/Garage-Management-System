@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_25_202630) do
-  # admin table schema
+ActiveRecord::Schema[7.0].define(version: 2022_10_25_210946) do
   create_table "admins", force: :cascade do |t|
     t.string "full_name"
     t.string "password"
@@ -19,8 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_25_202630) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-  
-  #parts table schema
+
   create_table "parts", force: :cascade do |t|
     t.string "name"
     t.string "image"
@@ -32,7 +30,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_25_202630) do
     t.datetime "updated_at", null: false
   end
 
-  #technicians table schema
   create_table "technicians", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -43,7 +40,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_25_202630) do
     t.integer "description"
   end
 
-  #users table schema
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
@@ -52,7 +48,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_25_202630) do
     t.string "password"
   end
 
-  #vehicles table schema
   create_table "vehicles", force: :cascade do |t|
     t.string "make"
     t.string "plate_number"
@@ -65,6 +60,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_25_202630) do
     t.string "image"
     t.integer "billing"
     t.boolean "approved"
+    t.integer "technician_id"
   end
 
 end
