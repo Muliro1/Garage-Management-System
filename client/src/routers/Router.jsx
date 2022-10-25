@@ -1,5 +1,5 @@
 import React from 'react'
-// import Home from '../components/Home/Home'
+import Home from '../components/Home/Home'
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import Sidebar from '../components/SideBar/Sidebar'
 // import Technicians from '../components/Technicians/Technicians'
@@ -11,10 +11,10 @@ const Router = () => {
     <BrowserRouter>
     <Sidebar>
     <Routes>
-    {/* <Route path="/" element ={<Home />}/> 
-    <Route path="/technicians" element={<Technicians/>}/> 
-    <Route path="/cars" element={<Cars/>}/> 
-    <Route path="/parts" element={<Parts/>}/>  */}
+    <Route path="/" element ={<Home />}/> 
+    {/* <Route path="/technicians" element={<Technicians/>}/>  */}
+    {/* <Route path="/cars" element={<Cars/>}/>  */}
+    {/* <Route path="/parts" element={<Parts/>}/>  */}
     </Routes>
     </Sidebar>
   </BrowserRouter>

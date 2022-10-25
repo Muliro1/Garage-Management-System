@@ -1,7 +1,7 @@
 import React from "react";
-import Footer from '../Footer/Footer'
+// import Footer from '../Footer/Footer'
 import mechanic from "../assets/images/mechanic/mechanics.jpg";
-import Testimonial from "../UI/Testimonials/Testimonial"
+// import Testimonial from "../UI/Testimonials/Testimonial"
 import {BsTools, BsHeadset} from "react-icons/bs"
 import {FaMoneyBillAlt} from "react-icons/fa"
 import {AiFillSafetyCertificate} from "react-icons/ai"
@@ -20,36 +20,38 @@ const Home = () => {
       </div>
       <div className="middle">
         <img src={mechanic} alt="mechanic" />
-        <div className="home__info">
+        <div class="sect1">
+            <hr/>
+            <h2 class="head">Cut the Hustle</h2>
+            <p class="sect2">In this current tough economic <br/> situations,living is already a hustle. <br/> Why then should you worry about <br/> how you should move to live better?</p>
+            <button id="sect3"> learn more <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+            </button>
+        </div>
+      </div>
+
+      <div className="home__info">
         <div className="icon-views"
                   style={{ columnGap: "4rem" }}
                 >
                   <span className="about__find">
-                  <BsTools/>
-                  <h1>Get the best services.</h1>
+                  
+                  <h1><BsTools/> Get the best services.</h1>
                   </span>
 
                   <span className="about__find">
-                  <FaMoneyBillAlt/>
-                  <h1>Affordable prices.</h1>
+                  <h1><FaMoneyBillAlt/> Affordable prices.</h1>
                   </span>
-                </div>
-
-                <div className="icon-views"
-                  style={{ columnGap: "4rem" }}
-                >
                   <span className="about__find">
-                  <BsHeadset/> 
-                  <h1>24/7 customer services.</h1>
+                 
+                  <h1> <BsHeadset/>  24/7 customer services.</h1>
                   </span>
 
                   <span className="about__find">
-                  <AiFillSafetyCertificate/> 
-                  <h1>Your safety our priority.</h1>
+                  
+                  <h1><AiFillSafetyCertificate/> Your safety our priority.</h1>
                   </span>
                 </div>
         </div>
-      </div>
 {/* testimonials */}
       <section>
         <Container>
