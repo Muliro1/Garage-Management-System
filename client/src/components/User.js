@@ -1,14 +1,14 @@
 import React from "react"
 
-const Home = () => {
+const User = () => {
   return (
     <>
       <section className='hero'>
-        <h1>Welcome To Home Page</h1>
+        <h1>Welcome To Users Page</h1>
       </section>
     </>
   )
-}
+};
 
 
-export default Home
+export default User;
