@@ -26,6 +26,6 @@ class PartsController < ApplicationController
     private
   
     def part_params
-      params.permit(:name, :image, :price, :condition, :serial_number, :model, :id)
+      params.permit(:name, :image, :price, :condition, :serial_number, :model, :id, :count)
     end
 end

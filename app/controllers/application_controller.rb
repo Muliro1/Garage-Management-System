@@ -22,11 +22,6 @@ class ApplicationController < ActionController::API
       render json: { errors: ["Not authorized"] }, status: :unauthorized unless @current_user
     end
 
-    #def authorize_admin
-      #@current_admin = Admin.find_by(id: session[:admin_id])
-
-      #render json: { errors: ["Not authorized"] }, status: :unauthorized unless @current_admin
-    #end
   
     def render_unprocessable_entity_response(exception)
       render json: { errors: exception.record.errors.full_messages }, status: :unprocessable_entity
