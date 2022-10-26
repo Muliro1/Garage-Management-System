@@ -3,6 +3,10 @@
     overflow: auto;
 }
 
+.car::-webkit-scrollbar{
+    display: none;
+}
+
 .car .search__box {
     width: 30vw;
     margin-left: 30rem;
@@ -28,12 +32,12 @@
   }
 
 .car .box-container {
-    height: 100vh;
-    margin-top: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    height: 70vh;
+    margin-top: 3rem;
   }
 
 .car .empty {

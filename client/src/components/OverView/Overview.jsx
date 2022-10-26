@@ -2,6 +2,7 @@ import React from 'react'
 import "./overview.css"
 import Footer from "../Footer/Footer"
 import BookingForm from '../UI/BookForm/BookingForm'
+import Payment from "../UI/Payments/Payment"
 import{AiFillCloseCircle,AiFillStar,AiFillCar,AiFillSetting} from "react-icons/ai"
 import {GiCarSeat} from "react-icons/gi"
 import {IoLogoModelS} from "react-icons/io"
@@ -83,10 +84,17 @@ const Overview = ({ show, part, onClose,}) => {
                 </div>
                 </div>
               </div>
-              <div className="booking-info ">
-                <h5 >Booking Information</h5>
+              <div className='pay__booking'>
+            <div className="booking-info ">
+                <h3 >Booking Information</h3>
                 <BookingForm />
               </div>
+              <div className="booking-info ">
+                <h3 >Payment Information</h3>
+                <Payment />
+              </div>
+
+            </div>
 
               <div className="booking-info ">
                 <Footer />

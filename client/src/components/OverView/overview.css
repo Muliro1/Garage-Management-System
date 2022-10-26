@@ -118,4 +118,9 @@
     margin-top: 2rem;
   }
   
+  .pay__booking{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
   

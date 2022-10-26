@@ -1,19 +1,26 @@
-.booking__form{
+form{
+  padding:20px;
+  width:900px;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0,0,0,.1);
+}
+
+ .booking__form{
     display: inline-block;
     margin-bottom: 2rem;
-    margin-right: 1.5rem;
-    width: 47.5%;
+    margin-right: 5rem;
+    width: 90%;
 }
   
-  .booking__form input {
+form .booking__form input {
     padding: 8px 15px;
-    border: 1px solid #7c8a972a;
-    color: #7c8a97;
+    border-radius: 5px;
+    border: 1px solid black;
+    color: grey;
     width: 100%;
   }
   
-  .booking__form select,
-  .textarea {
+  form .booking__form select {
     width: 100%;
     padding: 10px 15px;
     color: #7c8a97;
@@ -21,27 +28,25 @@
     border-radius: 4px;
   }
   
-  .time__picker::before {
+  form .time__picker::before {
     content: "Journey Time";
-    color: #7c8a97;
+    color: grey;
     margin-right: 0.5rem;
   }
   
-  .textarea:focus,
+  form .textarea:focus,
   .booking__form input:focus,
   .booking__form select:focus {
     outline: none;
   }
 
-  .submit__btn{
-    width: 30px;
+  form .submit__btn{
     align-items: center;
-    display: inline-block;
-    background: #000d6b;
+    background:black;
     color: #fff;
     border: none;
-    padding: 10px 20px;
-    margin: 5px;
+    margin-left: 2rem;
+    margin-top: 0px;
     border-radius: 5px;
     cursor: pointer;
     text-decoration: none;
@@ -49,11 +54,11 @@
   }
   
   @media only screen and (max-width: 768px) {
-    .booking__form {
+    form .booking__form {
       width: 100%;
     }
   
-    .booking__form input,
+    form  .booking__form input,
     .textarea,
     .booking__form select {
       font-size: 0.8rem;

@@ -37,14 +37,6 @@ const BookingForm = () => {
         />
         </div>
         <div className="booking__form ">
-        <textarea
-          rows={5}
-          type="textarea"
-          className="textarea"
-          placeholder="Write"
-        ></textarea>
-        </div>
-        <div className="booking__form ">
         <input  type="submit" className="submit__btn"/>
         </div>
      

@@ -13,7 +13,7 @@
       },
       {
         "id": 2,
-        "name": "Boj Denzel",
+        "name": "Martin Kelly",
         "image": "https://img.freepik.com/free-vector/doctor-character-background_1270-84.jpg?w=2000",
         "email": "boj@gmail.com",
         "speciality":"chef mechanic",
@@ -24,7 +24,7 @@
     },
     {
         "id": 3,
-        "name": "Boj Denzel",
+        "name": "Fred Royce",
         "image": "https://img.freepik.com/free-vector/doctor-character-background_1270-84.jpg?w=2000",
         "email": "boj@gmail.com",
         "speciality":"chef mechanic",
@@ -35,7 +35,7 @@
     },
     {
         "id": 4,
-        "name": "Boj Denzel",
+        "name": "Harry Potter",
         "image": "https://img.freepik.com/free-vector/doctor-character-background_1270-84.jpg?w=2000",
         "email": "boj@gmail.com",
         "speciality":"chef mechanic",
@@ -46,7 +46,7 @@
     },
     {
         "id": 5,
-        "name": "Boj Denzel",
+        "name": "Dwayne JavaScript",
         "image": "https://img.freepik.com/free-vector/doctor-character-background_1270-84.jpg?w=2000",
         "email": "boj@gmail.com",
         "speciality":"chef mechanic",
@@ -124,7 +124,7 @@
 "parts": [
     {
         "id": 1,
-        "name": "Rolls Royce",
+        "name": "Rear Lights",
         "image": "https://www.theengineerspost.com/wp-content/uploads/2022/02/Car-Body-Parts.jpg",
         "email": "Vee@gmail.com",
         "price": "1.2Million",
@@ -137,7 +137,7 @@
     },
     {
         "id": 2,
-        "name": "Rolls Royce",
+        "name": "Exhaust pipe",
         "image": "https://www.theengineerspost.com/wp-content/uploads/2022/02/Car-Body-Parts.jpg",
         "email": "Vee@gmail.com",
         "price": "1.2Million",
@@ -150,7 +150,7 @@
     },
     {
         "id": 3,
-        "name": "Rolls Royce",
+        "name": "V12 Naturally aspirated engine",
         "image": "https://www.theengineerspost.com/wp-content/uploads/2022/02/Car-Body-Parts.jpg",
         "email": "Vee@gmail.com",
         "price": "1.2Million",
@@ -163,7 +163,7 @@
     },
     {
         "id": 4,
-        "name": "Rolls Royce",
+        "name": "Bonnet",
         "image": "https://www.theengineerspost.com/wp-content/uploads/2022/02/Car-Body-Parts.jpg",
         "email": "Vee@gmail.com",
         "price": "1.2Million",
@@ -176,7 +176,20 @@
     },
     {
         "id": 5,
-        "name": "Rolls Royce",
+        "name": "Gearbox",
+        "image": "https://www.theengineerspost.com/wp-content/uploads/2022/02/Car-Body-Parts.jpg",
+        "email": "Vee@gmail.com",
+        "price": "1.2Million",
+        "automatic":"automatic",
+        "rating":112,
+        "model":"2019",
+        "speed": "180km/h",
+        "Telephone": "070000000",
+        "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe voluptatibus ut commodi minus animi, rem soluta iure labore eum enim eaque totam est atque aut vero dicta eius. Impedit, alias."
+    },
+    {
+        "id": 5,
+        "name": "Crack shaft",
         "image": "https://www.theengineerspost.com/wp-content/uploads/2022/02/Car-Body-Parts.jpg",
         "email": "Vee@gmail.com",
         "price": "1.2Million",
