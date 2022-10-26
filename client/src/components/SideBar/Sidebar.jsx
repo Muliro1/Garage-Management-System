@@ -1,5 +1,6 @@
 import React from 'react'
 import './sidebar.css';
+import{FcEngineering}from "react-icons/fc"
 import{GiAutoRepair}from "react-icons/gi"
 import {AiFillHome} from "react-icons/ai"
 import {TbEngine} from "react-icons/tb"
@@ -18,7 +19,7 @@ const Sidebar = ({children}) => {
         {
             path:'/technicians',
             name:"Technicians",
-            icon:<GiAutoRepair/>
+            icon:<FcEngineering/>
         },
         {
             path:'/cars',
@@ -29,6 +30,11 @@ const Sidebar = ({children}) => {
             path:'/parts',
             name:"Car parts",
             icon:<TbEngine/>
+        },
+        {
+            path:'',
+            name:"Sevices",
+            icon:<GiAutoRepair/>
         }
     ]
   return (
