@@ -222,7 +222,9 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
+
   faker
+
   jbuilder
   puma (~> 5.0)
   rack-cors (~> 0.2.0)
