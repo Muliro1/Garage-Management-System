@@ -18,6 +18,14 @@ const data = [
     phoneNumber: "011-211-7516",
     email: "jessica.warren@email.com",
   },
+  {
+    id: 3,
+    fullName: "Hesbon ochieng",
+    address: "5 west town",
+    phoneNumber: "099-211-7500",
+    email: "hesbon.ochieng@email.com",
+  }
+
 ];
 
 const Technician = () => {
