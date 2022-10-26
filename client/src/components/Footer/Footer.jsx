@@ -1,6 +1,7 @@
 import React from "react";
 import { Container } from "@mui/material";
 import {BsFacebook,BsLinkedin} from "react-icons/bs"
+import {GrSend} from "react-icons/gr"
 import {AiFillTwitterCircle} from "react-icons/ai"
 import "./footer.css";
 
@@ -48,7 +49,7 @@ const Footer = () => {
 
       
             <div className="mb-4">
-              <h5 className="footer__link-title">Talk to us</h5>
+              <h3 className="footer__link-title">Talk to us</h3>
               <>
                 {quickLinks.map((item, index) => (
                   <div key={index} className="p-0 mt-3 quick__link">
@@ -59,7 +60,7 @@ const Footer = () => {
             </div>
 
             <div className="mb-4">
-              <h5 className="footer__link-title">Head Office</h5>
+              <h3 className="footer__link-title">Head Office</h3>
               <p className="office__info">Nairobi,CBD Eagle house 3rd floor</p>
               <p className="office__info">Phone: +0995345875365</p>
 
@@ -71,19 +72,19 @@ const Footer = () => {
 
           
             <div className="mb-4">
-              <h5 className="footer__link-title">Newsletter</h5>
-              <p className="section__description">Subscribe our newsletter</p>
+              <h3 className="footer__link-title">Newsletter</h3>
+              <p className="footer__link-title">Subscribe our newsletter</p>
               <div className="newsletter">
                 <input type="email" placeholder="Email" />
                 <span>
-                  <i class="ri-send-plane-line"></i>
+                <GrSend/>
                 </span>
               </div>
             </div>
           
             <div className="footer__bottom">
-              <p className="section__description d-flex align-items-center justify-content-center gap-1 pt-4">
-                <i class="ri-copyright-line"></i>Copyright {year}. All rights reserved.
+              <p className="copyright">
+                Copyright {year}. All rights reserved.
               </p>
             </div>
          

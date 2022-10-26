@@ -61,6 +61,10 @@
   .footer__bottom {
     border-top: 1px solid #7c8a972f;
   }
+
+  .copyright{
+    color: white;
+  }
   
   @media only screen and (max-width: 768px) {
     .footer__logo-content {
