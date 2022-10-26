@@ -5,6 +5,12 @@
     padding-bottom: 15px;
   }
 
+  .footerDesc{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   
   .footer__logo span {
     color: #fff;
@@ -85,7 +91,5 @@
     .footer__bottom p {
       font-size: 0.7rem;
     }
-  
-    
   }
   

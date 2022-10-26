@@ -30,6 +30,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <Container>
+        <div className="footerDesc">
             <div className="logo footer__logo">
               <h1>
                 <div to="/home" className=" d-flex align-items-center gap-2">
@@ -38,15 +39,13 @@ const Footer = () => {
                   </span>
                 </div>
               </h1>
-            </div>
-            <p className="footer__logo-content">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Consequuntur, distinctio, itaque reiciendis ab cupiditate harum ex
-              quam veniam, omnis expedita animi quibusdam obcaecati mollitia?
+              <p className="footer__logo-content">
+              Lorem ipsum dolor sit amet consectetur <br/>adipisicing elit.
+              Consequuntur, distinctio, itaque <br/>reiciendis ab cupiditate harum ex
+              quam veniam,<br/> omnis expedita animi quibusdam obcaecati mollitia?<br/>
               Delectus et ad illo recusandae temporibus?
             </p>
-          
-
+            </div>
       
             <div className="mb-4">
               <h3 className="footer__link-title">Talk to us</h3>
@@ -54,6 +53,7 @@ const Footer = () => {
                 {quickLinks.map((item, index) => (
                   <div key={index} className="p-0 mt-3 quick__link">
                     <div className="flex">{item.display} </div>
+                    <div className="flex">{item.name} </div>
                   </div>
                 ))}
               </>
@@ -81,13 +81,14 @@ const Footer = () => {
                 </span>
               </div>
             </div>
-          
+           
+            </div>
+
             <div className="footer__bottom">
               <p className="copyright">
                 Copyright {year}. All rights reserved.
               </p>
             </div>
-         
       </Container>
     </footer>
   );
