@@ -15,3 +15,63 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.adminlogin{
+  background-image: url(./admin/images/car.jpeg);
+  background-position:0% 70%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+}
+
+.adminlogo{
+font-family: Saira Stencil One;
+font-size: 36px;
+font-weight: 400;
+line-height: 57px;
+letter-spacing: 0em;
+text-align: left;
+
+}
+
+.adminlogobg{
+  background-color: rgba(211, 211, 211, 0.356);
+}
+.adminloginbtn{
+  font-family: Saira Stencil One;
+}
+.dashdiv{
+  background-color: rgba(67, 67, 67, 1);
+}
+.dashdivbtn{
+  background: linear-gradient(180deg, rgba(254, 254, 254, 0.25) 0%, rgba(120, 120, 120, 0.25) 100%);
+
+}
+.adminnavuser{
+  background:linear-gradient(0deg, rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.88));
+
+}
+
+::placeholder{
+  font-style: italic;
+}
+
+.adminclient{
+  background: rgba(67, 67, 67, 1);
+
+}
+
+.adminmechanicfalse{
+  display: none;
+}
+
+.adminmechanictrue {
+  position: fixed;
+  top: 30;
+  left: 20em;
+  z-index: 1040;
+  width: 40vw;
+  height: 58vh;
+  background-color: rgba(0, 0, 0, 0.818);
+  /* opacity: .85; */
+}

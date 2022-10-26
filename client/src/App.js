@@ -1,9 +1,10 @@
-import './App.css';
+import Admin from './admin/Admin';
 
 function App() {
   return (
-    <div>
-   </div>
+    <>
+      <Admin/>
+    </>
   );
 }
 

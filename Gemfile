@@ -2,6 +2,7 @@ source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "2.7.4"
+gem 'rack-cors', '~> 0.2.0'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4"
@@ -48,6 +49,7 @@ group :development, :test do
 end
 
 group :development do
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 
