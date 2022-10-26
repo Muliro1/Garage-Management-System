@@ -3,6 +3,10 @@
     overflow: auto;
 }
 
+.technicians::-webkit-scrollbar{
+  display: none;
+}
+
 .technicians .search__box {
     width: 30vw;
     margin-left: 30rem;

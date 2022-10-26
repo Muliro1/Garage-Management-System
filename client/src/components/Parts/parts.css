@@ -3,6 +3,10 @@
     overflow: auto;
 }
 
+.parts::-webkit-scrollbar{
+    display: none;
+}
+
 .parts .search__box {
     width: 30vw;
     margin-left: 30rem;
