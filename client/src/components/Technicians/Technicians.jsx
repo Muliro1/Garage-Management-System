@@ -8,7 +8,7 @@ const Technicians = () => {
 
 
   useEffect(() => {
-    fetch("http://localhost:4000/info")
+    fetch("")
     
       .then((r) => r.json())
       .then((data) => {

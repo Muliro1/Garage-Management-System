@@ -95,7 +95,7 @@
   .section__description{
     display: flex;
     justify-content: space-between;
-    color: #000d6b;
+    color: black;
     align-items: center;
     gap: 10px;
   }
@@ -103,7 +103,7 @@
   .modal-inner .inner-box button {
     align-items: center;
     display: inline-block;
-    background: #000d6b;
+    background: black;
     color: #fff;
     border: none;
     padding: 10px 20px;
