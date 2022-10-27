@@ -3,7 +3,7 @@ import React from "react"
 const Guard = () => {
   return (
     <>
-      <section className='hero'>
+      <section className='guard'>
         <h1>Welcome To the Guard's Page</h1>
       </section>
     </>
