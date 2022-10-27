@@ -32,7 +32,7 @@ const Sidebar = ({children}) => {
             icon:<TbEngine/>
         },
         {
-            path:'',
+            path:'/services',
             name:"Sevices",
             icon:<GiAutoRepair/>
         }

@@ -47,7 +47,6 @@ const Home = () => {
                   </span>
 
                   <span className="about__find">
-                  
                   <h1><AiFillSafetyCertificate/> Your safety our priority.</h1>
                   </span>
                 </div>

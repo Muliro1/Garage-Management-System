@@ -5,6 +5,7 @@ import Sidebar from '../components/SideBar/Sidebar'
 import Technicians from '../components/Technicians/Technicians'
 import Cars from '../components/Cars/Cars'
 import Parts from '../components/Parts/Parts'
+import Services from '../components/Services/Services'
 
 const Router = () => {
   return (
@@ -15,6 +16,7 @@ const Router = () => {
     <Route path="/technicians" element={<Technicians/>}/> 
     <Route path="/cars" element={<Cars/>}/> 
     <Route path="/parts" element={<Parts/>}/> 
+    <Route path="/services" element={<Services/>}/> 
     </Routes>
     </Sidebar>
   </BrowserRouter>
