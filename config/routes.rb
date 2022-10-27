@@ -39,4 +39,13 @@ Rails.application.routes.draw do
   
   #user logout route
   delete "/logout", to: "sessions#destroy"
+
+  #guard signup route
+  post "/guards/signup", to: "guards#create"
+
+  #guard login route
+  post "guards/login", to: "guard_sessions#create"
+
+  #guard logout route
+  post "/guards/logout", to:"guard_sessions#destroy"
 end
