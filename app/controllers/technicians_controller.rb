@@ -46,6 +46,6 @@ class TechniciansController < ApplicationController
     private
   
     def technician_params
-      params.permit(:name, :email, :telephone, :rating, :description, :id)
+      params.permit(:name, :email, :telephone, :rating, :description, :id, :password, :password_confirmation)
     end
 end
