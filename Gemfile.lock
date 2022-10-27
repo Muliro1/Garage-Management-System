@@ -3,8 +3,6 @@ GIT
   revision: b00901afae6a9590661c4930684ccb8f2aa8a176
   branch: main
   specs:
-    faker (2.23.0)
-      i18n (>= 1.8.11, < 2)
 
 GEM
   remote: https://rubygems.org/
@@ -222,9 +220,7 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
-
-  faker
-
+  faker!
   jbuilder
   puma (~> 5.0)
   rack-cors (~> 0.2.0)
