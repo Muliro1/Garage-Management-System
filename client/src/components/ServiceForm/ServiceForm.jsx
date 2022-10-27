@@ -44,7 +44,7 @@ const ServiceForm = () => {
           releaseDate: year,
         };
     
-        fetch("https://regal-busy-beaufort.glitch.me/Books",{
+        fetch("http://localhost:4000/posts",{
           method: "POST",
           headers: {
             "Content-Type": "application/json",
