@@ -1,33 +1,413 @@
-.NavBar {
-    margin: 0px;
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    width: 100%;
-    text-align: center;
-    display: inline-block;
-    overflow: hidden;
-    height: 8%;
-    text-decoration: none;
-    background-color: #162b64;
-    padding: 5px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
-    font-weight: bold;
-    color: white;
-};
+.App {
+  height: 100%
+}
 
-/* put equal spaces between .NavBar buttons
-.button {
-    text-decoration: none;
-    color: white;
-    width: 100px;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+li {
+  list-style-type: none;
+}
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 7vh;
+  background-color: navy;
+  box-shadow: rgba(50, 50, 93, 0.23) 0px 30px 30px -20px;
+  position: relative;
+
+  /*box-shadow: rgba(50, 50, 93, 0.23) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;*/
+}
+.logo {
+  font-size: 40px;
+  font-weight: 600;
+  color: rgb(224, 70, 15);
+  
+}
+.nav-links {
+  display: flex;
+  justify-content: flex-end;
+  width: 75%;
+}
+
+.nav-links li {
+  color: white;
+  font-size: 20px;
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.nav-links li:hover {
+  background-color: rgb(224, 70, 15);
+  border-radius: 4.5px;
+}
+
+.hero {
+  text-align: center;
+  margin-top: 15%;
+  background-color: navy;
+}
+
+.hero h1 {
+  text-align: center;
+  font-size: 80px;
+}
+.mobile-menu-icon {
+  display: none;
+}
+button {
+  border: none;
+  text-decoration: none;
+  font-size: 20px;
+  background: none;
+}
+@media (max-width: 768px) {
+  /* .logo {
+    display: flex;
+    position: absolute;
+    top: 15px;
+    left: 35px;
+  } */
+  .nav-links {
+    display: none;
+  }
+  .nav-links-mobile {
+    position: absolute;
     display: block;
-}; */
+    list-style: none;
+    box-shadow: rgba(50, 50, 93, 0.23) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    left: 0;
+    top: 10%;
+    transition: all 0.5s ease-in-out;
+    width: 100%;
+    background-color: white;
+  }
+  ul li {
+    padding: 32px;
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+    text-align: center;
+  }
+  .mobile-menu-icon {
+    position: absolute;
+    display: block;
+    right: 20px;
+  }
+  .hero h1 {
+    font-size: 50px;
+  }
+
+}
+
+/* style .contact so that it is aligned at the center of the page */
+
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 20px;
+}
+
+.contact-body {
+  background-image: url("https://c0.wallpaperflare.com/preview/934/179/745/building-ceiling-empty-hallway.jpg");
+  /* background-color: black; */
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 65% 100%;
+  position: fixed;
+  top: 6.9%;
+  /* left: 0;
+  right: 0;
+  bottom: 0; */
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.contact-container {
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); */
+  background-color: rgb(224, 70, 15);
+  padding: 40px;
+  width: 35%;
+  height: 100%;
+  /* display: flex; */
+  display: block;
+  float: right;
+}
+
+/* .contact-container .form-control label {
+  display: inline-block;
+  margin-bottom: 20px;
+} */
 
 
-/* Style footer */
 
-/* Style Home */
+
+
+
+.form-control label {
+  display: inline-block;
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+
+.form-control #message {
+  width: 100%;
+  height: 150px;
+  resize: none;
+  border-radius: 10px;
+}
+
+.form-control #message input {
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+}
+
+.form-control #email {
+  width: 100%;
+  height: 50px;
+  resize: none;
+  border-radius: 10px;
+}
+
+.form-control #name {
+  width: 100%;
+  height: 50px;
+  resize: none;
+  border-radius: 10px;
+}
+
+.form-control input {
+  display: inline-block;
+  background-color: rgb(214, 208, 208);
+}
+
+.form-control textarea {
+  background-color: rgb(214, 208, 208);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.contact .contact-container h1 {
+  /* font-size: 40px;
+  font-weight: 600;
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center; */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 1px;
+  font-size: 40px;
+  font-weight: 600;
+  color: white;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 70px;
+}
+
+.contact button {
+  background-color: navy;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 15px;
+  margin-top: 30px;
+}
+
+
+
+/* style .about to the center of page */
+
+/* .about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 20px;
+} */
+
+.about .container h2 {
+  font-size: 40px;
+  font-weight: 600;
+  margin-top: 0.05px;
+  color: white;
+}
+
+.about .center-align {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 80px;
+}
+
+.about p {
+  margin-top: 50px;
+}
+
+
+.about .container {
+  background-color: rgb(224, 70, 15);
+  padding: 40px;
+  width: 52%;
+  height: 100%;
+  /* display: flex; */
+  display: block;
+  float: left;
+  margin-top: 0.3px;  
+}
+
+.about-content p {
+  font-size: 20px;
+  line-height: 2.47;
+}
+
+.about-content a {
+  background-color: navy;
+  color: white;
+  padding: 10px;
+  border-radius: 4.5px;
+  /* margin-top: 42px; */
+  text-decoration: none;
+  /* position  at center of page */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-direction: column; */
+  width: 210px;
+  left: 20%;
+  margin: 0 auto;
+  margin-top: 40px;
+
+
+  /* width:550px;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+
+  position: relative;
+  top: 15%;
+  right: -45%;
+  transform: translate(-50%, -50%); */
+
+}
+
+
+.about .about-body {
+  background-image: url("https://c1.wallpaperflare.com/preview/760/122/404/modern-engine-motor-chopper-car-engine.jpg");
+  /* background-color: black; */
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 48% 100%;
+  position: fixed;
+  top: 6.9%;
+  /* left: 0;
+  right: 0;
+  bottom: 0; */
+  min-width: 100%;
+  min-height: 100%;
+}
+
+
+.home .home-welcome {
+  font-size: 20px;
+  margin-top: 20px;
+  background-image: url("https://wallpaperaccess.com/full/1291276.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  margin-top: 0.31px;
+}
+
+.home .home-welcome h1 {
+  color: white;
+  font-size: 45px;
+  font-weight: 600;
+  margin-top: 100px;
+  
+  width:550px;
+  margin: 0 auto;
+  background: rgb(224, 70, 15);
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+
+  position: relative;
+  top: 15%;
+  right: -45%;
+  transform: translate(-50%, -50%);
+
+}
+
+.home .home-welcome h1 span {
+  color: navy;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.home .home-welcome h3 {
+  color: rgb(224, 70, 15);
+  font-size: 25px;
+  font-weight: 600;
+  margin-top: 5px;
+  width:550px;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+
+  position: relative;
+  top: 15%;
+  right: -45%;
+  transform: translate(-50%, -50%);
+}
 
