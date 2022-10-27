@@ -17,8 +17,9 @@ class UsersController < ApplicationController
     end
 
     def index
-        users = User.all
-        render json: users
+        @pagy, @users = pagy(User.limit(1))
+        #@pagy, @records = pagy(Product.limit(10))
+        render json: @users
     end
 
     def show

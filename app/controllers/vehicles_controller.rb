@@ -8,13 +8,13 @@
 
 class VehiclesController < ApplicationController
     def index
-      vehicles = Vehicle.all
+      @pagy, @vehicles = pagy(Vehicle.limit(1))
       render json: vehicles
+      @pagy, @users = pagy(User.limit(1))
     end
 
     def create
         vehicle = Vehicle.create!(vehicle_params)
-        #session[:vehicle_id] = vehicle.id
         render json: vehicle, status: :created
     end
 
