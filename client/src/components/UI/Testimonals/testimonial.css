@@ -7,6 +7,11 @@
   .testimonial{
       padding: 3rem;
   }
+
+
+  .testimonial .section_description{
+    font-size: 17px;
+  }
   
   .image-desc{
       margin-top: 15px;

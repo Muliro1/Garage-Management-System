@@ -1,8 +1,13 @@
 import React from 'react'
+import { Container } from '@mui/material'
 
 const Services = () => {
   return (
-    <div>Services</div>
+    <div>
+      <Container>
+        
+      </Container>
+    </div>
   )
 }
 
