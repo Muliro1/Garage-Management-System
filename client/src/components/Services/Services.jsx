@@ -3,6 +3,8 @@ import { Container } from '@mui/material'
 import {Add} from '@mui/icons-material'
 import {Fab} from '@mui/material'
 import ServiceForm from '../ServiceForm/ServiceForm'
+import ServiceContainer from '../ServiceContainer/ServiceContainer'
+import "./services.css"
 
 const Services = () => {
   const [showService, setShowService] = useState();
@@ -16,7 +18,7 @@ const Services = () => {
   }
   
   return (
-      <Container>
+     
         <div className='serviceMenu'>
         <div className="serviceSide">
         <Fab color='primary'
@@ -26,8 +28,8 @@ const Services = () => {
         </Fab>
         {showService ? <ServiceForm setNewService={setNewService} /> : null}
       </div>
+      <ServiceContainer setNewService={setNewService} />
         </div>
-      </Container>
   )
 }
 
