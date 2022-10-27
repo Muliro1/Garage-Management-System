@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-// import './App.css';
+import './App.css';
 import NavBar from './components/NavBar';
 import Home from './components/Home';
 import Contact from './components/Contact';
@@ -18,7 +18,7 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home />} />
           
           <Route path="/contact" element={<Contact />} />
 
@@ -35,6 +35,8 @@ function App() {
           <Route path="/guard" element={<Guard />} />
         </Routes>
       </BrowserRouter>
+      
+
     </div>
   );
 }
