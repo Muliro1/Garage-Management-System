@@ -21,6 +21,16 @@ class PartsController < ApplicationController
     def show
       render json: @current_part
     end
+
+    def destroy
+      part = Part.find_by(id: params[:id])
+      if part
+        part.destroy
+        head :no_content
+      else
+        render json: { error: "Part not found" }, status: :not_found
+      end
+  end
   
     private
   
