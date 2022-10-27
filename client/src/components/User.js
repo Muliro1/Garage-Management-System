@@ -3,8 +3,8 @@ import React from "react"
 const User = () => {
   return (
     <>
-      <section className='hero'>
-        <h1>Welcome To Users Page</h1>
+      <section className='user'>
+        <h1>Welcome To User's Page</h1>
       </section>
     </>
   )
