@@ -20,17 +20,17 @@ const Contact = () => {
                     <form onSubmit={handleSubmit}>
                         <div className="form-control">
                             <label htmlFor="name">Name</label>
-                            <input type="text" id="name" name="name" value={name} placeholder="Enter name" onChange={(e) => setName(e.target.value)} />
+                            <input type="text" id="name" name="name" value={name} placeholder="Enter your full name" onChange={(e) => setName(e.target.value)} />
                         </div>
 
                         <div className="form-control">
                             <label htmlFor="email">Email</label>
-                            <input type="email" id="email" name="email" value={email} placeholder="Enter email address" onChange={(e) => setEmail(e.target.value)} />
+                            <input type="email" id="email" name="email" value={email} placeholder="Enter your email address" onChange={(e) => setEmail(e.target.value)} />
                         </div>
 
                         <div className="form-control">
                             <label htmlFor="message">Message</label>
-                            <textarea id="message" name="message" value={message} placeholder="Write message" onChange={(e) => setMessage(e.target.value)}></textarea>
+                            <textarea id="message" name="message" value={message} placeholder="Write your message" onChange={(e) => setMessage(e.target.value)}></textarea>
                         </div>
 
                         <button type="submit">Submit</button>
@@ -40,10 +40,10 @@ const Contact = () => {
 
                         <div className="contact-info">
                             <h3>Address: XYZ Place, Waiyaki Way, Nairobi, KE 00100</h3>
-                            <h3>Phone: +254(123) 456-789</h3>
-                            <h3>Twitter: @pbmw</h3>
+                            <h3>Phone: +254 (0) 212 345678</h3>
+                            <h3>Email: info@pbmw.com</h3>
                             <h3>Instagram: @pbmw</h3>
-                            <h3>Email: pbmw@gmail.com or info@pbmw.com</h3>
+                            <h3>Twitter: @pbmw</h3>
                         </div>
 
                     </span>
