@@ -21,6 +21,27 @@ class GuardsController < ApplicationController
       render json: @current_guard
     end
 
+    def update
+        guard = Guard.find_by(id: params[:id])
+        if guard
+          guard.update(guard_params)
+          render json: guard
+        else
+          render json: { error: "Guard not found" }, status: :not_found
+        end
+    end
+
+    def destroy
+        guard = Guard.find_by(id: params[:id])
+        if guard
+          guard.destroy
+          head :no_content
+        else
+          render json: { error: "guard not found" }, status: :not_found
+        end
+    end
+
+
     private
 
     def guard_params

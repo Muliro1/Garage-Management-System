@@ -13,6 +13,11 @@ class AdminsController < ApplicationController
         render json: admin, status: :created
     end
 
+    def index
+        admins = Admin.all
+        render json: admins
+    end
+
     private
 
     def admin_params

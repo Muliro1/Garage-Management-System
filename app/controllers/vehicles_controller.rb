@@ -8,9 +8,8 @@
 
 class VehiclesController < ApplicationController
     def index
-      @pagy, @vehicles = pagy(Vehicle.limit(1))
-      render json: vehicles
-      @pagy, @users = pagy(User.limit(1))
+      @pagy, @vehicles = pagy(Vehicle.limit(10))
+      render json: @vehicles
     end
 
     def create
@@ -41,6 +40,6 @@ class VehiclesController < ApplicationController
     private
 
     def vehicle_params
-        params.permit(:make, :plate_number, :user_id, :id, :price, :vehicle_type, :speed, :image, :billing, :approved, :technician_id)
+        params.permit(:make, :plate_number, :user_id, :id, :price, :vehicle_type, :speed, :image, :billing, :approved, :technician_id, :service, :repair)
     end
 end

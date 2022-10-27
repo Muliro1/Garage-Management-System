@@ -20,6 +20,8 @@ Rails.application.routes.draw do
     #nested routes for parts
   resources :parts, only: [:index, :show, :create, :update, :destroy]
 
+  resources :guards, only: [:index, :update, :destroy]
+
   get "/vehicles", to: "vehicles#index"
 
   # user signup route
@@ -36,6 +38,9 @@ Rails.application.routes.draw do
 
   #admin logout route
   delete "/admins/logout", to: "admin_sessions#destroy"
+
+  #get all admins route
+  get "/admins", to: "admins#index"
   
   #user logout route
   delete "/logout", to: "sessions#destroy"
