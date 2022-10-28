@@ -212,6 +212,17 @@
       "summary": "Rolls-Royce PLC is, major British manufacturer of aircraft engines, marine propulsion systems, and power-generation systems. Noted for much of the 20th century as a maker of luxury automobiles, the company was separated from its car-making operations and nationalized following bankruptcy in 1971.",
       "speed": "254km/h",
       "id": 1
+    },
+    {
+      "make": "2022",
+      "vehicle": "Maybach",
+      "image": "https://media.ed.edmunds-media.com/mercedes-benz/maybach/2021/oem/2021_mercedes-benz_maybach_sedan_s-580-4matic_fq_oem_1_1600.jpg",
+      "plate": "KZZ034A",
+      "price": "600000000",
+      "option": "repair",
+      "summary": "Mercedes PLC is, major British manufacturer of aircraft engines, marine propulsion systems, and power-generation systems. Noted for much of the 20th century as a maker of luxury automobiles, the company was separated from its car-making operations and nationalized following bankruptcy in 1971.",
+      "speed": "205km/h",
+      "id": 2
     }
   ]
 }

@@ -113,7 +113,7 @@ const ServiceForm = () => {
 
     <div className="form-control">
         <label>speed</label>
-        <input  placeholder="254km/h" required
+        <input  placeholder="254km/h"
         onChange={HandleSpeedChange}
         value={speed}
     />
