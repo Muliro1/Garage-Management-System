@@ -4,7 +4,7 @@
           {
             "id": 1,
             "name": "Boj Denzel",
-            "image": "https://img.freepik.com/free-vector/doctor-character-background_1270-84.jpg?w=2000",
+            "image": "https://i.pinimg.com/236x/c8/e1/6e/c8e16e642d1bf35dd2f0cedae8fb7f53.jpg",
             "email": "boj@gmail.com",
             "speciality": "chef mechanic",
             "rating": 112,
@@ -15,7 +15,7 @@
           {
             "id": 2,
             "name": "Martin Kelly",
-            "image": "https://img.freepik.com/free-vector/doctor-character-background_1270-84.jpg?w=2000",
+            "image": "https://i.pinimg.com/236x/2f/35/01/2f35016fd12134ab28d35311f93e2212.jpg",
             "email": "boj@gmail.com",
             "speciality": "chef mechanic",
             "rating": 112,
@@ -26,7 +26,7 @@
           {
             "id": 3,
             "name": "Fred Royce",
-            "image": "https://img.freepik.com/free-vector/doctor-character-background_1270-84.jpg?w=2000",
+            "image": "https://i.pinimg.com/236x/86/fc/72/86fc722d224ecdc20016fd2272edfc87.jpg",
             "email": "boj@gmail.com",
             "speciality": "chef mechanic",
             "rating": 112,
@@ -37,7 +37,7 @@
           {
             "id": 4,
             "name": "Harry Potter",
-            "image": "https://img.freepik.com/free-vector/doctor-character-background_1270-84.jpg?w=2000",
+            "image": "https://i.pinimg.com/236x/29/04/ee/2904ee8f406baf62c6d4bff476905ab2.jpg",
             "email": "boj@gmail.com",
             "speciality": "chef mechanic",
             "rating": 112,
@@ -48,7 +48,18 @@
           {
             "id": 5,
             "name": "Dwayne JavaScript",
-            "image": "https://img.freepik.com/free-vector/doctor-character-background_1270-84.jpg?w=2000",
+            "image": "https://i.pinimg.com/236x/f7/76/c2/f776c20a6818ce945a6e318c07ef4d4d.jpg",
+            "email": "boj@gmail.com",
+            "speciality": "chef mechanic",
+            "rating": 112,
+            "price": "2000",
+            "Telephone": "070000000",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe voluptatibus ut commodi minus animi, rem soluta iure labore eum enim eaque totam est atque aut vero dicta eius. Impedit, alias."
+          },
+          {
+            "id": 6,
+            "name": "Dwayne JavaScript",
+            "image": "https://i.pinimg.com/236x/f7/76/c2/f776c20a6818ce945a6e318c07ef4d4d.jpg",
             "email": "boj@gmail.com",
             "speciality": "chef mechanic",
             "rating": 112,
@@ -56,5 +67,6 @@
             "Telephone": "070000000",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe voluptatibus ut commodi minus animi, rem soluta iure labore eum enim eaque totam est atque aut vero dicta eius. Impedit, alias."
           }
+         
         ]
   }
