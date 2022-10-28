@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import ServicingCard from './ServicingCard';
-import ServicingImage from './ServicingImage';
+import ServicingImage from './ServicingImage'
 
 
 const Servicing = () => {
@@ -9,20 +9,23 @@ const Servicing = () => {
   const [term, setTerm] = useState('');
 
   useEffect(() => {
-    fetch(`https://pixab.env.REACT_APP_PIXABAY_API_KEY}&q=${term}&image_type=photo&pretty=true`)
+    fetch(`http://localhost:4000/img`)
       .then(res => res.json())
       .then(data => {
-        setImages(data.hits);
+        setImages(data);
         setIsLoading(false);
       })
       .catch(err => console.log(err));
   }, [term]);
+  console.log(images)
 
   return (
     <div className="container mx-auto">
+
+
       <ServicingImage searchText={(text) => setTerm(text)} />
 
-      {!isLoading && images.length === 0 && <h1 className="text-5xl text-center mx-auto mt-32">No Images Found</h1> }
+      {!isLoading && images?.length && <h1 className="text-5xl text-center mx-auto mt-32">Vehicles to be serviced</h1> }
 
       {isLoading ? <h1 className="text-6xl text-center mx-auto mt-32">Loading...</h1> : <div className="grid grid-cols-3 gap-4">
         {images.map(image => (
