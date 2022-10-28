@@ -1,10 +1,12 @@
-import React from 'react'
+import React,{useState} from 'react'
 import {AiFillCar, AiFillSetting} from "react-icons/ai"
 import {IoLogoModelS} from "react-icons/io"
+import Update from '../Update/Update'
 import "./postService.css"
 
-const CarItem = ({repCar,onDelete}) => {
-    const {make,plate,vehicle, image, price,speed,summary}= repCar;
+const CarItem = ({repCar,onDelete,onUpdateService}) => {
+    const {id,make,plate,vehicle, image, price,summary}= repCar;
+    const [isEditing, setIsEditing] = useState(false);
 
     function deleteService() {
       fetch(`http://localhost:4000/posts/${repCar.id}`, {
@@ -17,9 +19,19 @@ const CarItem = ({repCar,onDelete}) => {
         .then(() => onDelete(repCar));
     }
 
+    function serviceUpdate(updatedSevice) {
+      setIsEditing(false);
+      onUpdateService(updatedSevice);
+    }
+
 
   return (
     <>
+    {isEditing?(<Update
+    id={id}
+    summary={summary}
+    onUpdateService={serviceUpdate}
+    />):(
     <div className="servicePost">
     <div className="car__img">
     <img src={image} alt={vehicle}/>
@@ -46,7 +58,7 @@ const CarItem = ({repCar,onDelete}) => {
         </span>
       </div>
         <div className='car__btn-action'>
-        <button className="car__btn-rent">
+        <button className="car__btn-rent" onClick={() => setIsEditing((isEditing) => !isEditing)}>
         Update
       </button>
       <button className="car__btn-details" onClick={deleteService}>
@@ -55,6 +67,7 @@ const CarItem = ({repCar,onDelete}) => {
         </div>
     </div>
   </div>
+  )}
 </>
   )
 }

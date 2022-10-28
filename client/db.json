@@ -203,15 +203,15 @@
   ],
   "posts": [
     {
-      "make": "V12 engine",
-      "vehicle": "Rolls Royce",
+      "make": "2021 model",
+      "vehicle": "Rolls Royce Phantom",
       "image": "https://cdn.motor1.com/images/mgl/npO4G/s1/2021-rolls-royce-ghost-front.jpg",
-      "plate": "KBB0001Z",
-      "price": "57000000",
-      "option": "",
-      "summary": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe voluptatibus ut commodi minus animi, rem soluta iure labore eum enim eaque totam est atque aut vero dicta eius. Impedit, alias.",
+      "plate": "KGA001A",
+      "price": "45000000",
+      "option": "service",
+      "summary": "Rolls-Royce PLC is, major British manufacturer of aircraft engines, marine propulsion systems, and power-generation systems. Noted for much of the 20th century as a maker of luxury automobiles, the company was separated from its car-making operations and nationalized following bankruptcy in 1971.",
       "speed": "254km/h",
-      "id": 2
+      "id": 1
     }
   ]
 }
