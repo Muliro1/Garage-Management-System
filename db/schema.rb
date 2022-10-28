@@ -10,13 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_25_225241) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_28_035624) do
   create_table "admins", force: :cascade do |t|
     t.string "full_name"
     t.string "password"
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "guards", force: :cascade do |t|
+    t.string "full_name"
+    t.string "password_digest"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "password"
   end
 
   create_table "parts", force: :cascade do |t|
@@ -29,6 +38,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_25_225241) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "count"
+    t.integer "vehicle_id"
   end
 
   create_table "technicians", force: :cascade do |t|
@@ -39,6 +49,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_25_225241) do
     t.integer "telephone"
     t.integer "rating"
     t.integer "description"
+    t.string "password"
+    t.string "password_digest"
   end
 
   create_table "users", force: :cascade do |t|
@@ -47,6 +59,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_25_225241) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password"
+    t.string "email"
   end
 
   create_table "vehicles", force: :cascade do |t|
@@ -62,6 +75,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_25_225241) do
     t.integer "billing"
     t.boolean "approved"
     t.integer "technician_id"
+    t.boolean "service"
+    t.boolean "repair"
+    t.string "summary"
   end
 
 end

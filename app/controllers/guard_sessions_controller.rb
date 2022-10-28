@@ -5,14 +5,14 @@
 
 
 
-class AdminSessionsController < ApplicationController
+class GuardSessionsController < ApplicationController
     #skip_before_action :authorize, only: [:create, :destroy]
   
     def create
-      admin = Admin.find_by(full_name: params[:full_name])
-      if admin&.authenticate(params[:password])
-        session[:admin_id] = admin.id
-        render json: admin
+      guard = Guard.find_by(full_name: params[:full_name])
+      if guard&.authenticate(params[:password])
+        session[:guard_id] = guard.id
+        render json: guard
       else
         render json: { errors: ["Invalid fullname or password"] }, status: :unauthorized
       end
@@ -20,7 +20,7 @@ class AdminSessionsController < ApplicationController
 
     
     def destroy
-      session.delete :admin_id
+      session.delete :guard_id
       head :no_content
     end
 end
