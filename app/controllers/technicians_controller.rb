@@ -1,12 +1,6 @@
 
-
-
-
-
-
-
 class TechniciansController < ApplicationController
-    skip_before_action :authorize, only: [:create, :index]
+    # skip_before_action :authorize, only: [:create, :index, :destroy]
   
     def create
       technician = Technician.create!(technician_params)

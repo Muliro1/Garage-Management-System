@@ -1,17 +1,16 @@
 class ApplicationController < ActionController::API
-protect_from_forgery with: :null_session
     include ActionController::Cookies
     
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
   
-    before_action :authorize
+    # before_action :authorize
   
     private
   
     def authorize
       @current_user = User.find_by(id: session[:user_id])
 
-      @current_admin = Admin.find_by(id: session[:admin_id])
+      @current_admin = Admin.find_by(id: cookies[:admin_id])
   
       render json: { errors: ["Not authorized"] }, status: :unauthorized unless @current_user
     end

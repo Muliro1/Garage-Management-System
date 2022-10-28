@@ -15,8 +15,8 @@ Vehicle.create({make: "Toyota", plate_number: "KAV 073y", user_id: 1, price: 500
 image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dreamstime.com%2Fphotos-images%2Ftruck.html&psig=AOvVaw2LEZZexIQT4Q9E03c2qh_I&ust=1666829061119000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCKiuiaHM_PoCFQAAAAAdAAAAABAE",
 billing: 3000, approved: false, technician_id: 2 })
 
-Technician.create({name: "Intro Nerd", email: "mulirokhaemba@gmail.com", telephone: 0272, rating: 5, description: "very hardworking"})
-Technician.create({name: "Intro ", email: "muliro@gmail.com", telephone: 02727563, rating: 4, description: "very hardworking"})
+Technician.create(name: "Intro Nerd", email: "mulirokhaemba@gmail.com", telephone: 0272, rating: 5, description: "very hardworking")
+Technician.create(name: "Intro ", email: "muliro@gmail.com", telephone: 02727563, rating: 4, description: "very hardworking")
 
 Part.create({name: "turbo", image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fturbocharger&psig=AOvVaw2K2OZTvu9zYc9dXQilwBPD&ust=1666829938357000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCPCqqMPP_PoCFQAAAAAdAAAAABAE",
 price: 30000, condition: "brand new", serial_number: 3456, model: "dodge demon", count: 9 })

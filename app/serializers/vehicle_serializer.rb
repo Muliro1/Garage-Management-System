@@ -1,8 +1,3 @@
-
-
-
-
-
 class VehicleSerializer < ActiveModel::Serializer
   belongs_to :user
 

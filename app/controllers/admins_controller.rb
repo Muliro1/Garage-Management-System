@@ -1,16 +1,20 @@
-
-
-
-
-
-
 class AdminsController < ApplicationController
-    skip_before_action :authorize, only: :create
+    # skip_before_action :authorize, only: [:create, :show]
 
     def create
         admin = Admin.create!(admin_params)
-        session[:admin_id] = admin.id
+        cookies[:admin_id] = admin.id
+        byebug
         render json: admin, status: :created
+    end
+
+    def show
+        admin = Admin.find_by(id: cookies[:admin_id])
+        if admin
+            render json: admin, status: :ok
+        else
+            render json:{errors:"Not Authorized"}, status: :unauthorized
+        end
     end
 
     private

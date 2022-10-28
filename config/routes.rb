@@ -7,6 +7,9 @@ Rails.application.routes.draw do
     end
   end
 
+  #vehicles update
+  resources :vehicles, only: [:update, :destroy]
+
   # technician resources
   resources :technicians, only: [:index,:show, :create, :update, :destroy] 
 
@@ -14,6 +17,7 @@ Rails.application.routes.draw do
   resources :parts, only: [:index, :show, :create, :update, :destroy]
 
   get "/vehicles", to: "vehicles#index"
+  
 
   # user signup route
   post "/signup", to: "users#create"
@@ -26,6 +30,7 @@ Rails.application.routes.draw do
 
   #admin login route
   post "admins/login", to: "admin_sessions#create"
+  get 'admins/me', to: 'admins#show'
 
   #admin logout route
   delete "admins/logout", to: "admin_sessions#destroy"
