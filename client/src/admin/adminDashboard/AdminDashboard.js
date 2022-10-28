@@ -1,13 +1,38 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
-function AdminDashboard() {
+function AdminDashboard({admin}) {
+    const [technicians, setTechnicians] = useState([])
+    const [vehicles,setVehicles] = useState([])
+    
+    useEffect(() => {
+        fetch('http://127.0.0.1:3000/technicians')
+            .then((r) => r.json())
+            .then((data) => setTechnicians(data))
+
+
+    }, [])
+    useEffect(() => {
+        fetch('http://127.0.0.1:3000/vehicles')
+            .then((r) => r.json())
+            .then((data) => setVehicles(data))
+
+
+    }, [])
+    
+    function handleLogout() {
+        localStorage.clear()
+        window.location.reload()
+    }
+    
     return (
         <main className='admindashboard m-0   '>
 
             <div className='adminmain  h-[100vh] '>
-                <div className=' adminnavuser text-white h-[8vh]'>
-                    <p className='float-right text-xl font-bold mt-2 mr-8' >Welcome User</p>
+                <div className=' adminnavuser text-white h-[8vh] flex justify-between'>
+                    <p className=' text-xl font-bold pl-2 mt-4' >Welcome {admin.full_name}</p>
+                    <button onClick={()=>handleLogout()} className=' text-lg font-bold pr-2 hover:text-orange-500 '>Logout</button>
+
                 </div>
                 <div className='flex mt-10'>
                     <svg className='ml-8' width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -52,7 +77,7 @@ function AdminDashboard() {
 
                     <div className='dashdiv w-[10em] rounded-xl text-white  '>
                         <div className='flex justify-around'>
-                            <p className=' text-3xl font-black text-center'>14<br></br> <span className=' font-normal text-sm italic '>cars</span> </p>
+                            <p className=' text-3xl font-black text-center'>{vehicles.length}<br></br> <span className=' font-normal text-sm italic '>cars</span> </p>
                             <svg className='' width="90" height="70" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M14.2 17L16 18.5V19H2V18.5L3.8 17H2C1.46957 17 0.960859 16.7893 0.585786 16.4142C0.210714 16.0391 0 15.5304 0 15V4C0 2.93913 0.421427 1.92172 1.17157 1.17157C1.92172 0.421427 2.93913 0 4 0H14C15.0609 0 16.0783 0.421427 16.8284 1.17157C17.5786 1.92172 18 2.93913 18 4V15C18 15.5304 17.7893 16.0391 17.4142 16.4142C17.0391 16.7893 16.5304 17 16 17H14.2ZM8 9V2H4C3.46957 2 2.96086 2.21071 2.58579 2.58579C2.21071 2.96086 2 3.46957 2 4V9H8ZM10 9H16V4C16 3.46957 15.7893 2.96086 15.4142 2.58579C15.0391 2.21071 14.5304 2 14 2H10V9ZM4.5 15C4.89782 15 5.27936 14.842 5.56066 14.5607C5.84196 14.2794 6 13.8978 6 13.5C6 13.1022 5.84196 12.7206 5.56066 12.4393C5.27936 12.158 4.89782 12 4.5 12C4.10218 12 3.72064 12.158 3.43934 12.4393C3.15804 12.7206 3 13.1022 3 13.5C3 13.8978 3.15804 14.2794 3.43934 14.5607C3.72064 14.842 4.10218 15 4.5 15ZM13.5 15C13.8978 15 14.2794 14.842 14.5607 14.5607C14.842 14.2794 15 13.8978 15 13.5C15 13.1022 14.842 12.7206 14.5607 12.4393C14.2794 12.158 13.8978 12 13.5 12C13.1022 12 12.7206 12.158 12.4393 12.4393C12.158 12.7206 12 13.1022 12 13.5C12 13.8978 12.158 14.2794 12.4393 14.5607C12.7206 14.842 13.1022 15 13.5 15Z" fill="white" />
                             </svg>
@@ -68,7 +93,7 @@ function AdminDashboard() {
 
                     <div className='dashdiv w-[10em] rounded-xl text-white  '>
                         <div className='flex justify-around'>
-                            <p className=' text-3xl font-black text-center'>6<br></br> <span className=' font-normal text-sm italic pl-1 '>mechanics</span> </p>
+                            <p className=' text-3xl font-black text-center'>{technicians.length }<br></br> <span className=' font-normal text-sm italic pl-1 '>mechanics</span> </p>
                             <svg width="90" height="70" viewBox="0 0 82 75" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1.52799 43.5445C0.810495 39.5423 0.810495 35.4576 1.52799 31.4554C5.93599 31.5518 9.89599 29.5938 11.436 26.1487C12.976 22.7 11.668 18.7172 8.47599 15.9026C11.0216 12.5996 14.1382 9.70895 17.7 7.34749C20.74 10.3067 25.036 11.5194 28.756 10.0917C32.476 8.66395 34.584 4.98899 34.476 0.906116C38.7957 0.240116 43.2043 0.240116 47.524 0.906116C47.416 4.9927 49.528 8.66395 53.244 10.0917C56.964 11.5194 61.26 10.3067 64.296 7.34749C67.8588 9.70752 70.9768 12.5969 73.524 15.8989C70.332 18.7172 69.024 22.7 70.564 26.1487C72.104 29.5975 76.068 31.5518 80.472 31.4517C81.1904 35.4564 81.1904 39.5435 80.472 43.5482C76.064 43.4481 72.104 45.4061 70.564 48.8512C69.024 52.2999 70.332 56.2827 73.524 59.0973C70.9783 62.4003 67.8617 65.2909 64.3 67.6524C61.26 64.6932 56.964 63.4805 53.244 64.9082C49.524 66.336 47.416 70.0109 47.524 74.0938C43.2043 74.7598 38.7957 74.7598 34.476 74.0938C34.584 70.0072 32.472 66.336 28.756 64.9082C25.036 63.4805 20.74 64.6932 17.704 67.6524C14.1411 65.2924 11.0232 62.403 8.47599 59.101C11.668 56.2827 12.976 52.2999 11.436 48.8512C9.89599 45.4024 5.93199 43.4481 1.52799 43.5482V43.5445ZM41 48.6249C44.1826 48.6249 47.2348 47.4529 49.4853 45.3665C51.7357 43.2802 53 40.4505 53 37.4999C53 34.5494 51.7357 31.7197 49.4853 29.6334C47.2348 27.547 44.1826 26.3749 41 26.3749C37.8174 26.3749 34.7651 27.547 32.5147 29.6334C30.2643 31.7197 29 34.5494 29 37.4999C29 40.4505 30.2643 43.2802 32.5147 45.3665C34.7651 47.4529 37.8174 48.6249 41 48.6249Z" fill="white" />
                             </svg>
@@ -116,7 +141,9 @@ function AdminDashboard() {
                         </div>
                     </div>
                 </section>
-                <section className='adminnavuser h-[3vh]'></section>
+                <section className='adminnavuser h-[5vh]'>
+                    <p className='text-white pl-4'>@copyright PBMW 2022</p>
+                </section>
             </div>
         </main>
     )

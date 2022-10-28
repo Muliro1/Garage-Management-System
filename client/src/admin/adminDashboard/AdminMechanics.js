@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import ReactModal from 'react-modal';
 import AdminMechanic from './AdminMechanic';
 
 
@@ -9,15 +8,17 @@ function AdminMechanics() {
     const [searchValue, setSearchValue] = useState('')
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
-    const [positio, setPositio] = useState('')
+    const [description, setDescription] = useState('')
     const [telephone, setTelephone] = useState('')
     const [refresh,setRefresh] = useState(false)
 
+console.log(mechanics)
     const newMechanic = {
         name: name,
         email: email,
-        positio: positio,
-        telephone: telephone
+        description: description,
+        telephone: telephone,
+        rating:0
     }
 
     // fetching all technicians
@@ -66,7 +67,7 @@ function AdminMechanics() {
         setAddMechanic(false)
         setName('')
         setEmail('')
-        setPositio('')
+        setDescription('')
         setTelephone('')
         e.target.reset()
     }
@@ -76,7 +77,6 @@ function AdminMechanics() {
     return (
         <main className=''>
             <div className=' adminnavuser text-white h-[8vh]'>
-                <p className='float-right text-xl font-bold mt-2 mr-8' >Welcome User</p>
             </div>
             <div className='flex mt-10'>
                 <svg className='ml-8' width="18" height="18" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -107,8 +107,8 @@ function AdminMechanics() {
                         <label className='text-white' htmlFor='email'>Email</label><br></br>
                         <input onChange={(e) => setEmail(e.target.value)} type='email' className='mt-2 mb-2 text-center' placeholder='enter email ...' required /><br></br>
 
-                        <label className='text-white  ' htmlFor='first-name'>Position</label><br></br>
-                        <input onChange={(e) => setPositio(e.target.value)} type='text' className='mt-2 mb-2 text-center' placeholder='enter position ...' required /><br></br>
+                        <label className='text-white  ' htmlFor='first-name'>Description</label><br></br>
+                        <input onChange={(e) => setDescription(e.target.value)} type='text' className='mt-2 mb-2 text-center' placeholder='enter position ...' required /><br></br>
 
                         <label className='text-white  ' htmlFor='first-name'>Telephone</label><br></br>
                         <input onChange={(e) => setTelephone(e.target.value)} type='number' className='mt-2 mb-2 text-center' placeholder='enter phone number ...' required /><br></br>
@@ -137,7 +137,7 @@ function AdminMechanics() {
                     </span>
                 </div>
                 <section className='bg-slate-50 m-auto h-60 mt-2 w-9/12  pb-2 overflow-hidden hover:overflow-y-scroll'>
-                    <div className='grid grid-cols-6 gap-[4.2rem] bg-slate-400 mb-20 fixed   '>
+                    <div className='grid grid-cols-6 gap-[4.2rem] bg-slate-400    '>
                         <p className='pl-6'>Image</p>
                         <p className=''>Name</p>
                         <p className=''>Email</p>
@@ -154,8 +154,10 @@ function AdminMechanics() {
 
 
             </section>
-            <section className='adminnavuser  absolute bottom-0 w-[85.7%]'>
-                <p>.</p>
+            <section className='adminnavuser  absolute bottom-[-0.72em] w-[85.7%]'>
+                <section className='adminnavuser h-[5vh]'>
+                    <p className='text-white pl-4'>@copyright PBMW 2022</p>
+                </section>
             </section>
         </main>
     )

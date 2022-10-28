@@ -17,7 +17,9 @@ code {
 }
 
 .adminlogin{
-  background-image: url(./admin/images/car.jpeg);
+  /* background-image: url(./admin/images/car.jpeg); */
+  background-image: url("./admin/images/car.jpeg"), linear-gradient(180deg,rgba(57, 44, 44, 0.5),rgba(57, 44, 44, 0.5),rgba(194, 194, 194, 0.933),rgba(57, 44, 44, 0.5));
+    background-blend-mode: overlay;
   background-position:0% 70%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -75,3 +77,4 @@ text-align: left;
   background-color: rgba(0, 0, 0, 0.818);
   /* opacity: .85; */
 }
+

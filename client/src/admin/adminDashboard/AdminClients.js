@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import ReactModal from 'react-modal';
 import AdminClient from './AdminClient';
 
 
@@ -45,7 +44,6 @@ function AdminClients() {
     return (
         <main className=''>
             <div className=' adminnavuser text-white h-[8vh]'>
-                <p className='float-right text-xl font-bold mt-2 mr-8' >Welcome User</p>
             </div>
             <div className='flex mt-10'>
                 <svg className='ml-8' width="18" height="18" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -80,7 +78,7 @@ function AdminClients() {
                     </span>
                 </div>
                 <section className='bg-slate-50 m-auto h-60 mt-2 w-9/12  pb-2 overflow-hidden hover:overflow-y-scroll'>
-                    <div className='flex bg-slate-400 mb-20 fixed  '>
+                    <div className='flex bg-slate-400   '>
                         <p className='pl-6'>Image</p>
                         <p className='pl-12'>Name</p>
                         <p className='pl-28'>Email</p>
@@ -88,7 +86,7 @@ function AdminClients() {
                         <p className='pl-24'>Number</p>
                         <p className='pl-10 pr-6'>Action</p>
                     </div>
-                    <div className='mt-10'>
+                    <div className='mt-6'>
                         {filteredClients.map((client) => {
                             return (
                                 <AdminClient key={client.id} client={client} />
@@ -100,8 +98,10 @@ function AdminClients() {
 
 
             </section>
-            <section className='adminnavuser  absolute bottom-0 w-[85.7%]'>
-                <p>.</p>
+            <section className='adminnavuser  absolute bottom-[-0.72em] w-[85.7%]'>
+                <section className='adminnavuser h-[5vh]'>
+                    <p className='text-white pl-4'>@copyright PBMW 2022</p>
+                </section>
             </section>
         </main>
     )
