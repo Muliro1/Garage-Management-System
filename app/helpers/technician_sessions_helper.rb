@@ -1,0 +1,2 @@
+module TechnicianSessionsHelper
+end
