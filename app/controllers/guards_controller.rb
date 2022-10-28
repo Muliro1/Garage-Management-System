@@ -5,7 +5,7 @@
 
 
 class GuardsController < ApplicationController
-    skip_before_action :authorize, only: :create
+    #skip_before_action :authorize, only: :create
     def create
         guard = Guard.create!(guard_params)
         session[:guard_id] = guard.id

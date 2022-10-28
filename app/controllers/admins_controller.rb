@@ -5,7 +5,7 @@
 
 
 class AdminsController < ApplicationController
-    skip_before_action :authorize, only: :create
+    #skip_before_action :authorize, only: :create
 
     def create
         admin = Admin.create!(admin_params)

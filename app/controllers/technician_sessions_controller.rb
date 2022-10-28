@@ -6,7 +6,7 @@
 
 
 class TechnicianSessionsController < ApplicationController
-    skip_before_action :authorize, only: [:create, :destroy]
+    #skip_before_action :authorize, only: [:create, :destroy]
   
     def create
       technician = Technician.find_by(name: params[:name])
