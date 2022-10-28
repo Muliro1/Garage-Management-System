@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/faker-ruby/faker.git
+  revision: 1844884d4a3d83c89e90780ad208c8cf8faedf9a
+  branch: main
+  specs:
+    faker (2.23.0)
+      i18n (>= 1.8.11, < 2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -94,8 +102,6 @@ GEM
     concurrent-ruby (1.1.10)
     crass (1.0.6)
     erubi (1.11.0)
-    faker (2.23.0)
-      i18n (>= 1.8.11, < 2)
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.12.0)
@@ -126,6 +132,8 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.9-x86_64-linux)
       racc (~> 1.4)
+    pagy (5.10.1)
+      activesupport
     public_suffix (5.0.0)
     puma (5.6.5)
       nio4r (~> 2.0)
@@ -207,8 +215,14 @@ DEPENDENCIES
   bootsnap
   byebug
   capybara
+<<<<<<< HEAD
   faker
+=======
+  debug
+  faker!
+>>>>>>> f8469c27e47d87843bde6d275e880ce98cc3190e
   jbuilder
+  pagy
   puma (~> 5.0)
   rack-cors (~> 0.2.0)
   rails (~> 7.0.4)

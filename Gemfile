@@ -29,13 +29,15 @@ gem 'active_model_serializers'
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 gem "bcrypt", "~> 3.1.7"
 
+gem 'pagy'
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 # Generates fake data to populate database
-gem 'faker'
+#gem 'faker'
 
 # Use Sass to process CSS
 # gem "sassc-rails"

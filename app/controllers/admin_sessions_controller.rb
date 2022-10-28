@@ -1,5 +1,5 @@
 class AdminSessionsController < ApplicationController
-    # skip_before_action :authorize, only: [:create, :destroy]
+    #skip_before_action :authorize, only: [:create, :destroy]
   
     def create
       admin = Admin.find_by(full_name: params[:full_name])

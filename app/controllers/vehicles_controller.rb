@@ -1,13 +1,12 @@
 
 class VehiclesController < ApplicationController
     def index
-      vehicles = Vehicle.all
-      render json: vehicles
+      @pagy, @vehicles = pagy(Vehicle.limit(10))
+      render json: @vehicles
     end
 
     def create
         vehicle = Vehicle.create!(vehicle_params)
-        #session[:vehicle_id] = vehicle.id
         render json: vehicle, status: :created
     end
 
@@ -34,6 +33,6 @@ class VehiclesController < ApplicationController
     private
 
     def vehicle_params
-        params.permit(:make, :plate_number, :user_id, :id, :price, :vehicle_type, :speed, :image, :billing, :approved, :technician_id)
+        params.permit(:make, :plate_number, :user_id, :id, :price, :vehicle_type, :speed, :image, :billing, :approved, :technician_id, :service, :repair, :summary)
     end
 end
