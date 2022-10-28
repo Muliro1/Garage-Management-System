@@ -11,12 +11,12 @@ class UsersController < ApplicationController
     skip_before_action :authorize, only: :create
   
     def create
-      user = User.create!(user_params)
-      #if user.save
-       # UserMailer.welcome_email(user).deliver_now
-     # end
-      session[:user_id] = user.id
-      render json: user, status: :created
+      @user = User.create!(user_params)
+      if @user.save
+        UserMailer.with(user: @user).welcome_email.deliver_now
+      end
+      session[:user_id] = @user.id
+      render json: @user, status: :created
     end
 
     def index
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
     private
   
     def user_params
-      params.permit(:username, :password, :password_confirmation, :id)
+      params.permit(:username, :password, :password_confirmation, :id, :email)
     end
   
   end
