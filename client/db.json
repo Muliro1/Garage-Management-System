@@ -203,21 +203,14 @@
   ],
   "posts": [
     {
-      "title": "blah",
-      "cover_image": "https://www.theengineerspost.com/wp-content/uploads/2022/02/Car-Body-Parts.jpg",
-      "author": "mieh",
-      "price": "1200",
-      "summary": "qqqqqqqqqqqqqtyyyyyyytytysfuuuuuuu",
-      "releaseDate": "2019",
-      "id": 1
-    },
-    {
-      "title": "Lamboghini",
-      "cover_image": "https://stimg.cardekho.com/images/carexteriorimages/630x420/Lamborghini/Huracan-EVO/7195/1645612088168/front-left-side-47.jpg",
-      "author": "kidsnextdoor",
-      "price": "15million",
+      "make": "V12 engine",
+      "vehicle": "Rolls Royce",
+      "image": "https://cdn.motor1.com/images/mgl/npO4G/s1/2021-rolls-royce-ghost-front.jpg",
+      "plate": "KBB0001Z",
+      "price": "57000000",
+      "option": "",
       "summary": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe voluptatibus ut commodi minus animi, rem soluta iure labore eum enim eaque totam est atque aut vero dicta eius. Impedit, alias.",
-      "releaseDate": "2021",
+      "speed": "254km/h",
       "id": 2
     }
   ]

@@ -4,6 +4,10 @@
     overflow: auto;
 }
 
+.serviceContainer::-webkit-scrollbar{
+  display: none;
+}
+
 .serviceContainer .box-container {
     display: flex;
     justify-content: center;

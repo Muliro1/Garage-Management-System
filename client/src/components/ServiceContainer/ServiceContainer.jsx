@@ -13,14 +13,19 @@ const ServiceContainer = () => {
         });
     }, [access]);
 
-   
+    function handleDeleteService(deletedServices) {
+      const updatedSevice = access.filter(
+        (repCar) => repCar.id !== deletedServices.id
+      );
+      getAccess(updatedSevice);
+    }
 
   return (
     <div className="serviceContainer">
        {access?.length > 0 ? (
         <div className="box-container">
           {access.map((repCar) => (
-              <PostService key={repCar.id} repCar={repCar} />
+              <PostService key={repCar.id} repCar={repCar} onDelete={handleDeleteService}/>
             ))}
         </div>
       ) : (

@@ -84,10 +84,10 @@ const Overlay = ({ show, car, onClose}) => {
                 </div>
               </div>
             <div className='pay__booking'>
-            <div className="booking-info ">
+            {/* <div className="booking-info ">
                 <h3 >Booking Information</h3>
                 <BookingForm />
-              </div>
+              </div> */}
               <div className="booking-info ">
                 <h3 >Payment Information</h3>
                 <Payment />

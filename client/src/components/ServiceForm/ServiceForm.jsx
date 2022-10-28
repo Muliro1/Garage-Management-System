@@ -2,46 +2,58 @@ import React,{ useState} from 'react'
 import "./ServiceForm.css"
 
 const ServiceForm = () => {
-    const [title, setTitle] = useState("");
-    const [author, setAuthor] = useState("");
+    const [make, setMake] = useState("");
+    const [vehicle, setVehicle] = useState("");
+    const [plate, setPlate] = useState("");
     const [image, setImage] = useState("");
     const [price, setPrice] = useState("");
+    const [option, setOption] = useState("");
     const [summary, setSummary] = useState("");
-    const [year, setYear] = useState("");
+    const [speed, setSpeed] = useState("");
 
-    function HandleTitleChange(event) {
-        setTitle(event.target.value);
+    function HandleMakeChange(event) {
+        setMake(event.target.value);
+      }
+
+      function HandleVehicleChange(event) {
+        setVehicle(event.target.value);
       }
 
       function HandleImageChange(event) {
         setImage(event.target.value);
       }
     
-      function HandleAuthorChange(event) {
-        setAuthor(event.target.value);
+      function HandlePlateChange(event) {
+        setPlate(event.target.value);
       }
     
       function HandleSummaryChange(event) {
         setSummary(event.target.value);
       }
 
+      function HandleOptionChange(event) {
+        setOption(event.target.value);
+      }
+
       function HandlePriceChange(event) {
         setPrice(event.target.value);
       }
 
-      function HandleYearChange(event) {
-        setYear(event.target.value);
+      function HandleSpeedChange(event) {
+        setSpeed(event.target.value);
       }
 
       function HandleSubmit(e) {
         e.preventDefault();
         const sumData = {
-          title: title,
-          cover_image: image,
-          author: author,
+          make: make,
+          vehicle: vehicle,
+          image: image,
+          plate: plate,
           price: price,
+          option: option,
           summary: summary,
-          releaseDate: year,
+          speed: speed,
         };
     
         fetch("http://localhost:4000/posts",{
@@ -52,28 +64,35 @@ const ServiceForm = () => {
           body: JSON.stringify(sumData),
         });
     
-        setAuthor("");
+        setPlate("");
         setImage("");
         setSummary("");
-        setTitle("");
-        setYear("");
+        setMake("");
         setPrice("");
+        setSpeed("");
       }
 
   return (
     <form className="add-form" onSubmit={HandleSubmit}>
     <div className="form-control">
-        <label>Title</label>
-        <input  placeholder="Title" required
-        onChange={HandleTitleChange}
-        value={title}
+        <label>Make</label>
+        <input  placeholder="2020 model" required
+        onChange={HandleMakeChange}
+        value={make}
     />
     </div>
     <div className="form-control">
-        <label>Author</label>
-        <input  placeholder="Author" required
-        onChange={HandleAuthorChange}
-        value={author}
+        <label>Vehicle</label>
+        <input  placeholder="Audi/BMW" required
+        onChange={HandleVehicleChange}
+        value={vehicle}
+    />
+    </div>
+    <div className="form-control">
+        <label>Plate</label>
+        <input  placeholder="KAY851Q" required
+        onChange={HandlePlateChange}
+        value={plate}
     />
     </div>
     <div className="form-control">
@@ -86,31 +105,41 @@ const ServiceForm = () => {
 
     <div className="form-control">
         <label>price</label>
-        <input  placeholder="Add image"
+        <input  placeholder="price"
         onChange={HandlePriceChange} 
         value={price}
     />
     </div>
 
     <div className="form-control">
-        <label>year</label>
-        <input  placeholder="Year" required
-        onChange={HandleYearChange}
-        value={year}
+        <label>speed</label>
+        <input  placeholder="254km/h" required
+        onChange={HandleSpeedChange}
+        value={speed}
     />
+    </div>
+    <div className="form-control">
+        <label>Option</label>
+        <select  placeholder="option" required
+        value={option}
+        onChange={HandleOptionChange}>
+          <option>repair/service</option>
+            <option >service</option>
+            <option >repair</option>
+        </select>
     </div>
     
     <div className="form-control">
         <label>summary</label>
         <textarea
-        placeholder="Write your summary here..."
-        rows={10}
+        placeholder="Describe the issue here..."
+        rows={5}
         required
         onChange={HandleSummaryChange}
         value={summary}
       />
         </div>
-    <input type='submit' value='Share your summary' className="btn-block"/>
+    <input type='submit' value='Add Vehicle' className="btn-block"/>
 </form>
   )
 }

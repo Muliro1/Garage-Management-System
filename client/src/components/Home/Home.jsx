@@ -6,6 +6,7 @@ import {BsTools, BsHeadset} from "react-icons/bs"
 import {FaMoneyBillAlt} from "react-icons/fa"
 import {AiFillSafetyCertificate} from "react-icons/ai"
 import {Container} from "@mui/material";
+import {HiArrowSmRight} from "react-icons/hi"
 import "./home.css";
 
 const Home = () => {
@@ -24,7 +25,7 @@ const Home = () => {
             <hr/>
             <h2 class="head">Cut the Hustle</h2>
             <p class="sect2">In this current tough economic <br/> situations,living is already a hustle. <br/> Why then should you worry about <br/> how you should move to live better?</p>
-            <button id="sect3"> learn more <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+            <button id="sect3"> learn more <HiArrowSmRight/>
             </button>
         </div>
       </div>
