@@ -25,7 +25,7 @@ const Repair = () => {
 
       <RepairSearch searchText={(text) => setTerm(text)} />
 
-      {!isLoading && images?.length && <h1 className="text-5xl text-center mx-auto mt-32">Vehicles to be Repaired</h1> }
+      {!isLoading && images?.length  }
 
       {isLoading ? <h1 className="text-6xl text-center mx-auto mt-32">Loading...</h1> : <div className="grid grid-cols-3 gap-4">
         {images.map(image => (

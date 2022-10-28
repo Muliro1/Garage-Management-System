@@ -12,15 +12,15 @@ const ImageCard = ({ image }) => {
         </div>
         <ul>
           <li>
-            <strong>Views: </strong>
-            {image.email}
+            <strong>Owner: </strong>
+            {image.name}
           </li>
           <li>
-            <strong>Downloads: </strong>
-            {image.speciality}
+            <strong>Model: </strong>
+            {image.owner}
           </li>
           <li>
-            <strong>Likes: </strong>
+            <strong>No.plate: </strong>
             {image.rating}
           </li>
         </ul>
