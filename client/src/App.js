@@ -35,8 +35,6 @@ function App() {
           <Route path="/guard" element={<Guard />} />
         </Routes>
       </BrowserRouter>
-      
-
     </div>
   );
 }
