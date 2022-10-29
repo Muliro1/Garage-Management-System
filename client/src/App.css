@@ -3,6 +3,10 @@
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+
+/* STYLING NAVBAR COMPONENT */
+
 * {
   padding: 0;
   margin: 0;
@@ -13,26 +17,28 @@
 a {
   text-decoration: none;
 }
+
 li {
   list-style-type: none;
 }
+
 .navbar {
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 7vh;
   background-color: navy;
-  box-shadow: rgba(50, 50, 93, 0.23) 0px 30px 30px -20px;
+  box-shadow: white;
   position: relative;
-
-  /*box-shadow: rgba(50, 50, 93, 0.23) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;*/
 }
+
 .logo {
   font-size: 40px;
   font-weight: 600;
   color: rgb(224, 70, 15);
   
 }
+
 .nav-links {
   display: flex;
   justify-content: flex-end;
@@ -63,25 +69,30 @@ li {
   text-align: center;
   font-size: 80px;
 }
+
 .mobile-menu-icon {
   display: none;
 }
+
 button {
   border: none;
   text-decoration: none;
   font-size: 20px;
   background: none;
 }
+
 @media (max-width: 768px) {
-  /* .logo {
+  .logo {
     display: flex;
     position: absolute;
     top: 15px;
     left: 35px;
-  } */
+  }
+
   .nav-links {
     display: none;
   }
+
   .nav-links-mobile {
     position: absolute;
     display: block;
@@ -93,24 +104,27 @@ button {
     width: 100%;
     background-color: white;
   }
+
   ul li {
     padding: 32px;
     width: 100%;
     transition: all 0.5s ease-in-out;
     text-align: center;
   }
+
   .mobile-menu-icon {
     position: absolute;
     display: block;
     right: 20px;
   }
+
   .hero h1 {
     font-size: 50px;
   }
-
 }
 
-/* style .contact so that it is aligned at the center of the page */
+
+/* STYLING CONTACT COMPONENT */
 
 .contact {
   display: flex;
@@ -122,43 +136,23 @@ button {
 
 .contact-body {
   background-image: url("https://c0.wallpaperflare.com/preview/934/179/745/building-ceiling-empty-hallway.jpg");
-  /* background-color: black; */
   background-repeat: no-repeat;
   background-position: left;
   background-size: 65% 100%;
   position: fixed;
   top: 6.9%;
-  /* left: 0;
-  right: 0;
-  bottom: 0; */
   min-width: 100%;
   min-height: 100%;
 }
 
 .contact-container {
-  /* position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%); */
   background-color: rgb(224, 70, 15);
   padding: 40px;
   width: 35%;
   height: 100%;
-  /* display: flex; */
   display: block;
   float: right;
 }
-
-/* .contact-container .form-control label {
-  display: inline-block;
-  margin-bottom: 20px;
-} */
-
-
-
-
-
 
 .form-control label {
   display: inline-block;
@@ -204,27 +198,7 @@ button {
   background-color: rgb(214, 208, 208);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .contact .contact-container h1 {
-  /* font-size: 40px;
-  font-weight: 600;
-  margin-top: 10px;
-  justify-content: center;
-  align-items: center; */
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -260,16 +234,7 @@ button {
 }
 
 
-
-/* style .about to the center of page */
-
-/* .about {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  font-size: 20px;
-} */
+/* STYLING ABOUT COMPONENT */
 
 .about .container h2 {
   font-size: 40px;
@@ -290,13 +255,11 @@ button {
   margin-top: 50px;
 }
 
-
 .about .container {
   background-color: rgb(224, 70, 15);
   padding: 40px;
   width: 52%;
   height: 100%;
-  /* display: flex; */
   display: block;
   float: left;
   margin-top: 0.3px;  
@@ -305,6 +268,7 @@ button {
 .about-content p {
   font-size: 20px;
   line-height: 2.47;
+  color: black;
 }
 
 .about-content a {
@@ -312,48 +276,29 @@ button {
   color: white;
   padding: 10px;
   border-radius: 4.5px;
-  /* margin-top: 42px; */
   text-decoration: none;
-  /* position  at center of page */
   display: flex;
   justify-content: center;
   align-items: center;
-  /* flex-direction: column; */
   width: 210px;
   left: 20%;
   margin: 0 auto;
   margin-top: 40px;
-
-
-  /* width:550px;
-  margin: 0 auto;
-  padding: 10px;
-  border-radius: 10px;
-  text-align: center;
-
-  position: relative;
-  top: 15%;
-  right: -45%;
-  transform: translate(-50%, -50%); */
-
 }
-
 
 .about .about-body {
   background-image: url("https://c1.wallpaperflare.com/preview/760/122/404/modern-engine-motor-chopper-car-engine.jpg");
-  /* background-color: black; */
   background-repeat: no-repeat;
   background-position: right;
   background-size: 48% 100%;
   position: fixed;
   top: 6.9%;
-  /* left: 0;
-  right: 0;
-  bottom: 0; */
   min-width: 100%;
   min-height: 100%;
 }
 
+
+/* STYLING HOME COMPONENT */
 
 .home .home-welcome {
   font-size: 20px;
@@ -373,19 +318,16 @@ button {
   font-size: 45px;
   font-weight: 600;
   margin-top: 100px;
-  
   width:550px;
   margin: 0 auto;
   background: rgb(224, 70, 15);
   padding: 10px;
   border-radius: 10px;
   text-align: center;
-
   position: relative;
   top: 15%;
   right: -45%;
   transform: translate(-50%, -50%);
-
 }
 
 .home .home-welcome h1 span {
@@ -404,10 +346,71 @@ button {
   padding: 10px;
   border-radius: 10px;
   text-align: center;
-
   position: relative;
   top: 15%;
   right: -45%;
   transform: translate(-50%, -50%);
 }
 
+
+/* STYLING SERVICES COMPONENTS */
+
+.services-cards {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background-color: rgb(224, 70, 15);
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 60px;
+  padding-bottom: 45px;
+  width: 100%;
+  height: 911px;
+}
+
+.services-cards h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 0.05px;
+  margin-bottom: 10px;
+  font-size: 40px;
+  font-weight: 600;
+  color: white;
+}
+
+.responsive .gallery {
+  border: 1px solid navy;
+}
+
+.responsive .gallery img {
+  width: 100%;
+  height: auto;  
+}
+
+.desc {
+  padding: 15px;
+  text-align: center;
+  background-color: navy;
+  color: white;
+  font-size: 20px;
+  font-weight: 450;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 20px 10px;
+  float: left;
+  width: 24.99999%;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
