@@ -5,11 +5,14 @@ import Servicing from './Servicing';
 import Sidebar from './Sidebar';
 import Vehicles from './Vehicles';
 import Technician from './Technician';
+import Header from './Header.js/header';
 
 // import User from './Components/User';
 
 const ParentTechnician = () => {
   return (
+    <>
+    <Header />
     <BrowserRouter>
       <Sidebar>
         <Routes>
@@ -21,6 +24,7 @@ const ParentTechnician = () => {
         </Routes>
       </Sidebar>
     </BrowserRouter>
+    </>
   );
 };
 

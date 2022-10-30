@@ -18,12 +18,14 @@ const Sidebar = ({children}) => {
         {
             path:"/",
             name:"Technician",
-            icon:<FaTh/>
+            icon:<FaUserAlt/>
+            
         },
         {
             path:"/repair",
             name:"Repair",
-            icon:<FaUserAlt/>
+            icon:<FaTh/>
+            
         },
         // {
         //     path:"/invoices",
