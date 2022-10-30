@@ -6,7 +6,7 @@ form {
   }
   
   .form-control {
-    margin: 20px 0;
+    margin: 20px;
   }
   
   .form-control label {
@@ -15,7 +15,7 @@ form {
   }
   
   .form-control input{
-    width: 100%;
+    width: 95%;
     height: 20px;
     padding: 5px;
     font: size 17px;
@@ -23,7 +23,7 @@ form {
   }
 
   .form-control select{
-    width: 102%;
+    width: 97%;
     height: 30px;
     padding: 5px;
     font: size 17px;
@@ -31,7 +31,7 @@ form {
   }
   
   .form-control textarea {
-    width: 100%;
+    width: 95%;
     height: 100%;
     padding: 5px;
     font: size 17px;
@@ -39,7 +39,7 @@ form {
   }
   
   input[type="submit"] {
-    width: 100%;
+    width: 95%;
     display: inline-block;
     background: grey;
     color: black;

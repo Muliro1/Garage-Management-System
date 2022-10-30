@@ -117,7 +117,7 @@
 
 .sect1 button#sect3{
   align-items: center;
-  display: inline-block;
+  display: flex;
   background: black;
   color: #fff;
   border: none;

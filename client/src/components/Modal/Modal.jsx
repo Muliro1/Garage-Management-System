@@ -1,8 +1,7 @@
 import React from "react";
-import BookingForm from '../UI/BookForm/BookingForm'
 import Payment from "../UI/Payments/Payment"
 import Footer from "../Footer/Footer"
-import{AiFillCloseCircle,AiFillStar,AiOutlineMail,AiFillSetting} from "react-icons/ai"
+import{AiFillCloseCircle,AiFillStar,AiOutlineMail} from "react-icons/ai"
 import {FiPhoneCall} from "react-icons/fi"
 import "./modal.css"
 

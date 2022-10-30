@@ -11,17 +11,15 @@ const Testimonial = () => {
     <div className="test__container">
       <div className="testimonial">
         <p className="section_description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus magni
-          explicabo molestias recusandae repudiandae, dolor, sapiente placeat
-          ab, animi eum minima nulla facere aliquam aut vitae quo pariatur
-          voluptate odit?
+         Amazing services, with some of the best technicians.
+         Got my car up and running in no time.
         </p>
 
         <div className="image-desc">
           <img src={ava01} alt="" />
 
           <div>
-            <h3 >Martin Garry</h3>
+            <h3>Martin Garry</h3>
             <h4>Customer</h4>
           </div>
         </div>
@@ -29,17 +27,15 @@ const Testimonial = () => {
 
       <div className="testimonial">
         <p className="section_description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus magni
-          explicabo molestias recusandae repudiandae, dolor, sapiente placeat
-          ab, animi eum minima nulla facere aliquam aut vitae quo pariatur
-          voluptate odit?
+        Amazing services, with some of the best technicians.
+         Got my car up and running in no time.
         </p>
 
         <div className="image-desc">
-          <img src={ava02} alt=""  />
+          <img src={ava02} alt="" />
 
           <div>
-            <h3 >Monalisa Tessa</h3>
+            <h3>Monalisa Tessa</h3>
             <h4>Customer</h4>
           </div>
         </div>
@@ -47,17 +43,15 @@ const Testimonial = () => {
 
       <div className="testimonial">
         <p className="section_description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus magni
-          explicabo molestias recusandae repudiandae, dolor, sapiente placeat
-          ab, animi eum minima nulla facere aliquam aut vitae quo pariatur
-          voluptate odit?
+        Amazing services, with some of the best technicians.
+         Got my car up and running in no time.
         </p>
 
         <div className="image-desc">
-          <img src={ava03} alt=""  />
+          <img src={ava03} alt="" />
 
           <div>
-            <h3 >Mohammed Ali</h3>
+            <h3>Mohammed Ali</h3>
             <h4>Customer</h4>
           </div>
         </div>
@@ -65,24 +59,20 @@ const Testimonial = () => {
 
       <div className="testimonial">
         <p className="section_description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus magni
-          explicabo molestias recusandae repudiandae, dolor, sapiente placeat
-          ab, animi eum minima nulla facere aliquam aut vitae quo pariatur
-          voluptate odit?
+        Amazing services, with some of the best technicians.
+         Got my car up and running in no time.
         </p>
 
         <div className="image-desc">
-          <img src={ava04} alt=""  />
+          <img src={ava04} alt="" />
 
           <div>
-            <h3 >Ciara Kara</h3>
+            <h3>Ciara Kara</h3>
             <h4>Customer</h4>
           </div>
         </div>
       </div>
-
-      
-      </div>
+    </div>
   );
 };
 
