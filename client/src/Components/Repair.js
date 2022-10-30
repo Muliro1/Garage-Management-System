@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import ImageRepair from './ImageRepair';
-import RepairSearch from './RepairSearch';
+import Footer from './footer/Footer';
 
 
 const Repair = () => {
@@ -20,10 +20,11 @@ const Repair = () => {
   console.log(images)
 
   return (
+    <>
     <div className="container mx-auto">
 
 
-      <RepairSearch searchText={(text) => setTerm(text)} />
+      {/* <RepairSearch searchText={(text) => setTerm(text)} /> */}
 
       {!isLoading && images?.length  }
 
@@ -32,7 +33,10 @@ const Repair = () => {
           <ImageRepair key={image.id} image={image} />
         ))}
       </div>}
+      
     </div>
+    <Footer />
+    </>
         
        
     );
