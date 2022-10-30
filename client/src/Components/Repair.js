@@ -6,7 +6,7 @@ import Footer from './footer/Footer';
 const Repair = () => {
     const [images, setImages] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [term, setTerm] = useState('');
+  const [term,] = useState('');
 
   useEffect(() => {
     fetch(`http://localhost:4000/img`)

@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import ServicingCard from './ServicingCard';
-import ServicingImage from './ServicingImage'
+import Footer from './footer/Footer';
 
 
 const Servicing = () => {
@@ -20,10 +20,11 @@ const Servicing = () => {
   console.log(images)
 
   return (
+    <>
     <div className="container mx-auto">
 
 
-      <ServicingImage searchText={(text) => setTerm(text)} />
+      {/* <ServicingImage searchText={(text) => setTerm(text)} /> */}
 
       {!isLoading && images?.length }
 
@@ -33,6 +34,8 @@ const Servicing = () => {
         ))}
       </div>}
     </div>
+    <Footer />
+    </>
         
        
     );

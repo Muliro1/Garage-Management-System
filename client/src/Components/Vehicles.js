@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import ImageCard from './ImageCard';
-import ImageSearch from './ImageSearch';
+import Footer from './footer/Footer';
 
 
 const Vehicles = () => {
@@ -20,10 +20,11 @@ const Vehicles = () => {
   console.log(images)
 
   return (
+    <>
     <div className="container mx-auto">
 
 
-      <ImageSearch searchText={(text) => setTerm(text)} />
+      {/* <ImageSearch searchText={(text) => setTerm(text)} /> */}
 
       {!isLoading && images?.length  }
 
@@ -33,6 +34,8 @@ const Vehicles = () => {
         ))}
       </div>}
     </div>
+    <Footer />
+    </>
         
        
     );
