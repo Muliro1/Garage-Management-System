@@ -5,11 +5,11 @@ import Update from '../Update/Update'
 import "./postService.css"
 
 const CarItem = ({repCar,onDelete,onUpdateService}) => {
-    const {id,make,plate,vehicle, image, price,summary}= repCar;
+    const {id,make,plate_number,vehicle_type, image, price,summary}= repCar;
     const [isEditing, setIsEditing] = useState(false);
 
     function deleteService() {
-      fetch(`http://localhost:4000/posts/${repCar.id}`, {
+      fetch(`http://127.0.0.1:3000/vehicles/${repCar.id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -34,11 +34,11 @@ const CarItem = ({repCar,onDelete,onUpdateService}) => {
     />):(
     <div className="servicePost">
     <div className="car__img">
-    <img src={image} alt={vehicle}/>
+    <img src={image} alt={vehicle_type}/>
     </div>
 
     <div className="car__item-content">
-      <h4 className="section__title">{vehicle}</h4>
+      <h4 className="section__title">{vehicle_type}</h4>
       <h6 className="rent__price">
         ${price}.00 <span>/ VAT</span>
       </h6>
@@ -48,10 +48,10 @@ const CarItem = ({repCar,onDelete,onUpdateService}) => {
 
       <div className="car__item-info">
         <span>
-          <AiFillCar/> {vehicle}
+          <AiFillCar/> {vehicle_type}
         </span>
         <span>
-          <AiFillSetting/> {plate}
+          <AiFillSetting/> {plate_number}
         </span>
         <span>
           <IoLogoModelS/> {make}

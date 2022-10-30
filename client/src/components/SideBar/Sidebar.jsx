@@ -4,7 +4,6 @@ import{FcEngineering}from "react-icons/fc"
 import{GiAutoRepair}from "react-icons/gi"
 import {AiFillHome} from "react-icons/ai"
 import {TbEngine} from "react-icons/tb"
-import {FaCarAlt} from "react-icons/fa"
 import {NavLink} from 'react-router-dom';
 
 const Sidebar = ({children}) => {
@@ -22,13 +21,8 @@ const Sidebar = ({children}) => {
             icon:<FcEngineering/>
         },
         {
-            path:'/cars',
-            name:"Cars",
-            icon:<FaCarAlt/>
-        },
-        {
-            path:'/parts',
-            name:"Car parts",
+            path:'/inventory',
+            name:"Inventory",
             icon:<TbEngine/>
         },
         {

@@ -6,7 +6,7 @@ const ServiceContainer = () => {
     const [access, getAccess] = useState([]);
 
     useEffect(() => {
-      fetch("http://localhost:4000/posts")
+      fetch("http://127.0.0.1:3000/vehicles")
         .then((r) => r.json())
         .then((data) => {
           getAccess(data);

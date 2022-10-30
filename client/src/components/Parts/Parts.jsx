@@ -7,7 +7,7 @@ const Parts = () => {
     const [view, setView] = useState("");
   
     useEffect(() => {
-      fetch("http://localhost:4000/cars")
+      fetch("http://127.0.0.1:3000/parts")
         .then((r) => r.json())
         .then((data) => {
         setParts(data);

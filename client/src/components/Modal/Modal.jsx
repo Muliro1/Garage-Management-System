@@ -2,11 +2,8 @@ import React from "react";
 import BookingForm from '../UI/BookForm/BookingForm'
 import Payment from "../UI/Payments/Payment"
 import Footer from "../Footer/Footer"
-import{AiFillCloseCircle,AiFillStar,AiFillCar,AiFillSetting} from "react-icons/ai"
-import {GiCarSeat} from "react-icons/gi"
-import {IoLogoModelS} from "react-icons/io"
-import {MdLocalGasStation} from "react-icons/md"
-import {RiTimerFlashFill} from "react-icons/ri"
+import{AiFillCloseCircle,AiFillStar,AiOutlineMail,AiFillSetting} from "react-icons/ai"
+import {FiPhoneCall} from "react-icons/fi"
 import "./modal.css"
 
 const Modal = ({ show, tech, onClose,}) => {
@@ -20,7 +17,7 @@ const Modal = ({ show, tech, onClose,}) => {
         <div className="modal-inner">
         <button className="close" onClick={onClose}><AiFillCloseCircle/></button>
           <div className="inner-box">
-            <img src={thumbnail} alt={tech.name} />
+            <img src={thumbnail? thumbnail : "https://via.placeholder.com/400"} alt={tech.name} />
             <div className="informations">
                   <h2 className='title__car'>{tech.name}</h2>
                   <div className="price__tag">
@@ -47,47 +44,19 @@ const Modal = ({ show, tech, onClose,}) => {
                   style={{ columnGap: "4rem" }}
                 >
                   <span className="section__description">
-                  <AiFillCar/>
+                  <AiOutlineMail/>
                     {tech.email}
                   </span>
 
                   <span className="section__description">
-                  <AiFillSetting/>
-                    {tech.speciality}
-                  </span>
-
-                  <span className="section__description">
-                  <RiTimerFlashFill/> 
-                    {tech.Telephone}
+                  <FiPhoneCall/> 
+                    {tech.telephone}
                   </span>
                 </div>
 
-                <div
-                  className="icon-description"
-                  style={{ columnGap: "4rem" }}
-                >
-                  <span className="section__description">
-                  <GiCarSeat/>
-                    {tech.email}
-                  </span>
-
-                  <span className="section__description">
-                  <IoLogoModelS/>
-                    {tech.speciality}
-                  </span>
-
-                  <span className="section__description">
-                  <MdLocalGasStation/> 
-                    {tech.Telephone}
-                  </span>
-                </div>
                 </div>
           </div>
           <div className='pay__booking'>
-            <div className="booking-info ">
-                <h3 >Booking Information</h3>
-                <BookingForm />
-              </div>
               <div className="booking-info ">
                 <h3 >Payment Information</h3>
                 <Payment />

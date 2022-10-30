@@ -5,7 +5,7 @@ import Overview from '../OverView/Overview';
 import "./partItem.css"
 
 const PartItem = ({part}) => {
-    const {name, image, speed, price,model,automatic}= part;
+    const {name, image, condition, price,model,serial_number}= part;
     const [show, setShow] = useState(false);
     const [item, setItem] = useState();
   return (
@@ -26,10 +26,10 @@ const PartItem = ({part}) => {
           <AiFillCar/> {model}
         </span>
         <span>
-          <AiFillSetting/> {automatic}
+          <AiFillSetting/> {serial_number}
         </span>
         <span>
-          <RiTimerFlashFill/> {speed}
+          <RiTimerFlashFill/> {condition}
         </span>
       </div>
         <div className='car__btn-action'>

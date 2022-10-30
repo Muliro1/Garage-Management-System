@@ -1,12 +1,11 @@
 import React,{useState} from 'react'
 import Modal from "../Modal/Modal"
 import {AiFillMail} from "react-icons/ai"
-import {MdEngineering} from "react-icons/md"
 import {FiPhoneCall} from "react-icons/fi"
 import './mechanic.css'
 
 const Mechanic= ({tech}) => {
-    const {name, image, speciality, Telephone,email,price}= tech;
+    const {name, image,telephone,email,price}= tech;
     const [show, setShow] = useState(false);
     const [item, setItem] = useState();
   return (
@@ -27,10 +26,7 @@ const Mechanic= ({tech}) => {
           <AiFillMail/> {email}
         </span>
         <span>
-          <MdEngineering/> {speciality}
-        </span>
-        <span>
-          <FiPhoneCall/> {Telephone}
+          <FiPhoneCall/> {telephone}
         </span>
       </div>
       <div className='car__btn-action'>

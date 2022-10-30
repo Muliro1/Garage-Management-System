@@ -1,12 +1,8 @@
 import React from 'react'
 import "./overview.css"
 import Footer from "../Footer/Footer"
-import BookingForm from '../UI/BookForm/BookingForm'
 import Payment from "../UI/Payments/Payment"
 import{AiFillCloseCircle,AiFillStar,AiFillCar,AiFillSetting} from "react-icons/ai"
-import {GiCarSeat} from "react-icons/gi"
-import {IoLogoModelS} from "react-icons/io"
-import {MdLocalGasStation} from "react-icons/md"
 import {RiTimerFlashFill} from "react-icons/ri"
 
 
@@ -54,41 +50,18 @@ const Overview = ({ show, part, onClose,}) => {
 
                   <span className="section__description">
                   <AiFillSetting/>
-                    {part.automatic}
+                    {part.serial_number}
                   </span>
 
                   <span className="section__description">
                   <RiTimerFlashFill/> 
-                    {part.speed}
+                    {part.condition}
                   </span>
                 </div>
 
-                <div
-                  className="icon-description"
-                  style={{ columnGap: "4rem" }}
-                >
-                  <span className="section__description">
-                  <GiCarSeat/>
-                    {part.model}
-                  </span>
-
-                  <span className="section__description">
-                  <IoLogoModelS/>
-                    {part.automatic}
-                  </span>
-
-                  <span className="section__description">
-                  <MdLocalGasStation/> 
-                    {part.speed}
-                  </span>
-                </div>
                 </div>
               </div>
               <div className='pay__booking'>
-            <div className="booking-info ">
-                <h3 >Booking Information</h3>
-                <BookingForm />
-              </div>
               <div className="booking-info ">
                 <h3 >Payment Information</h3>
                 <Payment />

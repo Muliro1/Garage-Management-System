@@ -7,7 +7,7 @@ const Update = ({id,summary,onUpdateService}) => {
     function handleFormSubmit(e) {
       e.preventDefault();
   
-      fetch(`http://localhost:4000/posts/${id}`, {
+      fetch(`http://127.0.0.1:3000/vehicles/${id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
