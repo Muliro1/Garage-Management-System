@@ -4,5 +4,5 @@ class User < ApplicationRecord
     validates :password, presence: true, uniqueness: true
 
     has_many :vehicles, dependent: :destroy
-    belongs_to :admin, class_name: "User", optional: true
+    # belongs_to :admin, class_name: "User", optional: true
 end

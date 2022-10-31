@@ -1,9 +1,3 @@
-
-
-
-
-
-
 class Technician < ApplicationRecord
     has_secure_password
     validates :name, presence: true, uniqueness: true
@@ -12,5 +6,5 @@ class Technician < ApplicationRecord
 
 
     belongs_to :admin, class_name: "Technician", optional: true
-    has_one :vehicle
+    has_many :vehicles, dependent: :destroy
 end
