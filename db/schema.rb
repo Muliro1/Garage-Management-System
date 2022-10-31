@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_28_035624) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_30_154232) do
   create_table "admins", force: :cascade do |t|
     t.string "full_name"
     t.string "password"
@@ -60,6 +60,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_28_035624) do
     t.datetime "updated_at", null: false
     t.string "password"
     t.string "email"
+    t.string "telephone"
   end
 
   create_table "vehicles", force: :cascade do |t|
@@ -67,17 +68,22 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_28_035624) do
     t.string "plate_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
     t.float "price"
     t.string "vehicle_type"
     t.integer "speed"
     t.string "image"
     t.integer "billing"
     t.boolean "approved"
-    t.integer "technician_id"
     t.boolean "service"
     t.boolean "repair"
     t.string "summary"
+    t.boolean "cleared"
+    t.integer "user_id"
+    t.integer "technician_id"
+    t.index ["technician_id"], name: "index_vehicles_on_technician_id"
+    t.index ["user_id"], name: "index_vehicles_on_user_id"
   end
 
+  add_foreign_key "vehicles", "technicians"
+  add_foreign_key "vehicles", "users"
 end
