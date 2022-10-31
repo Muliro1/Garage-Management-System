@@ -1,11 +1,11 @@
 import React,{useState} from 'react'
-import {AiFillCar, AiFillSetting} from "react-icons/ai"
-import {IoLogoModelS} from "react-icons/io"
+import {AiFillCar} from "react-icons/ai"
+import {FaCoins,FaFileAlt} from "react-icons/fa"
 import Update from '../Update/Update'
 import "./postService.css"
 
 const CarItem = ({repCar,onDelete,onUpdateService}) => {
-    const {id,make,plate_number,vehicle_type, image, price,summary}= repCar;
+    const {id,make,plate_number,vehicle_type,billing, image, price,summary}= repCar;
     const [isEditing, setIsEditing] = useState(false);
 
     function deleteService() {
@@ -34,11 +34,11 @@ const CarItem = ({repCar,onDelete,onUpdateService}) => {
     />):(
     <div className="servicePost">
     <div className="car__img">
-    <img src={image} alt={vehicle_type}/>
+    <img src={image} alt={make}/>
     </div>
 
     <div className="car__item-content">
-      <h4 className="section__title">{vehicle_type}</h4>
+      <h4 className="section__title">{make}</h4>
       <h6 className="rent__price">
         ${price}.00 <span>/ VAT</span>
       </h6>
@@ -51,10 +51,10 @@ const CarItem = ({repCar,onDelete,onUpdateService}) => {
           <AiFillCar/> {vehicle_type}
         </span>
         <span>
-          <AiFillSetting/> {plate_number}
+          <FaFileAlt/> {plate_number}
         </span>
         <span>
-          <IoLogoModelS/> {make}
+          <FaCoins/> ${billing}.00
         </span>
       </div>
         <div className='car__btn-action'>

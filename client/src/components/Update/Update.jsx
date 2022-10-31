@@ -22,7 +22,7 @@ const Update = ({id,summary,onUpdateService}) => {
   return (
     <form className='update' onSubmit={handleFormSubmit}>
              <div className='formControl'>
-        <input placeholder='Name'
+        <input placeholder='Report'
               onChange={(e) =>setMessageBody(e.target.value)}
               value={messageBody}/>
               <input type='submit'  value='Update' className="btn-block"/>

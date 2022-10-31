@@ -1,9 +1,9 @@
 import React from 'react'
-import "./overview.css"
 import Footer from "../Footer/Footer"
-import Payment from "../UI/Payments/Payment"
+import Checkout from '../UI/Checkout/Checkout'
 import{AiFillCloseCircle,AiFillStar,AiFillCar,AiFillSetting} from "react-icons/ai"
 import {RiTimerFlashFill} from "react-icons/ri"
+import "./overview.css"
 
 
 const Overview = ({ show, part, onClose,}) => {
@@ -61,13 +61,10 @@ const Overview = ({ show, part, onClose,}) => {
 
                 </div>
               </div>
-              <div className='pay__booking'>
               <div className="booking-info ">
                 <h3 >Payment Information</h3>
-                <Payment />
+                <Checkout />
               </div>
-
-            </div>
 
               <div className="booking-info ">
                 <Footer />

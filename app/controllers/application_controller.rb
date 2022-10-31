@@ -11,11 +11,7 @@ class ApplicationController < ActionController::API
     
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
   
-<<<<<<< HEAD
     # before_action :authorize
-=======
-    #before_action :authorize
->>>>>>> b117ad824cbf9526c4483711d56dd8f6feab4d7c
   
     private
   

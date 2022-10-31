@@ -1,18 +1,12 @@
-
-
-
-
-
-
-
 Rails.application.routes.draw do
   # resources for users
   resources :users , only: [:index,:show, :create, :update, :destroy] do
 
     #nested resource for vehicles
-    resources :vehicles, only: [:index, :create] do
-    end
+  
   end
+
+  resources :vehicles
 
   # technician resources
   resources :technicians, only: [:index,:show, :create, :update, :destroy] 

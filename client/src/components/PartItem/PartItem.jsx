@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
-import {AiFillCar, AiFillSetting} from "react-icons/ai"
-import {RiTimerFlashFill} from "react-icons/ri"
+import {AiFillCar,AiFillFile} from "react-icons/ai"
+import {MdOutlineStarRate} from "react-icons/md"
 import Overview from '../OverView/Overview';
 import "./partItem.css"
 
@@ -20,16 +20,17 @@ const PartItem = ({part}) => {
       <h6 className="rent__price">
         ${price}.00 <span>/ VAT</span>
       </h6>
+      
 
       <div className="car__item-info">
         <span>
           <AiFillCar/> {model}
         </span>
         <span>
-          <AiFillSetting/> {serial_number}
+          <AiFillFile/> {serial_number}
         </span>
         <span>
-          <RiTimerFlashFill/> {condition}
+          <MdOutlineStarRate/> {condition}
         </span>
       </div>
         <div className='car__btn-action'>

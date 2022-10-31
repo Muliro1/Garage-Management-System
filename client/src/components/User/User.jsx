@@ -2,7 +2,7 @@ import React from 'react'
 import Header from '../Header/Header'
 import Router from "../../routers/Router"
 
-const Layout = () => {
+const User = () => {
   return (
     <>
     <Header/>
@@ -11,4 +11,4 @@ const Layout = () => {
   )
 }
 
-export default Layout
+export default User;
