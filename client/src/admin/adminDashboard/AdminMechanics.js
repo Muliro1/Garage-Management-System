@@ -8,17 +8,22 @@ function AdminMechanics() {
     const [searchValue, setSearchValue] = useState('')
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
-    const [description, setDescription] = useState('')
+    const [rating, setRating] = useState('')
     const [telephone, setTelephone] = useState('')
+    const [password, setPassword] = useState('')
+    const [passwordConfirmation, setPasswordConfirmation] = useState('')
     const [refresh,setRefresh] = useState(false)
 
 console.log(mechanics)
     const newMechanic = {
         name: name,
         email: email,
-        description: description,
+        description:'',
         telephone: telephone,
-        rating:0
+        rating: rating,
+        password: password,
+        password_confirmation:passwordConfirmation
+        
     }
 
     // fetching all technicians
@@ -63,11 +68,11 @@ console.log(mechanics)
             headers: { 'content-Type': 'application/json' },
             body: JSON.stringify(newMechanic)
         })
-        setRefresh(!refresh)
+            .then(() => setRefresh(!refresh))
         setAddMechanic(false)
         setName('')
         setEmail('')
-        setDescription('')
+        setRating('')
         setTelephone('')
         e.target.reset()
     }
@@ -107,11 +112,18 @@ console.log(mechanics)
                         <label className='text-white' htmlFor='email'>Email</label><br></br>
                         <input onChange={(e) => setEmail(e.target.value)} type='email' className='mt-2 mb-2 text-center' placeholder='enter email ...' required /><br></br>
 
-                        <label className='text-white  ' htmlFor='first-name'>Description</label><br></br>
-                        <input onChange={(e) => setDescription(e.target.value)} type='text' className='mt-2 mb-2 text-center' placeholder='enter position ...' required /><br></br>
+                        <label className='text-white  ' htmlFor='first-name'>rating(between 1 and 10)</label><br></br>
+                        <input onChange={(e) => setRating(e.target.value)} type='number' min='1' max='10' className='mt-2 mb-2 text-center' placeholder='enter rating ...' required /><br></br>
 
                         <label className='text-white  ' htmlFor='first-name'>Telephone</label><br></br>
                         <input onChange={(e) => setTelephone(e.target.value)} type='number' className='mt-2 mb-2 text-center' placeholder='enter phone number ...' required /><br></br>
+
+                        <label className='text-white  ' htmlFor='first-name'>Password</label><br></br>
+                        <input onChange={(e) => setPassword(e.target.value)} type='password' className='mt-2 mb-2 text-center' placeholder='enter password ...' required /><br></br>
+
+                        <label className='text-white  ' htmlFor='first-name'>Confrim Password</label><br></br>
+                        <input onChange={(e) => setPasswordConfirmation(e.target.value)} type='password' className='mt-2 mb-2 text-center' placeholder='confirm password...' required /><br></br>
+
 
                         <input type='submit' value='Register' className='bg-slate-100 font-black mt-2 p-1 rounded-md' />
 
@@ -136,15 +148,16 @@ console.log(mechanics)
 
                     </span>
                 </div>
-                <section className='bg-slate-50 m-auto h-60 mt-2 w-9/12  pb-2 overflow-hidden hover:overflow-y-scroll'>
-                    <div className='grid grid-cols-6 gap-[4.2rem] bg-slate-400    '>
-                        <p className='pl-6'>Image</p>
-                        <p className=''>Name</p>
-                        <p className=''>Email</p>
-                        <p className=''>Position</p>
-                        <p className=''>Telephone</p>
-                        <p className='pl-2 pr-2'>Action</p>
-                    </div>
+                <div className='grid grid-cols-6 bg-slate-400 mt-4 w-11/12 m-auto   '>
+                    <p className='pl-6'>Image</p>
+                    <p className=''>Name</p>
+                    <p className=''>Email</p>
+                    <p className='pl-6'>Rating</p>
+                    <p className=''>Telephone</p>
+                    <p className='pl-8'>Action</p>
+                </div>
+                <section className='bg-slate-50 m-auto h-60  w-11/12  pb-2 overflow-hidden hover:overflow-y-scroll'>
+                   
                     {filteredMechanics.map((mechanic) => {
                         return (
                             <AdminMechanic key={mechanic.id} mechanic={mechanic} refresh={refresh} setRefresh={setRefresh} />

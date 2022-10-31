@@ -6,9 +6,8 @@ function AdminClients() {
    
     const [clients, setClients] = useState([])
     const [searchValue, setSearchValue] = useState('')
-
     useEffect(() => {
-        fetch('http://127.0.0.1:3000/technicians')
+        fetch('http://127.0.0.1:3000/users')
             .then((r) => r.json())
             .then((data) => setClients(data))
 
@@ -19,7 +18,7 @@ function AdminClients() {
     const getFilteredClients = () => {
         if (!searchValue) return clients
         return clients.filter(
-            mechanic => mechanic.name.toLowerCase().includes(searchValue.toLowerCase())
+            client => client.username.toLowerCase().includes(searchValue.toLowerCase())
         )
     }
 
@@ -28,14 +27,14 @@ function AdminClients() {
     // sorting functionality
     function handleAscSort() {
         const strAscending = [...clients].sort((a, b) =>
-            a.name > b.name ? 1 : -1,
+            a.username > b.username ? 1 : -1,
         );
         setClients(strAscending)
     }
 
     function handleDescSort() {
         const strDescending = [...clients].sort((a, b) =>
-            a.name > b.name ? -1 : 1,
+            a.username > b.username ? -1 : 1,
         );
         setClients(strDescending)
     }
@@ -77,14 +76,14 @@ function AdminClients() {
 
                     </span>
                 </div>
-                <section className='bg-slate-50 m-auto h-60 mt-2 w-9/12  pb-2 overflow-hidden hover:overflow-y-scroll'>
-                    <div className='flex bg-slate-400   '>
-                        <p className='pl-6'>Image</p>
-                        <p className='pl-12'>Name</p>
-                        <p className='pl-28'>Email</p>
-                        <p className='pl-40'>Address</p>
-                        <p className='pl-24'>Number</p>
-                        <p className='pl-10 pr-6'>Action</p>
+                <section className='bg-slate-50 m-auto h-60 mt-2 w-11/12  pb-2 overflow-hidden hover:overflow-y-scroll'>
+                    <div className='pl-10 grid grid-cols-6 gap-10 bg-slate-400   '>
+                        <p className=''>Image</p>
+                        <p className=''>Name</p>
+                        <p className=''>Email</p>
+                        <p className=''>Address</p>
+                        <p className=''>Phone Number</p>
+                        <p className=''>Action</p>
                     </div>
                     <div className='mt-6'>
                         {filteredClients.map((client) => {

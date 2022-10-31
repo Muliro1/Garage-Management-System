@@ -8,7 +8,7 @@ function AdminCars() {
     const [refresh,setRefresh] = useState(false)
    
 
-    // console.log(vehicles)
+    console.log(vehicles)
   
 
     // fetching all vehicles
@@ -24,7 +24,7 @@ function AdminCars() {
     const getFilteredVehicles = () => {
         if (!searchValue) return vehicles
         return vehicles.filter(
-            vehicle => vehicle.plate_number.toLowerCase().includes(searchValue.toLowerCase())
+            vehicle => vehicle.user.username.toLowerCase().includes(searchValue.toLowerCase())
         )
     }
 
@@ -76,16 +76,18 @@ function AdminCars() {
 
                     </span>
                 </div>
-                <section className='bg-slate-50 m-auto h-60 mt-2 w-11/12  pb-2 overflow-hidden hover:overflow-y-scroll'>
-                    <div className='grid grid-cols-7 gap-4 bg-slate-400   '>
-                        <p className='pl-6'>Image</p>
-                        <p className=''>Make</p>
-                        <p className=''>billing</p>
-                        <p className=''>Plate Number</p>
-                        <p className='pl-1'>owner</p>
-                        <p className='pl-2'>Approval Status</p>
-                        <p className='pl-6  '>Action</p>
-                    </div>
+                <div className='grid grid-cols-8 gap-4 bg-slate-400 mr-4 ml-4 mt-4  '>
+                    <p className='pl-6'>Image</p>
+                    <p className=''>Make</p>
+                    <p className=''>billing</p>
+                    <p className=''>Plate Number</p>
+                    <p className='pl-1'>owner</p>
+                    <p className='pl-2'>Approval Status</p>
+                    <p className='pl-2'>Clearance Status</p>
+                    <p className='pl-6  '>Action</p>
+                </div>
+                <section className='bg-slate-50 m-auto h-60  w-12/12 ml-4 mr-4 pb-2 overflow-hidden hover:overflow-y-scroll'>
+                   
                     {vehicles.errors? null: filteredVehicles.map((vehicle) => {
                         return (
                             <AdminCar key={vehicle.id} vehicle={vehicle} setRefresh={setRefresh} refresh={refresh}  />

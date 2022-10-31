@@ -41,14 +41,14 @@ function AdminGuards() {
     // sorting functionality
     function handleAscSort() {
         const strAscending = [...guards].sort((a, b) =>
-            a.name > b.name ? 1 : -1,
+            a.full_name > b.full_name ? 1 : -1,
         );
         setGuards(strAscending)
     }
 
     function handleDescSort() {
         const strDescending = [...guards].sort((a, b) =>
-            a.name > b.name ? -1 : 1,
+            a.full_name > b.full_name ? -1 : 1,
         );
         setGuards(strDescending)
     }
@@ -56,12 +56,13 @@ function AdminGuards() {
     // Registering a guard
     function handleNewGuard(e) {
         e.preventDefault()
-        fetch('http://127.0.0.1:3000/guards', {
+        fetch('http://127.0.0.1:3000//guards/signup', {
             method: 'POST',
             headers: { 'content-Type': 'application/json' },
             body: JSON.stringify(newGuard)
         })
-        setRefresh(!refresh)
+            .then( () => setRefresh(!refresh) )
+
         setAddGuard(false)
         setName('')
         setEmail('')
@@ -106,10 +107,10 @@ function AdminGuards() {
                         <input onChange={(e) => setEmail(e.target.value)} type='email' className='mt-2 mb-2 text-center' placeholder='enter email ...' required /><br></br>
 
                         <label className='text-white  ' htmlFor='first-name'>Password</label><br></br>
-                        <input onChange={(e) => setPassword(e.target.value)} type='text' className='mt-2 mb-2 text-center' placeholder='enter position ...' required /><br></br>
+                        <input onChange={(e) => setPassword(e.target.value)} type='password' className='mt-2 mb-2 text-center' placeholder='enter password...' required /><br></br>
 
                         <label className='text-white  ' htmlFor='first-name'>password Confirmation</label><br></br>
-                        <input onChange={(e) => setPasswordConfirmation(e.target.value)} type='number' className='mt-2 mb-2 text-center' placeholder='enter phone number ...' required /><br></br>
+                        <input onChange={(e) => setPasswordConfirmation(e.target.value)} type='password' className='mt-2 mb-2 text-center' placeholder='confirm password ...' required /><br></br>
 
                         <input type='submit' value='Register' className='bg-slate-100 font-black mt-2 p-1 rounded-md' />
 
