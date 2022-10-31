@@ -1,27 +1,27 @@
 import React from 'react';
 
-const ImageRepair = ({ image }) => {
+const ImageRepair = ({ vehicle }) => {
   // const tags = image.tags.split(',');
 
   return (
     <div className="max-w-sm rounded overflow-auto shadow-lg">
-      <img src={image.image} alt="" className="w-full"/>
+      <img src={vehicle.image} alt="" className="w-full"/>
       <div className="px-6 py-4">
         <div className="font-bold text-purple-500 text-xl mb-2">
-          Photo by {image.name}
+          Photo by {vehicle.name}
         </div>
         <ul>
           <li>
             <strong>Owner: </strong>
-            {image.email}
+            {vehicle.email}
           </li>
           <li>
             <strong>Model: </strong>
-            {image.speciality}
+            {vehicle.speciality}
           </li>
           <li>
             <strong>No.plate: </strong>
-            {image.rating}
+            {vehicle.rating}
           </li>
         </ul>
       </div>

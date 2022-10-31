@@ -4,42 +4,41 @@ import Footer from './footer/Footer';
 
 
 const Repair = () => {
-    const [images, setImages] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [term,] = useState('');
+  const [vehicles, setVehicles] = useState([]);
+const [isLoading, setIsLoading] = useState(true);
+const [term, setTerm] = useState('');
 
-  useEffect(() => {
-    fetch(`http://localhost:4000/img`)
-      .then(res => res.json())
-      .then(data => {
-        setImages(data);
-        setIsLoading(false);
-      })
-      .catch(err => console.log(err));
-  }, [term]);
-  console.log(images)
+useEffect(() => {
+  fetch(`http://127.0.0.1:3000/vehicles`)
+    .then(res => res.json())
+    .then(data => {
+      setVehicles(data);
+      setIsLoading(false);
+    })
+    // .catch(err => console.log(err));
+}, [term]);
+console.log(vehicles)
 
-  return (
-    <>
-    <div className="container mx-auto">
+return (
+  <>
+  <div className="container mx-auto">
 
 
-      {/* <RepairSearch searchText={(text) => setTerm(text)} /> */}
+    {/* <ImageSearch searchText={(text) => setTerm(text)} /> */}
 
-      {!isLoading && images?.length  }
+    {!isLoading && vehicles?.length  }
 
-      {isLoading ? <h1 className="text-6xl text-center mx-auto mt-32">Loading...</h1> : <div className="grid grid-cols-3 gap-4">
-        {images.map(image => (
-          <ImageRepair key={image.id} image={image} />
-        ))}
-      </div>}
+    {isLoading ? <h1 className="text-6xl text-center mx-auto mt-32">Loading...</h1> : <div className="grid grid-cols-3 gap-4">
+      {vehicles.map(vehicle => (
+        <ImageRepair key={vehicle.id} vehicle={vehicle} />
+      ))}
+    </div>}
+  </div>
+  <Footer />
+  </>
       
-    </div>
-    <Footer />
-    </>
-        
-       
-    );
+     
+  );
 }
 
 export default Repair;

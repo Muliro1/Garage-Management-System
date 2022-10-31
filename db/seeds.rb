@@ -8,26 +8,26 @@
 
 
 Vehicle.create({make: "BMW", plate_number: "KAV 097J", user_id: 3, price: 5000, vehicle_type: "Truck", speed: 900,
-image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dreamstime.com%2Fphotos-images%2Ftruck.html&psig=AOvVaw2LEZZexIQT4Q9E03c2qh_I&ust=1666829061119000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCKiuiaHM_PoCFQAAAAAdAAAAABAE",
+image: "https://i.pinimg.com/236x/c8/e1/6e/c8e16e642d1bf35dd2f0cedae8fb7f53.jpg",
 billing: 3000, approved: false, technician_id: 1 })
 
 Vehicle.create({make: "Toyota", plate_number: "KAV 073y", user_id: 1, price: 5000, vehicle_type: "SUV", speed: 600,
-image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dreamstime.com%2Fphotos-images%2Ftruck.html&psig=AOvVaw2LEZZexIQT4Q9E03c2qh_I&ust=1666829061119000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCKiuiaHM_PoCFQAAAAAdAAAAABAE",
+image: "https://i.pinimg.com/236x/2f/35/01/2f35016fd12134ab28d35311f93e2212.jpg",
 billing: 3000, approved: false, technician_id: 2 })
 
 Vehicle.create({make: "BMW", plate_number: "KAV 097", user_id: 3, price: 5000, vehicle_type: "Truck", speed: 900,
-image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dreamstime.com%2Fphotos-images%2Ftruck.html&psig=AOvVaw2LEZZexIQT4Q9E03c2qh_I&ust=1666829061119000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCKiuiaHM_PoCFQAAAAAdAAAAABAE",
+image: "https://i.pinimg.com/236x/86/fc/72/86fc722d224ecdc20016fd2272edfc87.jpg",
 billing: 3000, approved: false, technician_id: 1 })
 
 Vehicle.create({make: "Toyota", plate_number: "KAV 07", user_id: 1, price: 5000, vehicle_type: "SUV", speed: 600,
-image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dreamstime.com%2Fphotos-images%2Ftruck.html&psig=AOvVaw2LEZZexIQT4Q9E03c2qh_I&ust=1666829061119000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCKiuiaHM_PoCFQAAAAAdAAAAABAE",
+image: "https://i.pinimg.com/236x/29/04/ee/2904ee8f406baf62c6d4bff476905ab2.jpg",
 billing: 3000, approved: false, technician_id: 2 })
 
 Technician.create({name: "Intro Ne", email: "mulirokemba@gmail.com", telephone: 0272, rating: 5, description: "very hardworking", "password": "gan", "password_confirmation": "gan"})
 Technician.create({name: "Int ", email: "muliro@ail.com", telephone: 02727563, rating: 4, description: "very hardworking", "password": "ga", "password_confirmation": "ga"})
 
 Technician.create({name: "I Nerd", email: "mulirokhaemba@gmail.c", telephone: 0272, rating: 5, description: "very hardworking", "password": "gant", "password_confirmation": "gant"})
-Technician.create({name: "In ", email: "muliro@gmail.com", telephone: 02727563, rating: 4, description: "very hardworking", "password": "gane", "password_confirmation": "gane"})
+Technician.create({name: "Deno", email: "muliro@gmail.com", telephone: 02727563, rating: 4, description: "very hardworking", "password": "1234", "password_confirmation": "1234"})
 
 
 Part.create({name: "turbo", image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fturbocharger&psig=AOvVaw2K2OZTvu9zYc9dXQilwBPD&ust=1666829938357000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCPCqqMPP_PoCFQAAAAAdAAAAABAE",

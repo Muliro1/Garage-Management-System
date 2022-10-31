@@ -4,20 +4,20 @@ import Footer from './footer/Footer';
 
 
 const Vehicles = () => {
-    const [images, setImages] = useState([]);
+    const [vehicles, setVehicles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [term, setTerm] = useState('');
 
   useEffect(() => {
-    fetch(`http://localhost:4000/img`)
+    fetch(`http://127.0.0.1:3000/vehicles`)
       .then(res => res.json())
       .then(data => {
-        setImages(data);
+        setVehicles(data);
         setIsLoading(false);
       })
-      .catch(err => console.log(err));
+      // .catch(err => console.log(err));
   }, [term]);
-  console.log(images)
+  console.log(vehicles)
 
   return (
     <>
@@ -26,11 +26,11 @@ const Vehicles = () => {
 
       {/* <ImageSearch searchText={(text) => setTerm(text)} /> */}
 
-      {!isLoading && images?.length  }
+      {!isLoading && vehicles?.length  }
 
       {isLoading ? <h1 className="text-6xl text-center mx-auto mt-32">Loading...</h1> : <div className="grid grid-cols-3 gap-4">
-        {images.map(image => (
-          <ImageCard key={image.id} image={image} />
+        {vehicles.map(vehicle => (
+          <ImageCard key={vehicle.id} vehicle={vehicle} />
         ))}
       </div>}
     </div>
