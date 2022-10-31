@@ -1,11 +1,4 @@
-
-
-
-
-
-
-
 class UserSerializer < ActiveModel::Serializer
-  has_many :vehicles
-  attributes :id, :username, :email, :password, :password_confirmation
+  attributes :id, :username, :email,:telephone
+   has_many :vehicles
 end

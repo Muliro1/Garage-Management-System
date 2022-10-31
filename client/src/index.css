@@ -68,13 +68,12 @@ text-align: left;
 }
 
 .adminmechanictrue {
+  padding-bottom: 5px;
   position: fixed;
-  top: 30;
+  bottom: 4em;
   left: 20em;
   z-index: 1040;
   width: 40vw;
-  height: 58vh;
-  background-color: rgba(0, 0, 0, 0.818);
-  /* opacity: .85; */
+  background-color: rgba(0, 0, 0, 0.95);
 }
 
