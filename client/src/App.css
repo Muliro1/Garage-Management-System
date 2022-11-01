@@ -27,7 +27,7 @@ li {
   justify-content: space-around;
   align-items: center;
   height: 7vh;
-  background-color: navy;
+  background-color: black;
   box-shadow: white;
   position: relative;
 }
@@ -35,7 +35,7 @@ li {
 .logo {
   font-size: 40px;
   font-weight: 600;
-  color: rgb(224, 70, 15);
+  color: grey;
   
 }
 
@@ -55,14 +55,14 @@ li {
 }
 
 .nav-links li:hover {
-  background-color: rgb(224, 70, 15);
+  background-color: grey;
   border-radius: 4.5px;
 }
 
 .hero {
   text-align: center;
   margin-top: 15%;
-  background-color: navy;
+  background-color: black;
 }
 
 .hero h1 {
@@ -146,7 +146,7 @@ button {
 }
 
 .contact-container {
-  background-color: rgb(224, 70, 15);
+  background-color: grey;
   padding: 40px;
   width: 35%;
   height: 100%;
@@ -226,7 +226,7 @@ button {
 }
 
 .contact button {
-  background-color: navy;
+  background-color: black;
   color: white;
   padding: 10px 20px;
   border-radius: 15px;
@@ -256,7 +256,7 @@ button {
 }
 
 .about .container {
-  background-color: rgb(224, 70, 15);
+  background-color: grey;
   padding: 40px;
   width: 52%;
   height: 100%;
@@ -272,7 +272,7 @@ button {
 }
 
 .about-content a {
-  background-color: navy;
+  background-color: black;
   color: white;
   padding: 10px;
   border-radius: 4.5px;
@@ -320,7 +320,7 @@ button {
   margin-top: 100px;
   width:550px;
   margin: 0 auto;
-  background: rgb(224, 70, 15);
+  background: grey;
   padding: 10px;
   border-radius: 10px;
   text-align: center;
@@ -331,13 +331,13 @@ button {
 }
 
 .home .home-welcome h1 span {
-  color: navy;
+  color: black;
   font-size: 30px;
   font-weight: 500;
 }
 
 .home .home-welcome h3 {
-  color: rgb(224, 70, 15);
+  color: grey;
   font-size: 25px;
   font-weight: 600;
   margin-top: 5px;
@@ -360,7 +360,7 @@ button {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  background-color: rgb(224, 70, 15);
+  background-color: grey;
   padding-left: 30px;
   padding-right: 30px;
   padding-top: 60px;
@@ -382,7 +382,7 @@ button {
 }
 
 .responsive .gallery {
-  border: 1px solid navy;
+  border: 1px solid black;
 }
 
 .responsive .gallery img {
@@ -393,7 +393,7 @@ button {
 .desc {
   padding: 15px;
   text-align: center;
-  background-color: navy;
+  background-color: black;
   color: white;
   font-size: 20px;
   font-weight: 450;
