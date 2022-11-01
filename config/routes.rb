@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :users , only: [:index,:show, :create, :update, :destroy] do
 
     #nested resource for vehicles
-    resources :vehicles, only: [:create, :update, :destroy] do
+    resources :vehicles, only: [:index, :create] do
     end
   end
 
@@ -20,6 +20,12 @@ Rails.application.routes.draw do
 
   get "/vehicles", to: "vehicles#index"
   
+
+  #vehicle delete route
+  delete "/vehicle/:id", to:"vehicles#destroy"
+
+  #vehicle update route
+  patch "/vehicle/:id", to: "vehicles#update"
 
   # user signup route
   post "/signup", to: "users#create"
