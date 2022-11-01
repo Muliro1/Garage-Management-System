@@ -9,7 +9,7 @@ const About = () => {
             <h2 className="center-align">ABOUT US</h2>
             <div className="about-content">
               <p>
-                PBMW is a privately owned and operated startup company that has been servicing the trucking industry for a little over 3 years. We are a team of highly skilled and experienced technicians who are passionate about trucks and the trucking industry. We are committed to providing the best truck servicing experience to our customers by providing the best quality parts and services at the most competitive prices.
+                PBMW is a privately owned and operated startup company that has been servicing the automotive industry for a little over 3 years. We are a team of highly skilled and experienced technicians who are passionate about vehicles and the automotive industry. We are committed to providing the best automotive servicing experience to our customers by providing the best quality parts and services at the most competitive prices.
                 <br></br>
                 Our headquarter is located in the heart of the trucking industry in Westlands, Nairobi. We have a fleet of mobile service trucks that are equipped with the latest technology and tools to provide the best service to our customers. We also have a fully equipped workshop that is manned by highly skilled and experienced technicians who are able to provide the best service to our customers.
                 <br></br>
