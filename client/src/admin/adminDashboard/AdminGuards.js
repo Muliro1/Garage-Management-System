@@ -77,7 +77,7 @@ function AdminGuards() {
         <main className=''>
             <div className=' adminnavuser text-white h-[8vh]'>
             </div>
-            <div className='flex mt-10'>
+            <div className='flex mt-2'>
                 <svg className='ml-8' width="18" height="18" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0 21C0 18.8783 0.842855 16.8434 2.34315 15.3431C3.84344 13.8429 5.87827 13 8 13C10.1217 13 12.1566 13.8429 13.6569 15.3431C15.1571 16.8434 16 18.8783 16 21H0ZM8 12C4.685 12 2 9.315 2 6C2 2.685 4.685 0 8 0C11.315 0 14 2.685 14 6C14 9.315 11.315 12 8 12ZM15.363 14.233C16.8926 14.6261 18.2593 15.4918 19.2683 16.7068C20.2774 17.9218 20.8774 19.4242 20.983 21H18C18 18.39 17 16.014 15.363 14.233ZM13.34 11.957C14.178 11.2075 14.8482 10.2893 15.3066 9.26275C15.765 8.23616 16.0013 7.12429 16 6C16.0021 4.63347 15.6526 3.28937 14.985 2.097C16.1176 2.32459 17.1365 2.93737 17.8685 3.8312C18.6004 4.72502 19.0002 5.84473 19 7C19.0003 7.71247 18.8482 8.41676 18.5541 9.06567C18.26 9.71459 17.8305 10.2931 17.2946 10.7625C16.7586 11.2319 16.1285 11.5814 15.4464 11.7874C14.7644 11.9934 14.0462 12.0512 13.34 11.957Z" fill="black" />
                 </svg>
@@ -85,9 +85,9 @@ function AdminGuards() {
 
                 <h1 className='pl-4 font-black tracking-wider'>Guards</h1>
             </div>
-            <section className='adminclient  pb-6 m-auto ml-8 mr-4 pt-2 '>
+            <section className='bg-slate-300  pb-6 m-auto ml-8 mr-4 pt-2 '>
                 <div className='flex ml-2 '>
-                    <svg className='ml-2 mt-2' width="22" height="22" viewBox="0 0 71 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg className='ml-2 ' width="22" height="22" viewBox="0 0 71 66" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M9.31999 1.12997C11.8162 0.304398 14.5139 0.152658 17.0994 0.692392C19.685 1.23213 22.0521 2.44116 23.9258 4.17893C25.7994 5.9167 27.1024 8.11182 27.6835 10.5091C28.2645 12.9063 28.0996 15.4072 27.208 17.7211L70.588 57.9379L62.1 65.8033L18.72 25.5901C16.2238 26.4157 13.5261 26.5674 10.9406 26.0277C8.35502 25.488 5.98784 24.2789 4.11422 22.5412C2.24061 20.8034 0.937545 18.6083 0.356517 16.211C-0.224511 13.8138 -0.0596312 11.3129 0.831989 8.99905L9.77599 17.2946C10.3295 17.8259 10.9915 18.2496 11.7236 18.5412C12.4556 18.8327 13.2429 18.9861 14.0396 18.9926C14.8363 18.999 15.6263 18.8582 16.3637 18.5785C17.1011 18.2989 17.771 17.8858 18.3344 17.3635C18.8977 16.8413 19.3432 16.2202 19.6449 15.5366C19.9466 14.853 20.0984 14.1205 20.0915 13.3819C20.0846 12.6433 19.9191 11.9134 19.6046 11.2348C19.2901 10.5561 18.8331 9.94234 18.26 9.42922L9.31599 1.12626L9.31999 1.12997ZM50.788 8.11647L63.516 1.56014L69.172 6.80372L62.1 18.6036L55.028 19.9164L46.548 27.7818L40.888 22.5382L49.372 14.6728L50.788 8.11647V8.11647ZM22.504 36.9599L30.988 44.829L11.188 63.1852C10.0961 64.188 8.63086 64.7641 7.09431 64.7947C5.55777 64.8253 4.06713 64.3082 2.9298 63.3498C1.79247 62.3915 1.09518 61.0651 0.981714 59.6441C0.868251 58.2232 1.34727 56.8161 2.31999 55.7129L2.70799 55.3161L22.508 36.9599H22.504Z" fill="white" />
                     </svg>
 
@@ -118,13 +118,13 @@ function AdminGuards() {
                 </div>
 
 
-                <div className='ml-4  flex justify-end mt-4 '>
+                <div className='ml-4  flex justify-end'>
                     <div>
                         <label>Search Guard </label>
                         <input onChange={(e) => setSearchValue(e.target.value)} className='rounded-3xl text-center w-7/12' type='search' placeholder='enter guard name....' />
                     </div>
                 </div>
-                <div className='mt-4 flex  '>
+                <div className=' flex  '>
                     <span className='ml-4 pl-1 flex bg-white'>Name
                         <svg onClick={() => handleDescSort()} className='mt-2 ml-1 bg-slate-400 m-1 cursor-pointer ' width="10" height="10" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M6.99999 2.828L2.04999 7.778L0.635986 6.364L6.99999 0L13.364 6.364L11.95 7.778L6.99999 2.828Z" fill="black" />
@@ -135,18 +135,14 @@ function AdminGuards() {
 
                     </span>
                 </div>
-                <section className='bg-slate-50 m-auto h-60 mt-2 w-9/12  pb-2 overflow-hidden hover:overflow-y-scroll'>
-                    <div className='grid grid-cols-4 gap-[4.2rem] bg-slate-400    '>
-                        <p className='pl-6'>Image</p>
-                        <p className=''>Full Name</p>
-                        <p className=''>Email</p>
-                        <p className='pl-2 pr-2'>Action</p>
-                    </div>
+                <section className='bg-slate-200 m-auto h-[60vh] mt-2 w-11/12  pb-2 overflow-hidden hover:overflow-y-scroll rounded-md'>
+                    <div className='m-2  grid grid-cols-3 gap-4 '>
                     {filteredGuards.map((guard) => {
                         return (
                             <AdminGuard key={guard.id} guard={guard} refresh={refresh} setRefresh={setRefresh} />
                         )
                     })}
+                    </div>
                 </section>
 
 

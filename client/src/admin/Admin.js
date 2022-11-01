@@ -7,6 +7,7 @@ import AdminMechanics from './adminDashboard/AdminMechanics';
 import Aside from './adminDashboard/aside/Aside';
 import AdminCars from './adminDashboard/AdminCars'
 import AdminGuards from './adminDashboard/AdminGuards';
+import AdminInventories from './adminDashboard/AdminInventories';
 
 function Admin() {
   const [logged, setLogged] = useState(false)
@@ -92,7 +93,7 @@ function Admin() {
 
             <Route path="/partsinstock" element={
               <div className='col-span-6'>
-                  <h1>parts in stock</h1>
+                <AdminInventories/>
               </div>
             } />
 

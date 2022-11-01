@@ -30,96 +30,90 @@ function AdminMechanic({ mechanic, refresh,setRefresh}) {
     }
     
     return (
-        <div className='mt-6'>
-            <div className='grid grid-cols-6  bg-slate-300 rounded-lg pt-2 pb-1 mb-2 mr-2 ml-2 '>
-                <svg className='ml-6' width="30" height="30" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M30 0.833344C46.1 0.833344 59.1666 13.9 59.1666 30C59.1666 46.1 46.1 59.1667 30 59.1667C13.9 59.1667 0.833313 46.1 0.833313 30C0.833313 13.9 13.9 0.833344 30 0.833344ZM12.5671 39.9633C16.8487 46.3508 23.2771 50.4167 30.4666 50.4167C37.6533 50.4167 44.0846 46.3538 48.3633 39.9633C43.5092 35.4268 37.1106 32.9074 30.4666 32.9167C23.8216 32.9066 17.4219 35.4261 12.5671 39.9633ZM30 27.0833C32.3206 27.0833 34.5462 26.1615 36.1872 24.5205C37.8281 22.8796 38.75 20.654 38.75 18.3333C38.75 16.0127 37.8281 13.7871 36.1872 12.1462C34.5462 10.5052 32.3206 9.58334 30 9.58334C27.6793 9.58334 25.4537 10.5052 23.8128 12.1462C22.1719 13.7871 21.25 16.0127 21.25 18.3333C21.25 20.654 22.1719 22.8796 23.8128 24.5205C25.4537 26.1615 27.6793 27.0833 30 27.0833Z" fill="black" />
-                </svg>
-                <p>{mechanic.name}</p>
-                <p className=''>{mechanic.email}</p>
-                <p className='pl-14'>{mechanic.rating}</p>
-                <p>{mechanic.telephone}</p>
-                <div className='grid grid-cols-2 pl-10 '>
-                    <svg className='hover:bg-black hover:cursor-pointer' onClick={() => setIsOpen(!isOpen)} width="22" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9.9 3.85808L14.142 8.10108L4.242 18.0001H0V13.7571L9.9 3.85708V3.85808ZM11.314 2.44408L13.435 0.322083C13.6225 0.134612 13.8768 0.0292969 14.142 0.0292969C14.4072 0.0292969 14.6615 0.134612 14.849 0.322083L17.678 3.15108C17.8655 3.33861 17.9708 3.59292 17.9708 3.85808C17.9708 4.12325 17.8655 4.37756 17.678 4.56508L15.556 6.68608L11.314 2.44408Z" fill="white" />
-                    </svg>
-                    {/* <svg onClick={handleDeleteMechanic} className='ml-2 hover:cursor-pointer' width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15 4H20V6H18V19C18 19.2652 17.8946 19.5196 17.7071 19.7071C17.5196 19.8946 17.2652 20 17 20H3C2.73478 20 2.48043 19.8946 2.29289 19.7071C2.10536 19.5196 2 19.2652 2 19V6H0V4H5V1C5 0.734784 5.10536 0.48043 5.29289 0.292893C5.48043 0.105357 5.73478 0 6 0H14C14.2652 0 14.5196 0.105357 14.7071 0.292893C14.8946 0.48043 15 0.734784 15 1V4ZM7 9V15H9V9H7ZM11 9V15H13V9H11ZM7 2V4H13V2H7Z" fill="#FF0404" />
-                    </svg> */}
-                </div>
+      
+        <>
 
+            <div className="h-[43vh]  font-serif border-solid max-w-sm bg-slate-100 rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+                <img className="rounded-full m-auto w-20 h-20" src="https://robohash.org/sitsequiquia.png?size=300x300&set=set1" alt="" />
+                <div className="p-5 text-center ">
+                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{mechanic.name}</h5>
+                    <p>Email:{mechanic.email} <span></span></p>
+                    <p>Telephone:{mechanic.telephone} <span></span></p>
+                    <p>Rating: {mechanic.rating}/10 <span></span></p>
+                    <div>
+                        <span onClick={() => setIsOpen(!isOpen)} className='flex mt-2 text-sm rounded-2xl p-1 float-left bg-slate-500 text-white font-black  hover:cursor-pointer hover:text-orange-500'>View More Info
+                            <svg className='pt-1' title="view client" width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.18103 9C1.12103 3.88 5.60803 0 11 0C16.392 0 20.878 3.88 21.819 9C20.879 14.12 16.392 18 11 18C5.60803 18 1.12203 14.12 0.18103 9ZM11 14C12.3261 14 13.5979 13.4732 14.5356 12.5355C15.4732 11.5979 16 10.3261 16 9C16 7.67392 15.4732 6.40215 14.5356 5.46447C13.5979 4.52678 12.3261 4 11 4C9.67395 4 8.40218 4.52678 7.4645 5.46447C6.52681 6.40215 6.00003 7.67392 6.00003 9C6.00003 10.3261 6.52681 11.5979 7.4645 12.5355C8.40218 13.4732 9.67395 14 11 14ZM11 12C10.2044 12 9.44132 11.6839 8.87871 11.1213C8.3161 10.5587 8.00003 9.79565 8.00003 9C8.00003 8.20435 8.3161 7.44129 8.87871 6.87868C9.44132 6.31607 10.2044 6 11 6C11.7957 6 12.5587 6.31607 13.1214 6.87868C13.684 7.44129 14 8.20435 14 9C14 9.79565 13.684 10.5587 13.1214 11.1213C12.5587 11.6839 11.7957 12 11 12Z" fill="white" />
+                            </svg>
 
-                <ReactModal
-                    onRequestClose={() => setIsOpen(false)}
-                    isOpen={isOpen}
-                    contentLabel="Example Modal"
-                    ariaHideApp={false}
-                    style={{
-                        overlay: {
-                            position: 'fixed',
-                            top: 0,
-                            left: 0,
-                            right: 0,
-                            bottom: 0,
-                            backgroundColor: 'rgba(255, 255, 255, 0.3)'
-                        },
-                        content: {
-                            position: 'absolute',
-                            width: '30em',
-                            top: '15em',
-                            left: '45em',
-                            bottom: '8em',
-                            border: '1px solid #ccc',
-                            background: 'white',
-                            overflow: 'auto',
-                            WebkitOverflowScrolling: 'touch',
-                            borderRadius: '4px',
-                            outline: 'none',
+                        </span>
 
-                        }
-                    }}
-                >
-                    <div className='font-serif' >
-                        <button className='bg-black p-1 text-white float-right' onClick={() => setIsOpen(!isOpen)}>Close</button>
-
-                        <h1 className='text-center underline font-bold pt-10'>Mechanics Information</h1>
-                        <p>Name:<span className='font-black'>{mechanic.name}</span></p>
-                        <p>Email:<span className='font-black'>{mechanic.email}</span></p>
-                        <p>Phone Number:<span className='font-black'>{mechanic.telephone}</span></p>
-                        <p>Number of vehicle assigned:<span className='font-black'>{mechanic.vehicles.length}</span></p>
-                        <h1 className='text-center underline italic font-black'>Vehicles assigned info</h1>
-                        {mechanic.vehicles && mechanic.vehicles.length > 0 && mechanic.vehicles.map((vehicle) => (
-                            <div key={mechanic.id} className='bg-slate-200 rounded-lg m-2 pl-4'>
-                                <p>Vehicle Make:<span className='font-bold'>{vehicle.make}</span> </p>
-                                <p>Vehicle plate number:<span className='font-bold'>{vehicle.plate_number}</span></p>
-
-                                {/* <p>Vehicle owner:{vehicle.user.username}</p> */}
-                            </div>
-                        ))}
-                        <h1 className='text-center underline font-black mt-4'>Assign vehicle</h1>
-                        {vehicles.map((vehicle) => {
-                            if (vehicle.technician_id === null) {
-                            return (
-                                    
-                                    <div key={vehicle.id} className='text-center bg-slate-300 rounded-md mb-4'>
-                                        <p>Owner: {vehicle.user.username}</p>
-                                        <p>Vehicle Make: {vehicle.make}</p>
-                                        <p>Vehicle Number plate: {vehicle.plate_number}</p>
-                                        <button onClick={(e)=>assignVehicle(e)} value={vehicle.id} className='bg-black text-white rounded-xl p-1 m-2'>Assign vehicle</button>
-                                    </div>
-                                )
-                            }
-                            return true
-                        })}
-
+        <ReactModal
+                     onRequestClose={() => setIsOpen(false)}
+                     isOpen={isOpen}
+                     contentLabel="Example Modal"
+                     ariaHideApp={false}
+                     style={{
+                         overlay: {
+                             position: 'fixed',
+                             top: 0,
+                             left: 0,
+                             right: 0,
+                             bottom: 0,
+                             backgroundColor: 'rgba(255, 255, 255, 0.3)'
+                         },
+                         content: {
+                             position: 'absolute',
+                             width: '50em',
+                             top: '8em',
+                             left: '15em',
+                             bottom: '3em',
+                             border: '1px solid #ccc',
+                             background: 'white',
+                             overflow: 'auto',
+                             WebkitOverflowScrolling: 'touch',
+                             borderRadius: '4px',
+                             outline: 'none'
+                         }
+                     }}
+                 >
+                     <div className='font-serif' >
+                         <button className='bg-black p-1 text-white float-right' onClick={() => setIsOpen(!isOpen)}>Close</button>
+                         <h1 className='text-center underline font-bold pt-10'>Mechanics Information</h1>
+                         <p>Name:<span className='font-black'>{mechanic.name}</span></p>
+                         <p>Email:<span className='font-black'>{mechanic.email}</span></p>
+                         <p>Phone Number:<span className='font-black'>{mechanic.telephone}</span></p>
+                         <p>Number of vehicle assigned:<span className='font-black'>{mechanic.vehicles.length}</span></p>
+                         <h1 className='text-center underline italic font-black'>Vehicles assigned info</h1>
+                         {mechanic.vehicles && mechanic.vehicles.length > 0 && mechanic.vehicles.map((vehicle) => (
+                             <div key={mechanic.id} className='bg-slate-200 rounded-lg m-2 pl-4'>
+                                 <p>Vehicle Make:<span className='font-bold'>{vehicle.make}</span> </p>
+                                 <p>Vehicle plate number:<span className='font-bold'>{vehicle.plate_number}</span></p>
+                                 {/* <p>Vehicle owner:{vehicle.user.username}</p> */}
+                             </div>
+                         ))}
+                         <h1 className='text-center underline font-black mt-4'>Assign vehicle</h1>
+                                {vehicles.map((vehicle) => {
+                                    if (vehicle.technician_id === null) {
+                                        return (
+                              
+                                            <div key={vehicle.id} className='text-center bg-slate-300 rounded-md mb-4'>
+                                                <p>Owner: {vehicle.user.username}</p>
+                                                <p>Vehicle Make: {vehicle.make}</p>
+                                                <p>Vehicle Number plate: {vehicle.plate_number}</p>
+                                                <button onClick={(e) => assignVehicle(e)} value={vehicle.id} className='bg-black text-white rounded-xl p-1 m-2'>Assign vehicle</button>
+                                            </div>
+                                        )
+                                    }
+                                    return true
+                                })}
+                     </div>
+                 </ReactModal>
                     </div>
-
-                </ReactModal>
+                </div>
             </div>
 
-
-
-        </div>
+        </>
     )
 }
 
