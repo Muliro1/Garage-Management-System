@@ -1,9 +1,10 @@
-/* form {
+
+.add-form {
     background-color: black;
     border-radius: 10px;
     width:30vw;
     height: 70vh;
-  } */
+  } 
   
   .form-control {
     margin: 20px;
@@ -18,7 +19,7 @@
     width: 95%;
     height: 20px;
     padding: 5px;
-    font: size 17px;
+    font-size: 17px;
     border-radius: 5px;
   }
 
@@ -40,11 +41,10 @@
   
   /* input[type="submit"] {
     width: 95%;
-    display: inline-block;
     background: grey;
     color: black;
     border: none;
-    padding: 10px 20px;
+    padding: 10px 10px;
     margin: 5px;
     border-radius: 5px;
     cursor: pointer;

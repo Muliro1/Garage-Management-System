@@ -1,5 +1,4 @@
 import React from "react";
-import Payment from "../UI/Payments/Payment"
 import Footer from "../Footer/Footer"
 import{AiFillCloseCircle,AiFillStar,AiOutlineMail} from "react-icons/ai"
 import {FiPhoneCall} from "react-icons/fi"
@@ -55,13 +54,6 @@ const Modal = ({ show, tech, onClose,}) => {
 
                 </div>
           </div>
-          <div className='pay__booking'>
-              <div className="booking-info ">
-                <h3 >Payment Information</h3>
-                <Payment />
-              </div>
-
-            </div>
 
               <div className="booking-info ">
                 <Footer />

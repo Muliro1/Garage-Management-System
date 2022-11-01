@@ -5,19 +5,10 @@ import Update from '../Update/Update'
 import "./postService.css"
 
 const CarItem = ({repCar,onDelete,onUpdateService}) => {
-    const {id,make,plate_number,vehicle_type,billing, image, price,summary}= repCar;
+    const {id,make,plate_number,vehicle_type,billing,approved, image, price,summary}= repCar;
     const [isEditing, setIsEditing] = useState(false);
 
-    function deleteService() {
-      fetch(`http://127.0.0.1:3000/vehicles/${repCar.id}`, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-        .then((r) => r.json())
-        .then(() => onDelete(repCar));
-    }
+  
 
     function serviceUpdate(updatedSevice) {
       setIsEditing(false);
@@ -61,9 +52,7 @@ const CarItem = ({repCar,onDelete,onUpdateService}) => {
         <button className="car__btn-rent" onClick={() => setIsEditing((isEditing) => !isEditing)}>
         Update
       </button>
-      <button className="car__btn-details" onClick={deleteService}>
-        Delete
-      </button>
+     
         </div>
     </div>
   </div>

@@ -2,7 +2,11 @@
 
 class UsersController < ApplicationController
     #skip_before_action :authorize, only: :create
-  
+    def profile
+      render json: { user: UserSerializer.new(current_user) }, status: :accepted
+    end
+
+
     def create
       @user = User.create!(user_params)
       if @user.save
@@ -35,7 +39,7 @@ class UsersController < ApplicationController
     private
   
     def user_params
-      params.permit(:username, :password, :password_confirmation, :id, :email)
+      params.permit(:username, :password, :password_confirmation, :email)
     end
   
   end

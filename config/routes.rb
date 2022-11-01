@@ -31,6 +31,8 @@ Rails.application.routes.draw do
   #user login route
   post "/login", to: "sessions#create"
 
+  get "/profile", to: "users#profile"
+
   #admin signup route
   post "/admins/signup", to: "admins#create"
 
