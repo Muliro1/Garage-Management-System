@@ -1,9 +1,9 @@
-form {
+/* form {
     background-color: black;
     border-radius: 10px;
     width:30vw;
     height: 70vh;
-  }
+  } */
   
   .form-control {
     margin: 20px;
@@ -38,7 +38,7 @@ form {
     border-radius: 5px;
   }
   
-  input[type="submit"] {
+  /* input[type="submit"] {
     width: 95%;
     display: inline-block;
     background: grey;
@@ -51,4 +51,4 @@ form {
     text-decoration: none;
     font-size: 15px;
     font-family: inherit;
-  }
+  } */

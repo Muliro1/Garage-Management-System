@@ -69,7 +69,6 @@ function Admin() {
    
       {logged ?
          <div className='grid grid-cols-7'>
-        <BrowserRouter>
           <Aside />
           <Routes>
             <Route path='/'
@@ -111,7 +110,6 @@ function Admin() {
             
 
           </Routes>
-        </BrowserRouter>
       </div> 
         :
         <AdminLogin setFullName={setFullName} setPassword={setPassword} handleLogin={handleLogin} error={error} loading={loading} />

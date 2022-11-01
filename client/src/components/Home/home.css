@@ -1,7 +1,7 @@
 .home{
     width: 87vw;
     height: 83vh;
-    overflow: auto;
+    /* overflow: auto; */
 }
 
 .cars{

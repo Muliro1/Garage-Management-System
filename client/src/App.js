@@ -6,17 +6,24 @@ import Home from './components/Home';
 import Contact from './components/Contact';
 import About from './components/About';
 import Services from './components/Services';
-import User from './components/User';
-import Admin from './components/Admin';
+import User from './components/User/User';
+import Admin from './admin/Admin';
 import Technician from './components/Technician';
 import Guard from './components/Guard';
+import AdminClients from './admin/adminDashboard/AdminClients';
+import Aside from './admin/adminDashboard/aside/Aside';
+import AdminMechanics from './admin/adminDashboard/AdminMechanics';
+import AdminDashboard from './admin/adminDashboard/AdminDashboard';
+import AdminGuards from './admin/adminDashboard/AdminGuards';
+import AdminCars from './admin/adminDashboard/AdminCars';
+import AdminInventories from './admin/adminDashboard/AdminInventories';
 
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <NavBar />
+        {/* <NavBar /> */}
         <Routes>
           <Route path="/" element={<Home />} />
           
@@ -28,11 +35,20 @@ function App() {
 
           <Route path="/services" element={<Services />} />
 
-          <Route path="/admin" element={<Admin />} />
+          
 
           <Route path="/technician" element={<Technician />} />
+          {/* <Route path="/admin/clients" element={<Aside />} /> */}
 
           <Route path="/guard" element={<Guard />} />
+          {/* admin dashboard */}
+        <Route path="/admin" element={<Admin />} >
+          <Route path="clients" />
+          <Route path="mechanics"/>
+          <Route path="guards"/>
+          <Route path="carsingarage" />
+          <Route path="partsinstock"/>
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>

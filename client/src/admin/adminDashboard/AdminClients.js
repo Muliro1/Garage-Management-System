@@ -41,7 +41,7 @@ function AdminClients() {
 
 
     return (
-        <main className='bg-slate-100 pb-10'>
+        <main className='bg-slate-100 '>
             <div className=' adminnavuser text-white h-[8vh]'>
             </div>
             <div className='flex mt-2'>
