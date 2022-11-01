@@ -8,9 +8,9 @@
 
 
 Admin.create(full_name:'Dennis Mwangi', password:'20400001296',password_confirmation:'20400001296')
-p1 = User.create(username:'mike',telephone:'254799905192',password:'1234',password_confirmation:'1234',email:'mike@gmail.com')
-p2 = User.create(username:'jeff',telephone:'254799905192',password:'1234',password_confirmation:'1234',email:'jeff@gmail.com')
-p3 = User.create(username:'lucy',telephone:'254799905192',password:'1234',password_confirmation:'1234',email:'lucy@gmail.com')
+p1 = User.create(image:Faker::Avatar.image(slug: "my-own-slug", size: "50x50", format: "jpg") ,username:'mike',telephone:'254799905192',password:'1234',password_confirmation:'1234',email:'mike@gmail.com')
+p2 = User.create(image:Faker::Avatar.image(slug: "my-own-slug", size: "50x50", format: "jpg") ,username:'jeff',telephone:'254799905192',password:'1234',password_confirmation:'1234',email:'jeff@gmail.com')
+p3 = User.create(image:Faker::Avatar.image(slug: "my-own-slug", size: "50x50", format: "jpg") ,username:'lucy',telephone:'254799905192',password:'1234',password_confirmation:'1234',email:'lucy@gmail.com')
 
 
 t1=Technician.create({name: "Intro Ne", email: "mulirokemba@gmail.com", telephone: 0272, rating: 5, description: "very hardworking", "password": "gan", "password_confirmation": "gan"})
@@ -45,12 +45,12 @@ Vehicle.create({make: "Toyota", plate_number: "KAV 07", user_id: p1.id, price: 5
 image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dreamstime.com%2Fphotos-images%2Ftruck.html&psig=AOvVaw2LEZZexIQT4Q9E03c2qh_I&ust=1666829061119000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCKiuiaHM_PoCFQAAAAAdAAAAABAE",
 billing: 3000, approved: false, technician_id: t4.id, cleared:false })
 
-Part.create({name: "turbo", image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fturbocharger&psig=AOvVaw2K2OZTvu9zYc9dXQilwBPD&ust=1666829938357000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCPCqqMPP_PoCFQAAAAAdAAAAABAE",
+Part.create({name: "turbo", image: "https://images.unsplash.com/photo-1664695221759-21ed7295f697?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8dHVyYm8lMjBlbmdpbmV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
 price: 30000, condition: "brand new", serial_number: 3456, model: "dodge demon", count: 9 })
-Part.create({name: "supercharger", image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fturbocharger&psig=AOvVaw2K2OZTvu9zYc9dXQilwBPD&ust=1666829938357000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCPCqqMPP_PoCFQAAAAAdAAAAABAE",
+Part.create({name: "supercharger", image: "https://images.unsplash.com/photo-1616273548176-4bef46c37596?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3VwZXIlMjBjaGFyZ2VyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
 price: 40000, condition: "brand new", serial_number: 34678, model: "Koenigsegg Jesko", count: 9 })
 
-Part.create({name: "turbo", image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fturbocharger&psig=AOvVaw2K2OZTvu9zYc9dXQilwBPD&ust=1666829938357000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCPCqqMPP_PoCFQAAAAAdAAAAABAE",
-price: 30000, condition: "brand new", serial_number: 3456, model: "dodge demon", count: 9 })
-Part.create({name: "supercharger", image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fturbocharger&psig=AOvVaw2K2OZTvu9zYc9dXQilwBPD&ust=1666829938357000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCPCqqMPP_PoCFQAAAAAdAAAAABAE",
-price: 40000, condition: "brand new", serial_number: 34678, model: "Koenigsegg Jesko", count: 9 })
+# Part.create({name: "turbo", image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fturbocharger&psig=AOvVaw2K2OZTvu9zYc9dXQilwBPD&ust=1666829938357000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCPCqqMPP_PoCFQAAAAAdAAAAABAE",
+# price: 30000, condition: "brand new", serial_number: 3456, model: "dodge demon", count: 9 })
+# Part.create({name: "supercharger", image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fturbocharger&psig=AOvVaw2K2OZTvu9zYc9dXQilwBPD&ust=1666829938357000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCPCqqMPP_PoCFQAAAAAdAAAAABAE",
+# price: 40000, condition: "brand new", serial_number: 34678, model: "Koenigsegg Jesko", count: 9 })
