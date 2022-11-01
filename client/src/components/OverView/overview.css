@@ -24,6 +24,10 @@
     overflow: scroll;
     font-size: 1.3rem;
   }
+
+  .overview-inner::-webkit-scrollbar{
+    display: none;
+  }
   .overview-inner .close {
     position: absolute;
     top: 1rem;

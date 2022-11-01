@@ -4,10 +4,7 @@ import {FaCarAlt} from "react-icons/fa"
 import Profile from '../Profile/Profile'
 
 
-const Header = () => {
-  const [User, setUser] = React.useState({
-    displayName:"Christopher Chinia"
-}); 
+const Header = ({user}) => {
 
   return (
     <div className='header'>
@@ -16,7 +13,7 @@ const Header = () => {
       <h1><FaCarAlt/>PBMW</h1>
       </div>
       <div className='profilic'>
-      <h1>Welcome, {User.displayName}</h1>
+      <h1>Welcome, {user.username}</h1>
         <Profile/>
       </div>
         </div>

@@ -22,12 +22,14 @@ export default function Profile() {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  // profileImg =null;
   const [currentUser, setCurrentUser] = React.useState({
-    email:"chinia214@gmail.com",
-    displayName:"Christopher Chinia",
     photoURL:profileImg
 });
+
+function handleLogout() {
+  localStorage.clear()
+  window.location.reload()
+}
 
   return (
     <React.Fragment>
@@ -96,9 +98,9 @@ export default function Profile() {
           </ListItemIcon>
           Settings
         </MenuItem>
-        <MenuItem>
+        <MenuItem onClick={()=>handleLogout()}>
           <ListItemIcon>
-            <Logout fontSize="small" />
+            <Logout fontSize="small"/>
           </ListItemIcon>
           Logout
         </MenuItem>
