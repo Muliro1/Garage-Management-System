@@ -3,12 +3,10 @@ Rails.application.routes.draw do
   resources :users , only: [:index,:show, :create, :update, :destroy] do
 
     #nested resource for vehicles
-    resources :vehicles, only: [:index, :create] do
-    end
+  
   end
 
-  #vehicles update
-  resources :vehicles, only: [:update, :destroy]
+  resources :vehicles
 
   # technician resources
   resources :technicians, only: [:index,:show, :create, :update, :destroy] 

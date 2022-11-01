@@ -1,0 +1,142 @@
+.servicePost {
+    border: 1px solid black;
+    margin: 3rem;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 4px solid black;
+  }
+
+  .person_img img{
+    width: 500px;
+  }
+  
+  .servicePost-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .section__title, .rent__price{
+    text-align: center;
+  }
+
+  .servicePost-info span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: black;
+    font-size: 1.5rem;
+  }
+
+  .p_summary{
+    width: 500px;
+  }
+  
+  .servicePost-btn {
+    border-radius: 0;
+    border: none;
+    outline: none;
+    background: black;
+    padding: 8px 0px;
+  }
+  
+  .servicePost-btn a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+  }
+  
+  .servicePost-btn a:hover {
+    color: #fff;
+  }
+  .car__btn-details {
+    align-items: center;
+    /* display: inline-block; */
+    background: black;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 15px;
+  }
+  
+  .car__btn-rent {
+    align-items: center;
+    background: black;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 15px;
+  }
+  
+  .servicePost-content h4 {
+    font-size: 1.8rem;
+  }
+  
+  .servicePost-content h6 {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  .car__btn-action{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  @media only screen and (max-width: 992px) {
+    .servicePost h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0;
+    }
+  
+    .servicePost h6 {
+      font-size: 1rem;
+      margin-top: 10px;
+    }
+  
+    .servicePost-info {
+      flex-wrap: wrap;
+    }
+  
+    .servicePost-info span {
+      font-size: 0.8rem;
+      justify-content: space-between;
+    }
+  
+    .servicePost-btn {
+      padding: 5px 10px;
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .servicePost h4 {
+      font-size: 1rem;
+    }
+  
+    .servicePost h6 {
+      font-size: 0.9rem;
+    }
+  
+    .servicePost-info span {
+      font-size: 0.7rem;
+    }
+  
+    .servicePost-info span i {
+      font-size: 0.9rem;
+    }
+  
+    .servicePost-btn {
+      font-size: 0.8rem;
+    }
+  }
+  
+  
