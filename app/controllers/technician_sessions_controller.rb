@@ -8,7 +8,7 @@
 class TechnicianSessionsController < ApplicationController
     #skip_before_action :authorize, only: [:create, :destroy]
   
-    def create
+    def create 
       technician = Technician.find_by(name: params[:name])
       if technician&.authenticate(params[:password])
         session[:technician_id] = technician.id

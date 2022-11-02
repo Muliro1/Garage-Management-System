@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
-import NavBar from './components/NavBar';
 import Home from './components/Home';
 import Contact from './components/Contact';
 import About from './components/About';
@@ -10,13 +9,6 @@ import User from './components/User/User';
 import Admin from './admin/Admin';
 import Technician from './components/Technician';
 import Guard from './components/Guard';
-import AdminClients from './admin/adminDashboard/AdminClients';
-import Aside from './admin/adminDashboard/aside/Aside';
-import AdminMechanics from './admin/adminDashboard/AdminMechanics';
-import AdminDashboard from './admin/adminDashboard/AdminDashboard';
-import AdminGuards from './admin/adminDashboard/AdminGuards';
-import AdminCars from './admin/adminDashboard/AdminCars';
-import AdminInventories from './admin/adminDashboard/AdminInventories';
 
 
 function App() {
@@ -57,7 +49,7 @@ function App() {
       </BrowserRouter>
     </div>
   );
-}
+};
 
 
 export default App;
