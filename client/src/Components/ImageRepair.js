@@ -1,7 +1,20 @@
 import React from 'react';
 
-const ImageRepair = ({ vehicle }) => {
+const ImageRepair = ({ vehicle,term,setTerm }) => {
   // const tags = image.tags.split(',');
+  const Repairprice=5000
+  const RepairCar=()=>{
+    fetch(`http://127.0.0.1:3000/vehicles/${vehicle.id}`,{
+      method:"PATCH",
+      headers:{"content-type":"application/json"},
+    body:JSON.stringify({
+      billing:Repairprice
+    })
+    })
+    .then(()=>setTerm(!term))
+      
+
+  }
 
   return (
     <div className="max-w-sm rounded overflow-auto shadow-lg">
@@ -31,11 +44,9 @@ const ImageRepair = ({ vehicle }) => {
         </ul>
       </div>
       <div className="px-6 py-4">
-        {/* {tags.map((tag, index) => (
-          <span key={index} className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
-          #{tag}
-        </span>
-        ))} */}
+      <div className="px-6 py-4">
+        {vehicle.billing===0 && <button onClick={()=>RepairCar()}>RepairCar</button>}
+      </div>
       </div>
     </div>
   )

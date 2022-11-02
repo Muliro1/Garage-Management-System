@@ -6,7 +6,7 @@ import Footer from './footer/Footer';
 const Repair = () => {
   const [vehicles, setVehicles] = useState([]);
 const [isLoading, setIsLoading] = useState(true);
-const [term, setTerm] = useState('');
+const [term, setTerm] = useState(false);
 
 useEffect(() => {
   fetch(`http://127.0.0.1:3000/vehicles`)
@@ -33,7 +33,7 @@ return (
         
         if(vehicle.option=== "repair"){
           return (
-            <ImageRepair key={vehicle.id} vehicle={vehicle} />
+            <ImageRepair key={vehicle.id} vehicle={vehicle} term={term} setTerm={setTerm}/>
           )
 
         }
