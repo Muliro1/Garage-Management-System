@@ -1,36 +1,50 @@
 import React from 'react';
 
-const ServicingCard = ({ vehicle }) => {
+const ServicingCard = ({ vehicle,term,setTerm }) => {
   // const tags = image.tags.split(',');
+  const Serviceprice=3500
+  const ServiceCar=()=>{
+    fetch(`http://127.0.0.1:3000/vehicles/${vehicle.id}`,{
+      method:"PATCH",
+      headers:{"content-type":"application/json"},
+    body:JSON.stringify({
+      billing:Serviceprice
+    })
+    })
+    .then(()=>setTerm(!term))
+      
+
+  }
 
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg">
       <img src={vehicle.image} alt="" className="w-full"/>
       <div className="px-6 py-4">
         <div className="font-bold text-purple-500 text-xl mb-2">
-          Photo by {vehicle.name}
+        make {vehicle.make}
         </div>
         <ul>
           <li>
-            <strong>Owner: </strong>
-            {vehicle.email}
+            <strong>plate_number: </strong>
+            {vehicle.plate_number}
           </li>
           <li>
-            <strong>Model: </strong>
-            {vehicle.speciality}
+            <strong>option: </strong>
+            {vehicle.option}
           </li>
           <li>
-            <strong>NO.plate: </strong>
-            {vehicle.rating}
+            <strong>vehicle_type: </strong>
+            {vehicle.vehicle_type}
           </li>
+          <li>
+            <strong>billing: </strong>
+            {vehicle.billing}
+          </li>
+
         </ul>
       </div>
       <div className="px-6 py-4">
-        {/* {tags.map((tag, index) => (
-          <span key={index} className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
-          #{tag}
-        </span>
-        ))} */}
+        {vehicle.billing===0 && <button onClick={()=>ServiceCar()}>ServiceCar</button>}
       </div>
     </div>
   )

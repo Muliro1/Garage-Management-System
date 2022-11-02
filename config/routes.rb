@@ -21,14 +21,14 @@ Rails.application.routes.draw do
   resources :parts, only: [:index, :show, :create, :update, :destroy]
 
   resources :guards, only: [:index, :update, :destroy]
-
+  resources :vehicles
   get "/vehicles", to: "vehicles#index"
 
   #vehicle delete route
   delete "/vehicle/:id", to:"vehicles#destroy"
 
   #vehicle update route
-  patch "/vehicle/:id", to: "vehicles#update"
+  
 
   # user signup route
   post "/signup", to: "users#create"
@@ -65,6 +65,7 @@ Rails.application.routes.draw do
 
   #technician login route
   post "/technicians/login", to: "technician_sessions#create"
+  options "/technicians/login", to: "technician_sessions#create"
 
   #technician logout route
   delete "/technicians/logout", to: "technician_sessions#destroy"

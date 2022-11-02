@@ -29,9 +29,15 @@ return (
     {!isLoading && vehicles?.length  }
 
     {isLoading ? <h1 className="text-6xl text-center mx-auto mt-32">Loading...</h1> : <div className="grid grid-cols-3 gap-4">
-      {vehicles.map(vehicle => (
-        <ImageRepair key={vehicle.id} vehicle={vehicle} />
-      ))}
+      {vehicles.map(vehicle => {
+        
+        if(vehicle.option=== "repair"){
+          return (
+            <ImageRepair key={vehicle.id} vehicle={vehicle} />
+          )
+
+        }
+})}
     </div>}
   </div>
   <Footer />

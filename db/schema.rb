@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_28_035624) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_02_055845) do
   create_table "admins", force: :cascade do |t|
     t.string "full_name"
     t.string "password"
@@ -68,16 +68,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_28_035624) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-    t.float "price"
     t.string "vehicle_type"
     t.integer "speed"
     t.string "image"
     t.integer "billing"
     t.boolean "approved"
     t.integer "technician_id"
-    t.boolean "service"
-    t.boolean "repair"
     t.string "summary"
+    t.string "option"
   end
 
 end

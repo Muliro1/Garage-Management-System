@@ -6,7 +6,7 @@ import Footer from './footer/Footer';
 const Servicing = () => {
   const [vehicles, setVehicles] = useState([]);
 const [isLoading, setIsLoading] = useState(true);
-const [term, setTerm] = useState('');
+const [term, setTerm] = useState(false);
 
 useEffect(() => {
   fetch(`http://127.0.0.1:3000/vehicles`)
@@ -17,7 +17,7 @@ useEffect(() => {
     })
     // .catch(err => console.log(err));
 }, [term]);
-console.log(vehicles)
+
 
 return (
   <>
@@ -29,9 +29,15 @@ return (
     {!isLoading && vehicles?.length  }
 
     {isLoading ? <h1 className="text-6xl text-center mx-auto mt-32">Loading...</h1> : <div className="grid grid-cols-3 gap-4">
-      {vehicles.map(vehicle => (
-        <ServicingCard key={vehicle.id} vehicle={vehicle} />
-      ))}
+      {vehicles.map(vehicle => {
+        
+        if(vehicle.option=== "service"){
+          return (
+            <ServicingCard key={vehicle.id} vehicle={vehicle} term={term} setTerm={setTerm}/>
+          )
+
+        }
+})}
     </div>}
   </div>
   <Footer />
