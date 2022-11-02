@@ -20,11 +20,11 @@ const Technicians = () => {
 
   return (
     <div className='technicians'>
-        <div className="search__box">
+        <div className="search__box mt-4">
                 <input type="text" placeholder="Search" onChange={(e)=>setQuery(e.target.value)}/>
               </div>
           {technician?.length > 0 ? (
-        <div className="box-container">
+        <div className="box-container grid grid-cols-2 ">
           {technician.filter((value) => {
             if (query === "") {
               return value;

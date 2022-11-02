@@ -2,8 +2,12 @@
 .add-form {
     background-color: black;
     border-radius: 10px;
+    margin-left: 20px;
     width:30vw;
     height: 70vh;
+    overflow-y: auto;
+    /* z-index: 1040px; */
+    position: absolute;
   } 
   
   .form-control {

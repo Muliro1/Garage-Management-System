@@ -1,6 +1,6 @@
 .serviceContainer{
-    width: 50vw;
-    height: 100%;
+    /* width: 50vw; */
+    /* height: 100%; */
     overflow: auto;
 }
 
@@ -9,12 +9,8 @@
 }
 
 .serviceContainer .box-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    height: 78vh;
-    margin-top: 3rem;
+    height: 70vh;
+    /* margin-top: 3rem; */
   }
 
 .serviceContainer .empty {

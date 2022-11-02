@@ -10,9 +10,9 @@ const Mechanic= ({tech}) => {
     const [item, setItem] = useState();
   return (
     <>
-    <div className="car__item">
-    <div className="person_img">
-    <img src={image ? image : "https://via.placeholder.com/400"} alt={name}/>
+    <div className="car__item w-8/12">
+    <div className="pl-[4.5em]">
+    <img className='h-40 w-40 rounded-full '  src={image ? image : "https://via.placeholder.com/400"} alt={name}/>
     </div>
 
     <div className="car__item-content">
@@ -21,8 +21,8 @@ const Mechanic= ({tech}) => {
         ${price}.00 <span>/ day</span>
       </h6>
 
-      <div className="car__item-info">
-        <span>
+      <div className="car__item-info ">
+        <span className=''>
           <AiFillMail/> {email}
         </span>
         <span>

@@ -13,8 +13,6 @@ function AdminMechanics() {
     const [password, setPassword] = useState('')
     const [passwordConfirmation, setPasswordConfirmation] = useState('')
     const [refresh,setRefresh] = useState(false)
-
-console.log(mechanics)
     const newMechanic = {
         name: name,
         email: email,

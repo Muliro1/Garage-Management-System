@@ -11,15 +11,13 @@
     transform: scale(1.05, 1.05);
   }
   
-  .person_img img{
-    width: 500px;
-    border-radius: 50%;
-  }
+  
   
   .car__item-info{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
   }
   
   .section__title, .rent__price{
@@ -27,11 +25,11 @@
   }
   
   .car__item-info span {
-    display: flex;
-    align-items: center;
-    gap: 5px;
+    /* display: flex; */
+    /* align-items: center; */
+    /* gap: 5px; */
     color: black;
-    font-size: 1.5rem;
+    /* font-size: 1.5rem; */
   }
   
   .car__item-btn {

@@ -5,7 +5,7 @@ import Update from '../Update/Update'
 import "./postService.css"
 
 const CarItem = ({repCar,onDelete,onUpdateService}) => {
-    const {id,make,plate_number,vehicle_type,billing,approved, image, price,summary}= repCar;
+    const {id,make,plate_number,vehicle_type,billing,approved,cleared, image, option,summary}= repCar;
     const [isEditing, setIsEditing] = useState(false);
 
   
@@ -23,21 +23,21 @@ const CarItem = ({repCar,onDelete,onUpdateService}) => {
     summary={summary}
     onUpdateService={serviceUpdate}
     />):(
-    <div className="servicePost">
+    <div className="servicePost ">
     <div className="car__img">
-    <img src={image} alt={make}/>
+              <img className='w-[300px]' src={image } alt={make}/>
     </div>
 
     <div className="car__item-content">
       <h4 className="section__title">{make}</h4>
-      <h6 className="rent__price">
-        ${price}.00 <span>/ VAT</span>
-      </h6>
+              <h6 className="p_summary">
+               <span className='font-light'>Work to be done:</span> {option}
+              </h6>
       <h6 className="p_summary">
-        {summary}
+                <span className='font-light'>Work summary:</span><br></br>{summary}
       </h6>
 
-      <div className="car__item-info">
+      <div className="car__item-info pt-4">
         <span>
           <AiFillCar/> {vehicle_type}
         </span>
@@ -47,13 +47,11 @@ const CarItem = ({repCar,onDelete,onUpdateService}) => {
         <span>
           <FaCoins/> ${billing}.00
         </span>
-      </div>
-        <div className='car__btn-action'>
-        <button className="car__btn-rent" onClick={() => setIsEditing((isEditing) => !isEditing)}>
-        Update
-      </button>
-     
-        </div>
+              </div>
+              <div className='grid grid-cols-2'>
+                <h1 className={approved ?'font-bold text-white bg-green-500  mb-2 w-10/12':'font-bold text-black bg-red-500 mb-2 w-10/12'}>{approved ? 'Approved' : "Not Approved"}</h1>
+                <h1 className={cleared ? 'font-bold text-white bg-green-500  mb-2 w-10/12' : 'font-bold text-black bg-red-500 mb-2 w-10/12'}>{cleared ? 'Cleared' : "Not Cleared"}</h1>
+              </div>
     </div>
   </div>
   )}

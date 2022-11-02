@@ -28,36 +28,24 @@ const Footer = () => {
   const date = new Date();
   const year = date.getFullYear();
   return (
-    <footer className="footer">
+    <footer className="bg-black pt-2 text-white ">
       <Container>
-        <div className="footerDesc">
-          <div className="logo footer__logo">
-            <h1>
-              <div to="/home" className=" get__service">
-                <span>Get Service?</span>
-              </div>
-            </h1>
-            <p className="footer__logo-content">
-              In this current tough economic <br /> situations,living is already
-              a hustle. <br /> Why then should you worry about <br /> how you
-              should move to live better?
-            </p>
-          </div>
+        <div className="grid grid-cols-5">
+          
 
-          <div className="div__div">
-            <h3 className="footer__link-title">Talk to us</h3>
+          <div className="">
+            <h3 className="text-white font-bold pb-4">Talk to us</h3>
             <>
               {quickLinks.map((item, index) => (
-                <div key={index} className=" quick__link">
-                  <div className="flex">{item.display} </div>
-                  <div className="flex">{item.name} </div>
+                <div key={index} className="text-white ">
+                  <span className="flex">{item.display}<span className="pl-2">{item.name}</span> </span>
                 </div>
               ))}
             </>
           </div>
 
-          <div className="div__div">
-            <h3 className="footer__link-title">Head Office</h3>
+          <div className="col-span-2">
+            <h3 className="font-bold pb-4 ">Head Office</h3>
             <p className="office__info">Nairobi,CBD Eagle house 3rd floor</p>
             <p className="office__info">Phone: +0995345875365</p>
 
@@ -66,8 +54,8 @@ const Footer = () => {
             <p className="office__info">Office Time: 10am - 7pm</p>
           </div>
 
-          <div className="div__div">
-            <h3 className="footer__link-title">Newsletter</h3>
+          <div className="col-span-2">
+            <h3 className="font-bold pb-4">Newsletter</h3>
             <p className="footer__link-title">Subscribe our newsletter</p>
             <div className="newsletter">
               <input type="email" placeholder="Email" />

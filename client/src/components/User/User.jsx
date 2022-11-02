@@ -27,14 +27,14 @@ const User = () => {
   }, [logged,user])
 
 
-  useEffect(() => {
-    fetch("http://127.0.0.1:3000/profile").then((r) => {
-      if (r.ok) {
-        r.json().then((data) => setUser(data));
-      }
-    });
-  }, []);
-  console.log(user)
+  // useEffect(() => {
+  //   fetch("http://127.0.0.1:3000/profile").then((r) => {
+  //     if (r.ok) {
+  //       r.json().then((data) => setUser(data));
+  //     }
+  //   });
+  // }, []);
+  // console.log(user)
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -66,7 +66,7 @@ const User = () => {
       {logged ? (
         <>
           <Header user={user}/>
-          <Router />
+          <Router user={user} />
         </>
       ) : (
         <Login

@@ -1,15 +1,13 @@
 import React,{ useState} from 'react'
 import "./ServiceForm.css"
 
-const ServiceForm = () => {
+const ServiceForm = ({user,refresh,setRefresh}) => {
     const [make, setMake] = useState("");
     const [vehicle_type, setVehicle] = useState("");
     const [plate_number, setPlate] = useState("");
     const [image, setImage] = useState("");
-    const [price, setPrice] = useState("");
     const [option, setOption] = useState("");
     const [summary, setSummary] = useState("");
-    const [speed, setSpeed] = useState("");
 
     function HandleMakeChange(event) {
         setMake(event.target.value);
@@ -35,13 +33,9 @@ const ServiceForm = () => {
         setOption(event.target.value);
       }
 
-      function HandlePriceChange(event) {
-        setPrice(event.target.value);
-      }
+     
 
-      function HandleSpeedChange(event) {
-        setSpeed(event.target.value);
-      }
+      
 
       function HandleSubmit(e) {
         e.preventDefault();
@@ -50,10 +44,12 @@ const ServiceForm = () => {
           vehicle_type: vehicle_type,
           image: image,
           plate_number: plate_number,
-          price: price,
           option: option,
           summary: summary,
-          speed: speed,
+          billing: 0,
+          approved: false,
+          cleared: false,
+          user_id: user.id
         };
     
         fetch("http://127.0.0.1:3000/vehicles",{
@@ -62,14 +58,21 @@ const ServiceForm = () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(sumData),
-        });
+        })
+          .then((r) => {
+            if (r.ok) {
+              r.json().then(() => {
+                setRefresh(!refresh)
+              })
+            } else {
+              r.json().then((error)=>console.log(error))
+          }
+        })
     
         setPlate("");
         setImage("");
         setSummary("");
         setMake("");
-        setPrice("");
-        setSpeed("");
       }
 
   return (
@@ -103,21 +106,7 @@ const ServiceForm = () => {
     />
     </div>
 
-    <div className="form-control">
-        <label>price</label>
-        <input  placeholder="price"
-        onChange={HandlePriceChange} 
-        value={price}
-    />
-    </div>
-
-    <div className="form-control">
-        <label>speed</label>
-        <input  placeholder="254km/h"
-        onChange={HandleSpeedChange}
-        value={speed}
-    />
-    </div>
+  
     <div className="form-control">
         <label>Option</label>
         <select  placeholder="option" required
@@ -139,7 +128,7 @@ const ServiceForm = () => {
         value={summary}
       />
         </div>
-    <input type='submit' value='Add Vehicle' className="btn-block"/>
+    <input  type='submit' value='Add Vehicle' className="bg-white font-bold p-1 m-2 float-right rounded-md hover:bg-orange-500 hover:text-white cursor-pointer"/>
 </form>
   )
 }

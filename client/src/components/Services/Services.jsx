@@ -5,8 +5,10 @@ import ServiceForm from '../ServiceForm/ServiceForm'
 import ServiceContainer from '../ServiceContainer/ServiceContainer'
 import "./services.css"
 
-const Services = () => {
-  const [showService, setShowService] = useState();
+const Services = ({user}) => {
+  const [showService, setShowService] = useState(false);
+  const [refresh, setRefresh] = useState(false);
+
 
   const setNewService = () => {
     console.log("default");
@@ -25,9 +27,9 @@ const Services = () => {
         >
         <Add fontSize='large' onClick={toggleTable}/>
         </Fab>
-        {showService ? <ServiceForm setNewService={setNewService} /> : null}
+        {showService ? <ServiceForm setNewService={setNewService} user={user} refresh={refresh} setRefresh={setRefresh} /> : null}
       </div>
-      <ServiceContainer setNewService={setNewService} />
+      <ServiceContainer setNewService={setNewService} user={user} refresh={refresh}  />
         </div>
   )
 }

@@ -11,7 +11,7 @@ const PartItem = ({part}) => {
   return (
     <>
     <div className="car__item">
-    <div className="car__img">
+    <div className="w-12/12">
     <img src={image ? image : "https://via.placeholder.com/400"} alt={name}/>
     </div>
 

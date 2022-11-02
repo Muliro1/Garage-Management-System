@@ -30,7 +30,7 @@ function AdminCar({ vehicle, setRefresh, refresh }) {
         <>
 
             <div className="h-[43vh] text-center  font-serif border-solid max-w-sm bg-slate-100 rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-                <img className='w-20 h-20 rounded-full m-auto' src="https://thumbs.dreamstime.com/b/moving-truck-5819445.jpg" alt='' />
+                <img className='w-20 h-20 rounded-full m-auto' src={vehicle.image} alt={vehicle.make} />
                 <p className='font-black'><span className='font-normal'>Vehicle Plate Number:</span> {vehicle.plate_number}</p>
                 <p className='font-black'><span className='font-normal'>Total Bill:</span> {vehicle.billing} Ksh</p>
              <p className='font-black'><span className='font-normal'>Vehicle Make:</span> {vehicle.make}</p>
@@ -79,19 +79,21 @@ function AdminCar({ vehicle, setRefresh, refresh }) {
                  <div >
                      <button className='bg-black p-1 text-white float-right' onClick={() => setIsOpen(!isOpen)}>Close</button>
 
-                     <img className='  ml-4' src="https://thumbs.dreamstime.com/b/moving-truck-5819445.jpg" alt='' />
+                        <img className='  ml-4' src={vehicle.image} alt="https://thumbs.dreamstime.com/b/moving-truck-5819445.jpg" />
                      <div>
                          <h1 className='text-center underline font-black'>Vehicle Information</h1>
-                         <p className='p-1'>Total Bill: <span className='font-bold'>{vehicle.billing} Ksh</span></p>
+                            <p className='p-1'>Total Bill: <span className='font-bold'>{vehicle.billing} Ksh</span></p>
+                            <p className='p-1'>Work Done: <span className='font-bold'>{vehicle.option}</span></p>
+                            <p className='p-1'>Summary: <span className='font-bold'>{vehicle.summary}</span></p>
                          {vehicle.technician !== null && <>
                              <p className='p-1'>Technician name: <span className='font-bold'>{vehicle.technician.name}</span></p>
                              <p className='p-1'>Technician phone number: <span className='font-bold'>{vehicle.technician.telephone}</span></p>
 
                          </>}
                          <p className='p-1'>Vehicle make: <span className='font-bold'>{vehicle.make}</span></p>
-                         <p className='p-1'> Plate Number: <span className='font-bold'>{vehicle.plate_number}</span></p>
+                            <p className='p-1'> Plate Number: <span className='font-bold'>{vehicle.plate_number}</span></p>
                          <p className='p-1'>Car owner:<span className='font-bold'>{vehicle.user.username}</span></p>
-                         <p className='p-1'>Car owner phone number:<span className='font-bold'>{vehicle.user.telephone}</span></p>
+                         <p className='p-1'>Car owner email:<span className='font-bold'>{vehicle.user.email}</span></p>
                          <span className=''>Status: <span className={vehicle.approved ? "bg-green-500" : 'bg-red-500 font-bold'} >{vehicle.approved ? 'Approved' : "Not Approved"}</span></span><br></br>
                          <span className=' '>Clearance: <span className={vehicle.cleared ? "bg-green-500" : 'bg-red-500 font-bold'} >{vehicle.cleared ? 'Cleared' : "Not Cleared"}</span></span>
 

@@ -16,7 +16,7 @@ const Parts = () => {
   
     return (
       <div className="parts">
-        <div className="search__box">
+        <div className="search__box mt-4">
           <input
             type="text"
             placeholder="Search"
@@ -24,7 +24,7 @@ const Parts = () => {
           />
         </div>
         {parts?.length > 0 ? (
-          <div className="box-container">
+          <div className="box-container grid grid-cols-2">
             {parts
               .filter((value) => {
                 if (view === "") {

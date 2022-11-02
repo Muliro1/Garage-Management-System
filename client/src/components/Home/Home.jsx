@@ -11,7 +11,7 @@ import "./home.css";
 
 const Home = () => {
   return (
-    <section className="home">
+    <section className="home h-[88vh] overflow-y-scroll ">
       <div className="cars">
         <div className="content">
           <h4 className="text-1">Looking for a car?</h4>

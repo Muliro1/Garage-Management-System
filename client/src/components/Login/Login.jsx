@@ -13,6 +13,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Register from "../Register/Register"
+import { NavLink } from 'react-router-dom';
 
 function Copyright(props) {
   return (
@@ -22,7 +23,8 @@ function Copyright(props) {
         PBWM
       </Link>{' '}
       {new Date().getFullYear()}
-      {'.'}
+      {'.'}<br></br>
+      <NavLink to='/'>Back to HomePage</NavLink>
     </Typography>
   );
 }

@@ -4,29 +4,29 @@ import{FcEngineering}from "react-icons/fc"
 import{GiAutoRepair}from "react-icons/gi"
 import {AiFillHome} from "react-icons/ai"
 import {TbEngine} from "react-icons/tb"
-import {NavLink} from 'react-router-dom';
+import {NavLink, Outlet} from 'react-router-dom';
 
 const Sidebar = ({children}) => {
     
 
     const menuItem =[
         {
-            path:'/',
+            path:'/user',
             name:"Home",
             icon:<AiFillHome/>
         },
         {
-            path:'/technicians',
+            path:'/user/technicians',
             name:"Technicians",
             icon:<FcEngineering/>
         },
         {
-            path:'/inventory',
+            path:'/user/inventory',
             name:"Inventory",
             icon:<TbEngine/>
         },
         {
-            path:'/services',
+            path:'/user/services',
             name:"Sevices",
             icon:<GiAutoRepair/>
         }
@@ -44,7 +44,7 @@ const Sidebar = ({children}) => {
         }
         </div>
         <main>{children}</main>
-   
+   <Outlet/>
     </div>
   )
 }

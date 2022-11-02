@@ -1,14 +1,14 @@
 .servicePost {
     border: 1px solid black;
-    margin: 3rem;
+    margin: 5rem;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 4px 4px 4px solid black;
   }
 
-  .person_img img{
+  /* .person_img img{
     width: 500px;
-  }
+  } */
   
   .servicePost-info{
     display: flex;

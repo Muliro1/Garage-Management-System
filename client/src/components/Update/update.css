@@ -1,19 +1,20 @@
 .update .formControl {
     margin: 20px 20px;
     display: flex;
+    background-color: black;
   }
 
  .update .formControl input {
-    width: 90%;
+    /* width: 90%; */
     margin: 5px;
     padding: 5px;
-    font-size: 17px;
+    /* font-size: 17px; */
     border-radius: 5px;
   }
   
  .update input[type="submit"] {
-    width: 15%;
-    float: right;
+    /* width: 15%; */
+    /* float: right; */
     background: white;
     color: black;
     border: none;
@@ -21,6 +22,6 @@
     border-radius: 5px;
     cursor: pointer;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 12px;
     font-family: inherit;
   }

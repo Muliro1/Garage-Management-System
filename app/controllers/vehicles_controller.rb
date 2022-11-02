@@ -32,7 +32,7 @@ class VehiclesController < ApplicationController
     private
 
     def vehicle_params
-        params.permit(:make, :plate_number, :user_id, :id, :price, :vehicle_type, :speed, :image, :billing, :approved, :technician_id, :service, :repair, :summary)
+        params.permit(:id,:technician_id, :user_id, :make, :plate_number, :cleared, :vehicle_type, :option, :image, :billing, :approved, :summary)
     end
 
     def render_not_found_response

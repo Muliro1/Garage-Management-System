@@ -5,7 +5,7 @@ function AdminMechanic({ mechanic, refresh,setRefresh}) {
     const [isOpen, setIsOpen] = useState(false);
     const [vehicles, setVehicles] = useState([])
     const [vehicleRefresh,setVehicleRefresh] = useState(false)
-    console.log(vehicles);
+    // console.log(vehicles);
 
     useEffect(() => {
         fetch('http://127.0.0.1:3000/vehicles')
@@ -22,7 +22,10 @@ function AdminMechanic({ mechanic, refresh,setRefresh}) {
                 technician_id:mechanic.id
             })
         })
-            .then(() => {
+            .then((r)=>r.json())
+            .then((r) => {
+                console.log(vehicles)
+                console.log(r)
                 setRefresh(!refresh)
                 setVehicleRefresh(!vehicleRefresh)
                 setIsOpen(!isOpen)

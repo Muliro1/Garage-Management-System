@@ -6,18 +6,18 @@ import Technicians from '../components/Technicians/Technicians'
 import Parts from '../components/Parts/Parts'
 import Services from '../components/Services/Services'
 
-const Router = () => {
+const Router = ({user}) => {
   return (
-    <BrowserRouter>
+    // <BrowserRouter>
     <Sidebar>
     <Routes>
     <Route path="/" element ={<Home />}/> 
     <Route path="/technicians" element={<Technicians/>}/> 
     <Route path="/inventory" element={<Parts/>}/> 
-    <Route path="/services" element={<Services/>}/> 
+        <Route path="/services" element={<Services user={user} />}/> 
     </Routes>
     </Sidebar>
-  </BrowserRouter>
+  // </BrowserRouter>
   )
 }
 

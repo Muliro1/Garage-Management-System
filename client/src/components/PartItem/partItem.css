@@ -11,9 +11,7 @@
     transform: scale(1.05, 1.05);
   }
 
-  .car__img img{
-    width: 500px;
-  }
+  
   
   .car__item-info{
     display: flex;
@@ -25,13 +23,7 @@
     text-align: center;
   }
 
-  .car__item-info span {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    color: black;
-    font-size: 1.5rem;
-  }
+  
   
   .car__item-btn {
     border-radius: 0;

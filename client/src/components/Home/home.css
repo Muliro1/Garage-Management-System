@@ -1,18 +1,17 @@
-.home{
-    width: 87vw;
-    height: 83vh;
-    /* overflow: auto; */
+.home::-webkit-scrollbar {
+  display: none;
 }
 
 .cars{
- width: 86vw;
+ width: 80vw;
  height: 50vh;
  background: linear-gradient(rgb(0, 13, 107, 0.5), rgb(0, 13, 107, 0.5)),
   url("../assets/images/slider-img/slider-1.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 10px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
   
   .content {
@@ -54,21 +53,22 @@
   }
   
   .reserve_btn:hover {
-    background: black;
-    color: #fff;
+    background: white;
+    color: black;
   }
 
   .middle{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-top: 3rem;
     margin-bottom: 3rem;
   }
 
   .middle img{
-    height: 600px;
-    width: 800px;
+    height: 400px;
+    width: 500px;
     border-radius: 50px 0px ;
+    padding-left: 30px;
   }
 
   .home__info .about__find{
@@ -89,7 +89,7 @@
   }
 
   .sect1{
-    margin-right: 25%;
+    /* margin-right: 25%; */
     font-size: 40px;
   }
 
@@ -112,7 +112,7 @@
     font-size: large;
     font-style: unset;
     color: gray;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .sect1 button#sect3{
@@ -134,8 +134,9 @@
     text-decoration: underline;
     text-align: center;
     color: black;
-    font-size: 3.2rem;
+    font-size: 2rem;
     font-weight: 500;
+    margin-top: 10px;
   }
 
   .home__info{
