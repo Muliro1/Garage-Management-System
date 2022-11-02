@@ -17,7 +17,7 @@ const ServicingCard = ({ vehicle,term,setTerm }) => {
   }
 
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg">
+    <div className="max-w-sm round overflow-hidden shadow-lg">
       <img src={vehicle.image} alt="" className="w-full"/>
       <div className="px-6 py-4">
         <div className="font-bold text-purple-500 text-xl mb-2">

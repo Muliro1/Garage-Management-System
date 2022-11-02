@@ -48,11 +48,12 @@
 main{
   width: 100%;
   padding: 20px;
+  align-items: auto;
 }
 .sidebar{
   background: #000;
   color: #fff;
-  height: 100vh;
+  height: 185vh;
   width: 200px;
   transition: all 0.5s;
 }
@@ -77,12 +78,12 @@ main{
   transition: all 0.5s;
 }
 .link:hover{
-  background:lightskyblue;
+  background:gray;
   color: #000;
   transition: all 0.5s;
 }
 .active{
-  background: lightskyblue;
+  background: gray;
   color: #000;
 }
 .icon, .link_text{
