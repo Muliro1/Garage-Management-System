@@ -21,7 +21,7 @@ const ServicingCard = ({ vehicle,term,setTerm }) => {
       <img src={vehicle.image} alt="" className="w-full"/>
       <div className="px-6 py-4">
         <div className="font-bold text-purple-500 text-xl mb-2">
-        make {vehicle.make}
+         {vehicle.make}
         </div>
         <ul>
           <li>
@@ -44,7 +44,7 @@ const ServicingCard = ({ vehicle,term,setTerm }) => {
         </ul>
       </div>
       <div className="px-6 py-4">
-        {vehicle.billing===0 && <button onClick={()=>ServiceCar()}>ServiceCar</button>}
+        {vehicle.billing===0 && <button className='text-white font-bold bg-black p-1 rounded-md float-right mb-2 hover:text-orange-500' onClick={()=>ServiceCar()}>Service Car</button>}
       </div>
     </div>
   )

@@ -3,7 +3,7 @@ import { Container } from "@mui/material";
 import { BsFacebook, BsLinkedin } from "react-icons/bs";
 import { GrSend } from "react-icons/gr";
 import { AiFillTwitterCircle } from "react-icons/ai";
-import "./footer.css";
+import "../../components/Footer/footer.css";
 
 
 const quickLinks = [

@@ -20,22 +20,22 @@ const Vehicles = () => {
   console.log(vehicles)
 
   return (
-    <>
-    <div className="container mx-auto">
+    <section className='sect h-[89vh] overflow-y-scroll '>
+      <div className=" mx-auto ">
 
 
       {/* <ImageSearch searchText={(text) => setTerm(text)} /> */}
 
       {!isLoading && vehicles?.length  }
 
-      {isLoading ? <h1 className="text-6xl text-center mx-auto mt-32">Loading...</h1> : <div className="grid grid-cols-3 gap-4">
+      {isLoading ? <h1 className="text-6xl text-center mx-auto mt-32">Loading...</h1> : <div className="grid grid-cols-4 gap-4 w-11/12 m-auto mb-20 pt-6">
         {vehicles.map(vehicle => (
           <ImageCard key={vehicle.id} vehicle={vehicle} />
         ))}
       </div>}
     </div>
     <Footer />
-    </>
+    </section>
         
        
     );

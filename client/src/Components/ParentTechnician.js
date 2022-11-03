@@ -65,17 +65,15 @@ const ParentTechnician = () => {
     {logged?
     <>
     <Header technician={technician} />
-    <BrowserRouter>
       <Sidebar>
         <Routes>
           {/* <Route path="/" element={<Technician />} />
           <Route path="/dashboard" element={<Technician />} /> */}
-          <Route path="/repair" element={<Repair />} />
-          <Route path="/servicing" element={<Servicing />} />
+          <Route path="/repair" element={<Repair technician={technician} />} />
+          <Route path="/servicing" element={<Servicing technician={technician} />} />
           <Route path="/vehicles" element={<Vehicles />} />
         </Routes>
       </Sidebar>
-    </BrowserRouter>
     </>:<Login fullname={fullname} error={error} setFullName={setFullName} setPass={setPass} handleSubmit={handleSubmit} pass={pass}/>
         }
         </>

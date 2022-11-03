@@ -7,8 +7,8 @@ import About from './components/About';
 import Services from './components/Services';
 import User from './components/User/User';
 import Admin from './admin/Admin';
-import Technician from './components/Technician';
-import Guard from './components/Guard';
+import Guard from './Guard/Guard';
+import ParentTechnician from './Components/ParentTechnician';
 
 
 function App() {
@@ -33,10 +33,16 @@ function App() {
 
           
 
-          <Route path="/technician" element={<Technician />} />
-          {/* <Route path="/admin/clients" element={<Aside />} /> */}
+          <Route path="/technician" element={<ParentTechnician/>} >
+            <Route path="repair"  />
+            <Route path="servicing" />
+            <Route path="vehicles" />
+          </Route>
 
-          <Route path="/guard" element={<Guard />} />
+          <Route path="/guard/*" element={<Guard />} >
+            <Route path="guardvehicles" />
+          </Route>
+
           {/* admin dashboard */}
         <Route path="/admin" element={<Admin />} >
           <Route path="clients" />

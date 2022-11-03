@@ -62,7 +62,7 @@ function AdminClient({ client }) {
                                     {client.vehicles.length > 0 && client.vehicles.map((vehicle) => (
                                         <section key={vehicle.id} className='w-10/12 border-solid max-w-sm bg-slate-300 rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700'>
                                             <div className='text-center'>
-                                                <img className='rounded-full m-auto w-20 h-20' src="https://thumbs.dreamstime.com/b/moving-truck-5819445.jpg" alt='' />
+                                                <img className='rounded-full m-auto w-20 h-20' src={vehicle.image} alt='' />
                                                 <p>Vehicle Make:<span className='pl-2 font-bold'>{vehicle.make}</span></p>
                                                 <p>Vehicle Plate Number:<span className='pl-2 italic font-bold'>{vehicle.plate_number}</span></p>
                                                 <p>Vehicle total bill:<span className='pl-2 italic font-bold'>{vehicle.billing}Ksh</span></p>

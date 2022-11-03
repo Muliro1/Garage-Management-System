@@ -17,7 +17,7 @@ const Sidebar = ({children}) => {
     const menuItem=[
         
         {
-            path:"/repair",
+            path:"/technician/repair",
             name:"Repair",
             icon:<FaTh/>
             
@@ -33,12 +33,12 @@ const Sidebar = ({children}) => {
         //     icon:<FaCommentAlt/>
         // },
         {
-            path:"/servicing",
+            path:"/technician/servicing",
             name:"servicing",
             icon:<FaShoppingBag/>
         },
         {
-            path:"/vehicles",
+            path:"/technician/vehicles",
             name:"vehicles",
             icon:<FaThList/>
         }

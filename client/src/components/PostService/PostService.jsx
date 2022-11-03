@@ -45,7 +45,7 @@ const CarItem = ({repCar,onDelete,onUpdateService}) => {
           <FaFileAlt/> {plate_number}
         </span>
         <span>
-          <FaCoins/> ${billing}.00
+          <FaCoins/> Ksh {billing}.00
         </span>
               </div>
               <div className='grid grid-cols-2'>

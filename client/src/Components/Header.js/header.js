@@ -5,7 +5,10 @@ import {FaCarAlt} from "react-icons/fa"
 
 
 const Header = ({technician}) => {
-  
+  function handleLogout() {
+    localStorage.clear()
+    window.location.reload()
+  }
 
   return (
     <div className='header'>
@@ -14,8 +17,10 @@ const Header = ({technician}) => {
       <h1><FaCarAlt/></h1>
       </div>
       <div className='profilic'>
-      <h1>Welcome, {technician.name}</h1>
-      </div>
+          <h1>Welcome, {technician.name}</h1>
+          
+        </div>
+        <h1 onClick={()=>handleLogout()} className='text-sm font-bold cursor-pointer hover:text-orange-500'>Logout</h1>
         </div>
     </div>
   )

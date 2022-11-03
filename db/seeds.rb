@@ -21,49 +21,28 @@ t4=Technician.create({name: "In ", email: "muliro@gmail.com", telephone: 0272756
 
 
 
-Vehicle.create({make: "BMW", plate_number: "KAV 097J", user_id: p1.id, price: 5000, vehicle_type: "Truck", speed: 900,
-image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dreamstime.com%2Fphotos-images%2Ftruck.html&psig=AOvVaw2LEZZexIQT4Q9E03c2qh_I&ust=1666829061119000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCKiuiaHM_PoCFQAAAAAdAAAAABAE",
-billing: 3000, approved: false, technician_id: t1.id, cleared:false })
 
-Vehicle.create({make: "Audi", plate_number: "KDK 011A", user_id: p1.id, price: 5000, vehicle_type: "sport", speed: 900,
-image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dreamstime.com%2Fphotos-images%2Ftruck.html&psig=AOvVaw2LEZZexIQT4Q9E03c2qh_I&ust=1666829061119000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCKiuiaHM_PoCFQAAAAAdAAAAABAE",
-billing: 5000, approved: false, cleared:false })
-
-Vehicle.create({make: "Audi", plate_number: "KBJ 022F", user_id: p1.id, price: 5000, vehicle_type: "sport", speed: 900,
-image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dreamstime.com%2Fphotos-images%2Ftruck.html&psig=AOvVaw2LEZZexIQT4Q9E03c2qh_I&ust=1666829061119000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCKiuiaHM_PoCFQAAAAAdAAAAABAE",
-billing: 0, approved: false, cleared:false })
-Vehicle.create({make: "BMW", plate_number: "KAV 097J", user_id: 3,  option:"service", vehicle_type: "Truck", speed: 900,
+Vehicle.create({make: "BMW", plate_number: "KAV 097J", user_id: 3,  option:"service", vehicle_type: "Truck", 
 image: "https://i.pinimg.com/236x/c8/e1/6e/c8e16e642d1bf35dd2f0cedae8fb7f53.jpg",
 billing: 3000, approved: false, technician_id: 1 })
 
-Vehicle.create({make: "Toyota", plate_number: "KAV 073y", user_id: 1,  option:"repair", vehicle_type: "SUV", speed: 600,
+Vehicle.create({make: "Toyota", plate_number: "KAV 073y", user_id: 1,  option:"repair", vehicle_type: "SUV", 
 image: "https://i.pinimg.com/236x/2f/35/01/2f35016fd12134ab28d35311f93e2212.jpg",
 billing: 3000, approved: false, technician_id: 2 })
 
-Vehicle.create({make: "BMW", plate_number: "KAV 097", user_id: 3,  vehicle_type: "Truck", option:"service", speed: 900,
+Vehicle.create({make: "BMW", plate_number: "KAV 097", user_id: 3,  vehicle_type: "Truck", option:"service", 
 image: "https://i.pinimg.com/236x/86/fc/72/86fc722d224ecdc20016fd2272edfc87.jpg",
 billing: 3000, approved: false, technician_id: 1 })
 
-Vehicle.create({make: "Toyota", plate_number: "KAV 07", user_id: 1,  vehicle_type: "SUV", option:"repair", speed: 600,
+Vehicle.create({make: "Toyota", plate_number: "KAV 07", user_id: 1,  vehicle_type: "SUV", option:"repair", 
 image: "https://i.pinimg.com/236x/29/04/ee/2904ee8f406baf62c6d4bff476905ab2.jpg",
 billing: 3000, approved: false, technician_id: 2 })
 
-Vehicle.create({make: "Toyota", plate_number: "KAV 073y", user_id: p2.id, price: 5000, vehicle_type: "SUV", speed: 600,
-image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dreamstime.com%2Fphotos-images%2Ftruck.html&psig=AOvVaw2LEZZexIQT4Q9E03c2qh_I&ust=1666829061119000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCKiuiaHM_PoCFQAAAAAdAAAAABAE",
-billing: 3000, approved: false, technician_id: t2.id, cleared:false })
 
-<<<<<<< HEAD
-Vehicle.create({make: "BMW", plate_number: "KAV 097", user_id: p3.id, price: 5000, vehicle_type: "Truck", speed: 900,
-image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dreamstime.com%2Fphotos-images%2Ftruck.html&psig=AOvVaw2LEZZexIQT4Q9E03c2qh_I&ust=1666829061119000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCKiuiaHM_PoCFQAAAAAdAAAAABAE",
-billing: 3000, approved: false, technician_id: t3.id, cleared:false })
-=======
 Technician.create({name: "I Nerd", email: "mulirokhaemba@gmail.c", telephone: 0272, rating: 5, description: "very hardworking", "password": "gant", "password_confirmation": "gant"})
 Technician.create({name: "Deno", email: "muliro@gmail.com", telephone: 02727563, rating: 4, description: "very hardworking", "password": "1234", "password_confirmation": "1234"})
->>>>>>> 0184808ea5ffea3ee26a911e31c37d7d9adc40fe
 
-Vehicle.create({make: "Toyota", plate_number: "KAV 07", user_id: p1.id, price: 5000, vehicle_type: "SUV", speed: 600,
-image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dreamstime.com%2Fphotos-images%2Ftruck.html&psig=AOvVaw2LEZZexIQT4Q9E03c2qh_I&ust=1666829061119000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCKiuiaHM_PoCFQAAAAAdAAAAABAE",
-billing: 3000, approved: false, technician_id: t4.id, cleared:false })
+
 
 Part.create({name: "turbo", image: "https://images.unsplash.com/photo-1664695221759-21ed7295f697?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8dHVyYm8lMjBlbmdpbmV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
 price: 30000, condition: "brand new", serial_number: 3456, model: "dodge demon", count: 9 })
