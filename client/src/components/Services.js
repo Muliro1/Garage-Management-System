@@ -1,8 +1,10 @@
 import React from "react"
+import NavBar from './NavBar';
 
 const Services = () => {
   return (
     <>
+      <NavBar/>
       <section className='services'>
         
         <div className="services-cards">

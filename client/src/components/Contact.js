@@ -1,5 +1,6 @@
 import React from "react"
 import { useState } from "react"
+import NavBar from './NavBar';
 
 const Contact = () => {
     const [name, setName] = useState("");
@@ -13,6 +14,7 @@ const Contact = () => {
 
     return (
         <>
+            <NavBar/>
             <section className='contact'>
                 <div className="contact-body">                
                 <div className="contact-container">

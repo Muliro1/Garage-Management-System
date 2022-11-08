@@ -1,22 +1,21 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
-import NavBar from './components/NavBar';
 import Home from './components/Home';
 import Contact from './components/Contact';
 import About from './components/About';
 import Services from './components/Services';
-import User from './components/User';
-import Admin from './components/Admin';
-import Technician from './components/Technician';
-import Guard from './components/Guard';
+import User from './components/User/User';
+import Admin from './admin/Admin';
+import Guard from './Guard/Guard';
+import ParentTechnician from './Components/ParentTechnician';
 
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <NavBar />
+        {/* <NavBar /> */}
         <Routes>
           <Route path="/" element={<Home />} />
           
@@ -24,20 +23,39 @@ function App() {
 
           <Route path="/about" element={<About />} />
 
-          <Route path="/user" element={<User />} />
+          <Route path="/user" element={<User />} >
+            <Route path="technicians" />
+            <Route path="inventory" />
+            <Route path="services" />
+          </Route>
 
           <Route path="/services" element={<Services />} />
 
-          <Route path="/admin" element={<Admin />} />
+          
 
-          <Route path="/technician" element={<Technician />} />
+          <Route path="/technician" element={<ParentTechnician/>} >
+            <Route path="repair"  />
+            <Route path="servicing" />
+            <Route path="vehicles" />
+          </Route>
 
-          <Route path="/guard" element={<Guard />} />
+          <Route path="/guard/*" element={<Guard />} >
+            <Route path="guardvehicles" />
+          </Route>
+
+          {/* admin dashboard */}
+        <Route path="/admin" element={<Admin />} >
+          <Route path="clients" />
+          <Route path="mechanics"/>
+          <Route path="guards"/>
+          <Route path="carsingarage" />
+          <Route path="partsinstock"/>
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>
   );
-}
+};
 
 
 export default App;

@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 .App {
   height: 100%
 }
@@ -25,15 +30,15 @@ li {
 .navbar {
   display: flex;
   justify-content: space-around;
-  align-items: center;
-  height: 7vh;
+  /* align-items: center; */
+  height: 10vh;
   background-color: black;
   box-shadow: white;
-  position: relative;
+  /* position: relative; */
 }
 
 .logo {
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 600;
   color: grey;
   
@@ -77,7 +82,7 @@ li {
 button {
   border: none;
   text-decoration: none;
-  font-size: 20px;
+  /* font-size: 20px; */
   background: none;
 }
 
@@ -126,32 +131,34 @@ button {
 
 /* STYLING CONTACT COMPONENT */
 
-.contact {
+/* .contact {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   font-size: 20px;
-}
+} */
 
 .contact-body {
   background-image: url("https://c0.wallpaperflare.com/preview/934/179/745/building-ceiling-empty-hallway.jpg");
   background-repeat: no-repeat;
-  background-position: left;
-  background-size: 65% 100%;
+  /* background-position: left; */
+  /* background-size: 65% 100%; */
   position: fixed;
-  top: 6.9%;
+  /* top: 6.9%; */
   min-width: 100%;
   min-height: 100%;
 }
 
 .contact-container {
   background-color: grey;
-  padding: 40px;
+  /* padding: 40px; */
   width: 35%;
   height: 100%;
   display: block;
   float: right;
+  padding-bottom: 20px;
+  /* overflow-y: scroll; */
 }
 
 .form-control label {
@@ -161,9 +168,9 @@ button {
 }
 
 .form-control #message {
-  width: 100%;
+  /* width: 100%;
   height: 150px;
-  resize: none;
+  resize: none; */
   border-radius: 10px;
 }
 
@@ -176,17 +183,17 @@ button {
 }
 
 .form-control #email {
-  width: 100%;
-  height: 50px;
-  resize: none;
-  border-radius: 10px;
+  /* width: 100%; */
+  height: 20px;
+  /* resize: none; */
+  /* border-radius: 10px; */
 }
 
 .form-control #name {
-  width: 100%;
-  height: 50px;
-  resize: none;
-  border-radius: 10px;
+  /* width: 100%; */
+  height: 20px;
+  /* resize: none; */
+  /* border-radius: 10px; */
 }
 
 .form-control input {
@@ -209,28 +216,28 @@ button {
   color: white;
 }
 
-.contact form {
+/* .contact form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 50px;
-}
+} */
 
 .contact-info {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 70px;
+  margin-top: 5px;
 }
 
 .contact button {
   background-color: black;
   color: white;
-  padding: 10px 20px;
+  /* padding: 10px 20px; */
   border-radius: 15px;
-  margin-top: 30px;
+  /* margin-top: 30px; */
 }
 
 
@@ -414,3 +421,87 @@ button {
   display: table;
   clear: both;
 }
+
+*{
+  margin:0;
+  padding:0;
+  text-decoration: none;
+}
+.container{
+  display:flex;
+}
+
+.sidebar{
+  background: #000;
+  color: #fff;
+  height: 185vh;
+  width: 200px;
+  transition: all 0.5s;
+}
+.top_section{
+  display: flex;
+  align-items:center;
+  padding:20px 15px;
+}
+.logo{
+  font-size: 30px;
+}
+.bars{
+  display: flex;
+  font-size: 25px;
+  margin-left: 50px;
+}
+.link{
+  display: flex;
+  color: #fff;
+  padding: 10px 15px;
+  gap: 15px;
+  transition: all 0.5s;
+}
+.link:hover{
+  background:gray;
+  color: #000;
+  transition: all 0.5s;
+}
+.active{
+  background: gray;
+  color: #000;
+}
+.icon, .link_text{
+  font-size: 20px;
+}
+
+
+.auth-form-container, .login-form, .register-form {
+  display: flex;
+  flex-direction: column;
+}
+.sect::-webkit-scrollbar {
+  display: none;
+}
+@media screen and (min-width: 600px) {
+  .auth-form-container {
+    padding: 5rem;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin: 0.5rem;
+  }
+}
+
+label {
+  text-align: left;
+  padding: 0.25rem 0;
+}
+
+
+
+
+.link-btn {
+  background: none;
+  color: white;
+  text-decoration: underline;
+}
+
+
+
+
