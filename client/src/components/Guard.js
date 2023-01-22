@@ -4,7 +4,7 @@ const Guard = () => {
   return (
     <>
       <section className='guard'>
-        <h1>Welcome To the Guard's Page</h1>
+        <h1>Welcome To The Guard's Page</h1>
       </section>
     </>
   )
