@@ -77,7 +77,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_02_052848) do
     t.boolean "cleared"
     t.integer "user_id"
     t.integer "technician_id"
-    t.string "option"
     t.index ["technician_id"], name: "index_vehicles_on_technician_id"
     t.index ["user_id"], name: "index_vehicles_on_user_id"
   end
