@@ -14,7 +14,8 @@ class AdminsController < ApplicationController
             render json: admin, status: :ok
         else
             render json:{errors:"Not Authorized"}, status: :unauthorized
-        end
+    end 
+
     def index
         admins = Admin.all
         render json: admins
@@ -24,5 +25,6 @@ class AdminsController < ApplicationController
 
     def admin_params
         params.permit(:full_name, :password, :password_confirmation, :id)
-    end
+    end 
+    
 end
