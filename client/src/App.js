@@ -7,6 +7,7 @@ import About from './components/About';
 import Services from './components/Services';
 import User from './components/User/User';
 import Admin from './admin/Admin';
+import AdminSignup from './admin/AdminSignup';
 import Guard from './Guard/Guard';
 import ParentTechnician from './Components/ParentTechnician';
 
@@ -30,6 +31,7 @@ function App() {
           </Route>
 
           <Route path="/services" element={<Services />} />
+          
 
           
 
@@ -51,6 +53,7 @@ function App() {
           <Route path="carsingarage" />
           <Route path="partsinstock"/>
           </Route>
+          <Route path="/adminsignup" element={<AdminSignup/>} ></Route>
         </Routes>
       </BrowserRouter>
     </div>
