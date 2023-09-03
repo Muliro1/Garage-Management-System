@@ -1,5 +1,5 @@
 class AdminsController < ApplicationController
-    skip_before_action :authorize, only: :create
+    skip_before_action :authorize, only: [:create, :destroy, :index, :show, :update]
 
     def create
         admin = Admin.create!(admin_params)
@@ -14,6 +14,7 @@ class AdminsController < ApplicationController
             render json: admin, status: :ok
         else
             render json:{errors:"Not Authorized"}, status: :unauthorized
+        end
     end 
 
     def index

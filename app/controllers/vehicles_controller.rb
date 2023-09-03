@@ -1,5 +1,6 @@
 class VehiclesController < ApplicationController
-  rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
+  #rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
+  skip_before_action :authorize, only: [:create, :destroy, :index, :show, :update]
   
     def index
       @pagy, @vehicles = pagy(Vehicle.limit(10))

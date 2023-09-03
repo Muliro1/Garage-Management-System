@@ -1,5 +1,5 @@
 class GuardSessionsController < ApplicationController
-    skip_before_action :authorize, only: [:create, :destroy]
+  skip_before_action :authorize, only: [:create, :destroy, :index, :show, :update]
   
     def create
       guard = Guard.find_by(full_name: params[:full_name])
