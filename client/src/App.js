@@ -24,17 +24,13 @@ function App() {
 
           <Route path="/about" element={<About />} />
 
-          <Route path="/user" element={<User />} >
+          <Route path="/user/*" element={<User />} >
             <Route path="technicians" />
             <Route path="inventory" />
             <Route path="services" />
           </Route>
 
           <Route path="/services" element={<Services />} />
-          
-
-          
-
           <Route path="/technician" element={<ParentTechnician/>} >
             <Route path="repair"  />
             <Route path="servicing" />
@@ -46,7 +42,7 @@ function App() {
           </Route>
 
           {/* admin dashboard */}
-        <Route path="/admin" element={<Admin />} >
+        <Route path="/admin/*" element={<Admin />} >
           <Route path="clients" />
           <Route path="mechanics"/>
           <Route path="guards"/>

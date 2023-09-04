@@ -4,7 +4,7 @@ import Footer from './footer/Footer';
 
 
 const Vehicles = () => {
-    const [vehicles, setVehicles] = useState([]);
+  const [vehicles, setVehicles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [term, setTerm] = useState('');
 

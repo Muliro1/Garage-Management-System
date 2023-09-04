@@ -4,12 +4,13 @@ import Footer from './footer/Footer';
 
 
 const Repair = ({technician}) => {
-  const [vehicles, setVehicles] = useState([]);
+const [vehicles, setVehicles] = useState([]);
 const [isLoading, setIsLoading] = useState(true);
-  const [term, setTerm] = useState(false);
-  let AssignedCars = []
+const [term, setTerm] = useState(false);
+let AssignedCars = [];
 
 useEffect(() => {
+  //let AssignedCars = [];
   fetch(`http://127.0.0.1:3000/vehicles`)
     .then(res => res.json())
     .then((data) => {
@@ -21,7 +22,7 @@ useEffect(() => {
         }
       })
     })
-}, [term]);
+}, /*[term, AssignedCars,technician.id]*/);
 console.log(vehicles)
 
 return (

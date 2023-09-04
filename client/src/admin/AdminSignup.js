@@ -9,7 +9,7 @@ function AdminSignup({setFullName,setPassword,handlesignup, error ,loading}) {
             {loading ? <h1 className=' text-3xl text-white font-bold text-center pt-60'> Loading...</h1> :
                 <>
             <div className='adminlogobg'>
-                <h1 className='adminlogo text-white pl-4'>PBMW <span>Admin</span></h1>
+                <h1 className='adminlogo text-white pl-4'>PBMW <span>Admin Signup</span></h1>
                     </div>
                     <NavLink to='/' className='float-right mr-4 hover:text-orange-500'>Back to homepage</NavLink>
             <div className=' rounded-lg bg-gradient-to-b from-slate-100 to-transparent via-grey-500 m-auto  w-5/12 mt-10'>

@@ -1,7 +1,7 @@
 import AdminLogin from './AdminLogin';
 import AdminSignup from './AdminSignup';
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import AdminClients from './adminDashboard/AdminClients';
 import AdminDashboard from './adminDashboard/AdminDashboard';
 import AdminMechanics from './adminDashboard/AdminMechanics';
@@ -24,7 +24,7 @@ function Admin() {
   useEffect(() => {
     const data = localStorage.getItem('ADMIN')
     const login = localStorage.getItem('LOGGED')
-    const signup = localStorage.getItem('SIGNED')
+    //const signup = localStorage.getItem('SIGNED')
     if (data && login) {
       setLogged(JSON.parse(login))
       setAdmin(JSON.parse(data))
