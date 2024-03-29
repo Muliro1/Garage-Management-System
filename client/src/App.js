@@ -49,7 +49,7 @@ function App() {
           <Route path="carsingarage" />
           <Route path="partsinstock"/>
           </Route>
-          <Route path="/adminsignup" element={<AdminSignup/>} ></Route>
+          <Route path="adminsignup" element={<AdminSignup/>} ></Route>
         </Routes>
       </BrowserRouter>
     </div>
