@@ -4,7 +4,6 @@ class AdminsController < ApplicationController
     def create
         admin = Admin.create!(admin_params)
         cookies[:admin_id] = admin.id
-        byebug
         render json: admin, status: :created
     end
 
