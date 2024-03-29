@@ -1,0 +1,83 @@
+.payment{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding:25px; */
+    background: white;
+  }
+  
+  .payment form{
+    padding:20px;
+    width:900px;
+    background: #fff;
+    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+  }
+  
+  .payment form .row{
+    display: flex;
+    flex-wrap: wrap;
+    gap:15px;
+  }
+  
+  .payment form .row .col{
+    flex:1 1 250px;
+  }
+  
+  .payment form .row .col .title{
+    font-size: 20px;
+    color:#333;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+  }
+  
+  .payment form .row .col .inputBox{
+    margin:2rem ;
+  }
+  
+  .payment form .row .col .inputBox span{
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  .payment form .row .col .inputBox input{
+    width: 100%;
+    border:1px solid #ccc;
+    padding:10px 15px;
+    font-size: 15px;
+    text-transform: none;
+  }
+  
+  .payment form .row .col .inputBox input:focus{
+    border:1px solid #000;
+  }
+  
+  .payment form .row .col .flex{
+    display: flex;
+    gap:15px;
+  }
+  
+  .payment form .row .col .flex .inputBox{
+    margin-top: 5px;
+  }
+  
+  .payment form .row .col .inputBox img{
+    height: 34px;
+    margin-top: 5px;
+    filter: drop-shadow(0 0 1px #000);
+  }
+  
+  .payment form .submit-btn{
+    border: transparent;
+    width: 100%;
+    padding:12px;
+    font-size: 17px;
+    background: black;
+    color:#fff;
+    border-radius: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+  }
+  
+  .payment form .submit-btn:hover{
+    box-shadow: 5px 5px 5px grey;
+  }

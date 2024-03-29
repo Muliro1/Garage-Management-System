@@ -1,0 +1,42 @@
+.container{
+    display: flex;
+    }
+    
+    main{
+        width: 100%;
+        /* padding: 20px */
+    }
+    
+    .sidebar{
+        background:black;
+        color: #fff;
+        height: 89vh;
+        width: 300px;
+    }
+    
+    .link{
+        text-decoration: none;
+        display: flex;
+        margin-top: 3rem;
+        align-items: center;
+        color: #fff;
+        padding: 20px 25px;
+        gap: 35px;
+        transition: all 0.5s; 
+    }
+    
+    .link:hover{
+       color: #fff;
+       transition: all 0.5s;
+       background-color: grey;
+    }
+    
+    .active{
+        background: grey;
+        color: #fff;
+    }
+    
+    .icon, .link_text{
+        font-size: 20px;
+    }
+    

@@ -1,0 +1,142 @@
+.car__item {
+    border: 1px solid #7c8a9736;
+    margin: 3rem;
+    padding: 20px;
+    border-radius: 5px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
+  }
+  
+  .car__item:hover{
+    box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05, 1.05);
+  }
+  
+  
+  
+  .car__item-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+  }
+  
+  .section__title, .rent__price{
+    text-align: center;
+  }
+  
+  .car__item-info span {
+    /* display: flex; */
+    /* align-items: center; */
+    /* gap: 5px; */
+    color: black;
+    /* font-size: 1.5rem; */
+  }
+  
+  .car__item-btn {
+    border-radius: 0;
+    border: none;
+    outline: none;
+    background: black;
+    padding: 8px 0px;
+  }
+  
+  .car__item-btn a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+  }
+  
+  .car__item-btn a:hover {
+    color: #fff;
+  }
+  .car__btn-details {
+    align-items: center;
+    /* display: inline-block; */
+    background: black;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 15px;
+  }
+  
+  .car__btn-rent {
+    align-items: center;
+    background: black;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 15px;
+  }
+  
+  .car__item-content h4 {
+    font-size: 1.8rem;
+  }
+  
+  .car__item-content h6 {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  .car__btn-action{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  @media only screen and (max-width: 992px) {
+    .car__item h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0;
+    }
+  
+    .car__item h6 {
+      font-size: 1rem;
+      margin-top: 10px;
+    }
+  
+    .car__item-info {
+      flex-wrap: wrap;
+    }
+  
+    .car__item-info span {
+      font-size: 0.8rem;
+      justify-content: space-between;
+    }
+  
+    .car__item-btn {
+      padding: 5px 10px;
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .car__item h4 {
+      font-size: 1rem;
+    }
+  
+    .car__item h6 {
+      font-size: 0.9rem;
+    }
+  
+    .car__item-info span {
+      font-size: 0.7rem;
+    }
+  
+    .car__item-info span i {
+      font-size: 0.9rem;
+    }
+  
+    .car__item-btn {
+      font-size: 0.8rem;
+    }
+  }
+  
+  
