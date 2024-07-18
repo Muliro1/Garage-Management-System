@@ -9,6 +9,8 @@ import Aside from './adminDashboard/aside/Aside';
 import AdminCars from './adminDashboard/AdminCars'
 import AdminGuards from './adminDashboard/AdminGuards';
 import AdminInventories from './adminDashboard/AdminInventories';
+import { useHistory } from 'react-router-dom';
+import { PropaneSharp } from '@mui/icons-material';
 
 function Admin() {
   const [logged, setLogged] = useState(false)
@@ -38,7 +40,7 @@ function Admin() {
 
   }, [logged,admin,signed])
   
-  function handleLogin(e) {
+  function handleLogin(e, setFullName, setPassword) {
     setLoading(true)
     e.preventDefault()
     fetch('http://127.0.0.1:3000/admins/login', {
@@ -68,7 +70,7 @@ function Admin() {
     setPassword('')
   }
 
-  function handleSignUp(e){
+  function handleSignUp(e, setFullName, setPassword, props) {
     setLoading(true)
     e.preventDefault()
     fetch('http://127.0.0.1:3000/admins/signup', {
@@ -86,6 +88,7 @@ function Admin() {
             setAdmin(data)
             setLoading(false)
             setSigned(true)
+            //props.history.push('/admin-login')
           } )
         } else {
           r.json().then((error) =>setError(error.errors))

@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 
+
 function AdminSignup({setFullName,setPassword,handlesignup, error ,loading}) {
     return (
         <div className='adminlogin h-[100vh]'>
@@ -15,7 +16,7 @@ function AdminSignup({setFullName,setPassword,handlesignup, error ,loading}) {
                     <path d="M60.5 0.083252C93.85 0.083252 120.917 27.1499 120.917 60.4999C120.917 93.8499 93.85 120.917 60.5 120.917C27.15 120.917 0.083374 93.8499 0.083374 60.4999C0.083374 27.1499 27.15 0.083252 60.5 0.083252ZM24.389 81.1383C33.2582 94.3695 46.574 102.792 61.4667 102.792C76.3534 102.792 89.6752 94.3755 98.5384 81.1383C88.4835 71.741 75.2293 66.5223 61.4667 66.5416C47.702 66.5208 34.4454 71.7396 24.389 81.1383ZM60.5 54.4583C65.3071 54.4583 69.9173 52.5487 73.3164 49.1496C76.7155 45.7505 78.625 41.1403 78.625 36.3333C78.625 31.5262 76.7155 26.916 73.3164 23.5169C69.9173 20.1178 65.3071 18.2083 60.5 18.2083C55.693 18.2083 51.0828 20.1178 47.6837 23.5169C44.2846 26.916 42.375 31.5262 42.375 36.3333C42.375 41.1403 44.2846 45.7505 47.6837 49.1496C51.0828 52.5487 55.693 54.4583 60.5 54.4583Z" fill="black" />
                 </svg>
                 <form className=' text-center mt-6 ' onSubmit={(e) => handlesignup(e)}>
-                    {error.length > 0 && (
+                    {error &&error.length > 0 && (
                         <p className='text-red-500 pb-4 font-bold italic' key={error}>{error }</p>
                     ) }
 

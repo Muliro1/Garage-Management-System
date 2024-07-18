@@ -1,13 +1,14 @@
 import React, { useState } from "react";
+import { withRouter } from 'react-router-dom';
 
-export const Register = (props) => {
+export const Register = withRouter((props) => {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
     const [name, ] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(email);
+        props.history.push('/login');
     }
 
     return (
@@ -25,4 +26,4 @@ export const Register = (props) => {
         <button className="link-btn" onClick={() => props.onFormSwitch('login')}>Already have an account? Login here.</button>
     </div>
     )
-}
+});

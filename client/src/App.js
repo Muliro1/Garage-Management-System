@@ -40,6 +40,9 @@ function App() {
           <Route path="/guard/*" element={<Guard />} >
             <Route path="guardvehicles" />
           </Route>
+          <Route path="/adminsignup/*" element={<AdminSignup/>} >
+            <Route path="adminsignup" />
+          </Route>
 
           {/* admin dashboard */}
         <Route path="/admin/*" element={<Admin />} >
@@ -49,7 +52,6 @@ function App() {
           <Route path="carsingarage" />
           <Route path="partsinstock"/>
           </Route>
-          <Route path="/adminsignup" element={<AdminSignup/>} ></Route>
         </Routes>
       </BrowserRouter>
     </div>
