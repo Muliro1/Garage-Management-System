@@ -16,7 +16,7 @@ function Admin() {
   const [logged, setLogged] = useState(false)
   const [loading, setLoading]= useState(false)
   const [admin, setAdmin] = useState([])
-  const [fullName, setFullName] = useState('')
+  const [fullName, setFullName] = React.useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState([])
   const [signed, setSigned] = useState(false)
@@ -40,7 +40,7 @@ function Admin() {
 
   }, [logged,admin,signed])
   
-  function handleLogin(e, setFullName, setPassword) {
+  function handleLogin(e, setFullName, setPassword, props) {
     setLoading(true)
     e.preventDefault()
     fetch('http://127.0.0.1:3000/admins/login', {
