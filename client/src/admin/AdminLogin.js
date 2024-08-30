@@ -29,6 +29,7 @@ function AdminLogin({setFullName,setPassword, handleLogin, error ,loading, props
 
                     <input type='submit' value="LogIn" className='mt-6 mb-16 bg-black adminloginbtn text-white p-1 rounded-2xl w-3/12 hover:cursor-pointer  hover:ease-in-out duration-300 hover:scale-125 hover:bg-white hover:text-black' />
                 </form>
+                <NavLink to='/' className='float-right mr-4 hover:text-orange-500'>Back to homepage</NavLink>
 
                     </div>
                 </>}

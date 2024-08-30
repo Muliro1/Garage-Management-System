@@ -16,7 +16,7 @@ function Admin() {
   const [logged, setLogged] = useState(false)
   const [loading, setLoading]= useState(false)
   const [admin, setAdmin] = useState([])
-  const [fullName, setFullName] = React.useState('')
+  const [fullName, setFullName] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState([])
   const [signed, setSigned] = useState(false)
@@ -133,13 +133,19 @@ function Admin() {
             <Route path="/guards" element={<div className='col-span-6'>
               <AdminGuards />
             </div>} />
+            
+
+            <Route path="/adminsignup" element={<div className='col-span-6'>
+              <AdminSignup handleSignup={handleSignUp} error={error} setFullName={setFullName} setPassword={setPassword}/>
+            </div>} />
+            
 
 
           </Routes>
         </div>
         :
         <AdminLogin setFullName={setFullName} setPassword={setPassword} handleLogin={handleLogin} error={error} loading={loading} />}
-         <AdminSignup handlesignup={handleSignUp} error={error} setFullName={setFullName} setPassword={setPassword}/>
+  
 
 
 
