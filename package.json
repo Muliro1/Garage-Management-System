@@ -11,6 +11,9 @@
     "react-scripts": "^5.0.1",
     "styled-components": "^5.3.6"
   },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+  },
   "scripts": {
     "start": "HOST=0.0.0.0 react-scripts start"
   }
