@@ -6,7 +6,7 @@ ruby "3.2.8"
 gem 'rack-cors', '~> 0.2.0'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.0.4"
+gem "rails", "~> 7.1.0"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
@@ -18,7 +18,7 @@ gem "sqlite3", "~> 1.4", groups: [:development, :test]
 gem "pg", "~> 1.1", group: :production
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem "puma", "~> 5.0"
+gem "puma", "~> 6.0"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
