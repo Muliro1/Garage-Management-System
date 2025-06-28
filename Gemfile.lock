@@ -139,6 +139,7 @@ GEM
     nokogiri (1.17.2-x86_64-linux)
       racc (~> 1.4)
     pagy (6.5.0)
+    pg (1.5.9)
     public_suffix (6.0.1)
     puma (5.6.9)
       nio4r (~> 2.0)
@@ -227,6 +228,7 @@ DEPENDENCIES
   faker!
   jbuilder
   pagy
+  pg (~> 1.1)
   puma (~> 5.0)
   rack-cors (~> 0.2.0)
   rails (~> 7.0.4)
