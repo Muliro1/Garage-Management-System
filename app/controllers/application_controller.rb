@@ -4,7 +4,15 @@ class ApplicationController < ActionController::API
     
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
   
-    before_action :authorize
+    before_action :authorize, except: [:index]
+  
+    def index
+      render json: { 
+        message: "Welcome to Garage Management System API",
+        version: "1.0.0",
+        status: "running"
+      }
+    end
   
     private
   

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  # Root route
+  root "application#index"
+  
   # resources for users
   resources :users , only: [:index,:show, :create, :update, :destroy] do
 
