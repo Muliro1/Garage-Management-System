@@ -11,6 +11,7 @@ import AdminGuards from './adminDashboard/AdminGuards';
 import AdminInventories from './adminDashboard/AdminInventories';
 import { useHistory } from 'react-router-dom';
 import { PropaneSharp } from '@mui/icons-material';
+import { API_ENDPOINTS } from '../config';
 
 function Admin() {
   const [logged, setLogged] = useState(false)
@@ -43,7 +44,7 @@ function Admin() {
   function handleLogin(e, setFullName, setPassword, props) {
     setLoading(true)
     e.preventDefault()
-    fetch('http://127.0.0.1:3000/admins/login', {
+    fetch(API_ENDPOINTS.ADMIN_LOGIN, {
       method: 'POST',
       headers: { 'content-Type': 'application/json' },
       body: JSON.stringify({
@@ -73,7 +74,7 @@ function Admin() {
   function handleSignUp(e, setFullName, setPassword, props) {
     setLoading(true)
     e.preventDefault()
-    fetch('http://127.0.0.1:3000/admins/signup', {
+    fetch(API_ENDPOINTS.ADMIN_SIGNUP, {
       method: 'POST',
       headers: { 'content-Type': 'application/json' },
       body: JSON.stringify({
