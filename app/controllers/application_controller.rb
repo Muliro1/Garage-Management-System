@@ -40,11 +40,23 @@ class ApplicationController < ActionController::API
     private
   
     def set_cors_headers
-      response.headers['Access-Control-Allow-Origin'] = request.headers['Origin'] || '*'
+      # Handle CORS headers more robustly
+      origin = request.headers['Origin']
+      
+      # Allow specific origins or use wildcard for development
+      if origin.present?
+        # Check if origin is allowed (this will be handled by rack-cors middleware)
+        response.headers['Access-Control-Allow-Origin'] = origin
+      else
+        # Fallback for requests without origin header
+        response.headers['Access-Control-Allow-Origin'] = '*'
+      end
+      
       response.headers['Access-Control-Allow-Methods'] = 'GET, POST, PUT, PATCH, DELETE, OPTIONS, HEAD'
-      response.headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept, Authorization, X-CSRF-Token'
+      response.headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept, Authorization, X-CSRF-Token, Cache-Control'
       response.headers['Access-Control-Allow-Credentials'] = 'true'
       response.headers['Access-Control-Max-Age'] = '86400'
+      response.headers['Access-Control-Expose-Headers'] = 'Set-Cookie'
     end
 
     def handle_preflight
