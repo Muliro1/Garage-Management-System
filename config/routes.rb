@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   # Health check endpoint for CORS testing
   get '/health', to: "application#health"
   
+  # CORS test endpoint
+  get '/cors-test', to: "application#cors_test"
+  
   # CORS preflight requests
   match '*path', to: 'application#handle_options', via: :options
   

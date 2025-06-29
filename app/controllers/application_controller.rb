@@ -4,8 +4,10 @@ class ApplicationController < ActionController::API
     
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
   
-    before_action :authorize, except: [:index, :handle_options, :health]
-  
+    before_action :authorize, except: [:index, :handle_options, :health, :cors_test]
+    before_action :set_cors_headers
+    before_action :handle_preflight, if: -> { request.method == 'OPTIONS' }
+
     def index
       render json: { 
         message: "Welcome to Garage Management System API",
@@ -22,11 +24,32 @@ class ApplicationController < ActionController::API
       }
     end
 
+    def cors_test
+      render json: { 
+        message: "CORS test successful",
+        origin: request.headers['Origin'],
+        method: request.method,
+        headers: request.headers.select { |k,v| k.start_with?('HTTP_') }
+      }
+    end
+
     def handle_options
       head :ok
     end
   
     private
+  
+    def set_cors_headers
+      response.headers['Access-Control-Allow-Origin'] = request.headers['Origin'] || '*'
+      response.headers['Access-Control-Allow-Methods'] = 'GET, POST, PUT, PATCH, DELETE, OPTIONS, HEAD'
+      response.headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept, Authorization, X-CSRF-Token'
+      response.headers['Access-Control-Allow-Credentials'] = 'true'
+      response.headers['Access-Control-Max-Age'] = '86400'
+    end
+
+    def handle_preflight
+      head :ok
+    end
   
     def authorize
       # Check for any valid session (user, admin, technician, or guard)
