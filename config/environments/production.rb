@@ -91,17 +91,15 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  # Production CORS configuration - more restrictive but allows Swagger UI
+  # Production CORS configuration - allow all origins
   config.middleware.insert_before 0, Rack::Cors do
     allow do
-      origins "https://garage-management-frontend.onrender.com",
-              "https://garage-management-backend-15de.onrender.com",
-              /https:\/\/.*\.onrender\.com/
+      origins "*"
       
       resource "*",
         headers: :any,
         methods: [:get, :post, :put, :patch, :delete, :options, :head],
-        credentials: true,
+        credentials: false,
         expose: ['Set-Cookie', 'Content-Type', 'Authorization']
     end
   end

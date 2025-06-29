@@ -81,15 +81,15 @@ Rails.application.configure do
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
 
-  # CORS configuration for development - more permissive for Swagger UI
+  # CORS configuration for development - allow all origins
   config.middleware.insert_before 0, Rack::Cors do
     allow do
-      origins '*'
-      resource '*',
+      origins "*"
+      resource "*",
         headers: :any,
         methods: [:get, :post, :put, :patch, :delete, :options, :head],
         credentials: false,
-        expose: ['Set-Cookie']
+        expose: ['Set-Cookie', 'Content-Type', 'Authorization']
     end
   end
 end
