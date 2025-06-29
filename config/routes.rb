@@ -9,6 +9,12 @@ Rails.application.routes.draw do
   # API welcome endpoint
   get '/api', to: "application#index"
   
+  # Health check endpoint for CORS testing
+  get '/health', to: "application#health"
+  
+  # CORS preflight requests
+  match '*path', to: 'application#handle_options', via: :options
+  
   # resources for users
   resources :users , only: [:index,:show, :create, :update, :destroy] do
 

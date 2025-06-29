@@ -4,7 +4,7 @@ class ApplicationController < ActionController::API
     
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
   
-    before_action :authorize, except: [:index]
+    before_action :authorize, except: [:index, :handle_options, :health]
   
     def index
       render json: { 
@@ -13,15 +13,32 @@ class ApplicationController < ActionController::API
         status: "running"
       }
     end
+
+    def health
+      render json: { 
+        status: "healthy",
+        timestamp: Time.current,
+        cors: "enabled"
+      }
+    end
+
+    def handle_options
+      head :ok
+    end
   
     private
   
     def authorize
-      #@current_user = User.find_by(id: session[:user_id])
-
-      @current_admin = Admin.find_by(id: session[:admin_id])
+      # Check for any valid session (user, admin, technician, or guard)
+      @current_user = User.find_by(id: session[:user_id]) if session[:user_id]
+      @current_admin = Admin.find_by(id: session[:admin_id]) if session[:admin_id]
+      @current_technician = Technician.find_by(id: session[:technician_id]) if session[:technician_id]
+      @current_guard = Guard.find_by(id: session[:guard_id]) if session[:guard_id]
   
-      render json: { errors: ["Not authorized"] }, status: :unauthorized unless @current_admin
+      # If no valid session is found, return unauthorized
+      unless @current_user || @current_admin || @current_technician || @current_guard
+        render json: { errors: ["Not authorized"] }, status: :unauthorized
+      end
     end
 
   

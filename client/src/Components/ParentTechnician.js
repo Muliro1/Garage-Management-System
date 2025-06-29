@@ -1,44 +1,47 @@
-import React,{useState,useEffect} from 'react';
-import { Route, Routes } from 'react-router-dom';
-import Repair from './Repair';
-import Servicing from './Servicing';
-import Sidebar from './Sidebar';
-import Vehicles from './Vehicles';
-import Header from './Header.js/header';
-import Login from './Login'
+import React, { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import TechnicianLogin from './TechnicianLogin';
+import TechnicianSignup from './TechnicianSignup';
+import TechnicianDashboard from './TechnicianDashboard';
+import { API_ENDPOINTS } from '../config';
 
-// import User from './Components/User';
+function ParentTechnician() {
+  const [logged, setLogged] = useState(false)
+  const [loading, setLoading]= useState(false)
+  const [technician, setTechnician] = useState([])
+  const [fullName, setFullName] = useState('')
+  const [password, setPassword] = useState('')
+  const [error, setError] = useState([])
+  const [signed, setSigned] = useState(false)
 
-const ParentTechnician = () => {
-  const [logged,setLogged]=useState(false)
-  const [fullname, setFullName] = useState('');
-    const [pass, setPass] = useState('');
-    const[technician,setTechnician]=useState([]);
-    const [error,setError]=useState([]);
+  // localStorage.clear()
 
-    useEffect(() => {
-      const data = localStorage.getItem('TECHNICIAN')
-      const login = localStorage.getItem('LOGGED')
-      if (data && login) {
-        setLogged(JSON.parse(login))
-        setTechnician(JSON.parse(data))
-      }
-    }, [])
+  React.useEffect(() => {
+    const data = localStorage.getItem('TECHNICIAN')
+    const login = localStorage.getItem('LOGGED')
+    //const signup = localStorage.getItem('SIGNED')
+    if (data && login) {
+      setLogged(JSON.parse(login))
+      setTechnician(JSON.parse(data))
+    }
+  }, [])
+
+  React.useEffect(() => {
+    localStorage.setItem('LOGGED', JSON.stringify(logged))
+    localStorage.setItem('TECHNICIAN', JSON.stringify(technician))
+    localStorage.setItem('SIGNED', JSON.stringify(signed))
+
+  }, [logged,technician,signed])
   
-    useEffect(() => {
-      localStorage.setItem('LOGGED', JSON.stringify(logged))
-      localStorage.setItem('TECHNICIAN', JSON.stringify(technician))
-  
-    }, [logged,technician])
-
-    const handleSubmit = (e) => {
-      e.preventDefault()
-    fetch('http://127.0.0.1:3000/technicians/login', {
+  function handleLogin(e, setFullName, setPassword, props) {
+    setLoading(true)
+    e.preventDefault()
+    fetch(API_ENDPOINTS.TECHNICIAN_LOGIN, {
       method: 'POST',
       headers: { 'content-Type': 'application/json' },
       body: JSON.stringify({
-        name:fullname,
-        password:pass
+        name:fullName,
+        password:password
       })
     }
     )
@@ -46,6 +49,7 @@ const ParentTechnician = () => {
         if (r.ok) {
           r.json().then((data) => {
             setTechnician(data)
+            setLoading(false)
             setLogged(true)
           } )
         } else {
@@ -56,28 +60,80 @@ const ParentTechnician = () => {
       
     e.target.reset()
     setFullName('')
-    setPass('')
-        
-        
+    setPassword('')
+  }
+
+  function handleSignUp(e, setFullName, setPassword, props) {
+    setLoading(true)
+    e.preventDefault()
+    fetch(API_ENDPOINTS.TECHNICIAN_SIGNUP, {
+      method: 'POST',
+      headers: { 'content-Type': 'application/json' },
+      body: JSON.stringify({
+        name:fullName,
+        password:password
+      })
     }
-  return (
-    <>
-    {logged?
-    <>
-    <Header technician={technician} />
-      <Sidebar>
-        <Routes>
-          {/* <Route path="/" element={<Technician />} />
-          <Route path="/dashboard" element={<Technician />} /> */}
-          <Route path="/repair" element={<Repair technician={technician} />} />
-          <Route path="/servicing" element={<Servicing technician={technician} />} />
-          <Route path="/vehicles" element={<Vehicles />} />
-        </Routes>
-      </Sidebar>
-    </>:<Login fullname={fullname} error={error} setFullName={setFullName} setPass={setPass} handleSubmit={handleSubmit} pass={pass}/>
+    )
+      .then((r) => {
+        if (r.ok) {
+          r.json().then((data) => {
+            setTechnician(data)
+            setLoading(false)
+            setSigned(true)
+            //props.history.push('/technician-login')
+          } )
+        } else {
+          r.json().then((error) =>setError(error.errors))
         }
-        </>
+      }
+      )
+      
+    e.target.reset()
+    setFullName('')
+    setPassword('')
+
+  }
+
+  return (
+    <div>
+     
+      {logged ?
+        <div className='grid grid-cols-7'>
+          <TechnicianDashboard technician={technician} />
+          <Routes>
+            <Route path='/'
+              exact
+              element={<div className='col-span-6'>
+                <TechnicianDashboard technician={technician} />
+              </div>} />
+            <Route path="/repair" element={<div className='col-span-6'>
+              <TechnicianDashboard technician={technician} />
+            </div>} />
+
+            <Route path="/servicing" element={<div className='col-span-6'>
+              <TechnicianDashboard technician={technician} />
+            </div>} />
+
+            <Route path="/vehicles" element={<div className='col-span-6'>
+              <TechnicianDashboard technician={technician} />
+            </div>} />
+
+            
+
+
+          </Routes>
+        </div>
+        :
+        <TechnicianLogin setFullName={setFullName} setPassword={setPassword} handleLogin={handleLogin} error={error} loading={loading} />}
+  
+
+
+
+
+
+    </div>
   );
-};
+}
 
 export default ParentTechnician;

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CORS Test</title>
+</head>
+<body>
+    <h1>CORS Test for Garage Management System</h1>
+    
+    <div>
+        <h2>Test Local Backend</h2>
+        <button onclick="testLocalBackend()">Test Local Backend (http://127.0.0.1:3000)</button>
+        <div id="local-result"></div>
+    </div>
+    
+    <div>
+        <h2>Test Deployed Backend</h2>
+        <button onclick="testDeployedBackend()">Test Deployed Backend</button>
+        <div id="deployed-result"></div>
+    </div>
+    
+    <div>
+        <h2>Test Health Endpoint</h2>
+        <button onclick="testHealth()">Test Health Endpoint</button>
+        <div id="health-result"></div>
+    </div>
+
+    <script>
+        async function testLocalBackend() {
+            const resultDiv = document.getElementById('local-result');
+            resultDiv.innerHTML = 'Testing...';
+            
+            try {
+                const response = await fetch('http://127.0.0.1:3000/health', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+                
+                const data = await response.json();
+                resultDiv.innerHTML = `<p style="color: green;">✅ Success: ${JSON.stringify(data)}</p>`;
+            } catch (error) {
+                resultDiv.innerHTML = `<p style="color: red;">❌ Error: ${error.message}</p>`;
+            }
+        }
+        
+        async function testDeployedBackend() {
+            const resultDiv = document.getElementById('deployed-result');
+            resultDiv.innerHTML = 'Testing...';
+            
+            try {
+                const response = await fetch('https://garage-management-backend.onrender.com/health', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+                
+                const data = await response.json();
+                resultDiv.innerHTML = `<p style="color: green;">✅ Success: ${JSON.stringify(data)}</p>`;
+            } catch (error) {
+                resultDiv.innerHTML = `<p style="color: red;">❌ Error: ${error.message}</p>`;
+            }
+        }
+        
+        async function testHealth() {
+            const resultDiv = document.getElementById('health-result');
+            resultDiv.innerHTML = 'Testing...';
+            
+            try {
+                const response = await fetch('https://garage-management-backend.onrender.com/api', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+                
+                const data = await response.json();
+                resultDiv.innerHTML = `<p style="color: green;">✅ Success: ${JSON.stringify(data)}</p>`;
+            } catch (error) {
+                resultDiv.innerHTML = `<p style="color: red;">❌ Error: ${error.message}</p>`;
+            }
+        }
+    </script>
+</body>
+</html> 
