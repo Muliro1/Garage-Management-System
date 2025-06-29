@@ -308,12 +308,8 @@
   },
   "servers": [
     {
-      "url": "http://localhost:3000",
-      "description": "Development server"
-    },
-    {
-      "url": "http://127.0.0.1:3000",
-      "description": "Development server (IP)"
+      "url": "https://garage-management-backend-15de.onrender.com",
+      "description": "Production server (Render)"
     }
   ]
 }

@@ -14,6 +14,28 @@ RSpec.configure do |config|
   # By default, the operations defined in spec files are added to the first
   # document below. You can override this behavior by adding a openapi_spec tag to the
   # the root example_group in your specs, e.g. describe '...', openapi_spec: 'v2/swagger.json'
+  
+  # Define servers based on environment
+  servers = if Rails.env.production?
+    [
+      {
+        url: 'https://garage-management-backend-15de.onrender.com',
+        description: 'Production server (Render)'
+      }
+    ]
+  else
+    [
+      {
+        url: 'http://localhost:3000',
+        description: 'Development server'
+      },
+      {
+        url: 'http://127.0.0.1:3000',
+        description: 'Development server (IP)'
+      }
+    ]
+  end
+
   config.openapi_specs = {
     'v1/swagger.json' => {
       openapi: '3.0.1',
@@ -23,12 +45,7 @@ RSpec.configure do |config|
         description: 'API documentation for the Garage Management System'
       },
       paths: {},
-      servers: [
-        {
-          url: 'http://localhost:3000',
-          description: 'Development server'
-        }
-      ]
+      servers: servers
     }
   }
 
