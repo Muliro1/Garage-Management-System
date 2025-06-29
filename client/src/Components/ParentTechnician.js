@@ -3,6 +3,9 @@ import { Routes, Route } from 'react-router-dom';
 import TechnicianLogin from './TechnicianLogin';
 import TechnicianSignup from './TechnicianSignup';
 import TechnicianDashboard from './TechnicianDashboard';
+import Repair from './Repair';
+import Servicing from './Servicing';
+import Vehicles from './Vehicles';
 import { API_ENDPOINTS } from '../config';
 
 function ParentTechnician() {
@@ -99,39 +102,19 @@ function ParentTechnician() {
     <div>
      
       {logged ?
-        <div className='grid grid-cols-7'>
+        <div>
           <TechnicianDashboard technician={technician} />
           <Routes>
             <Route path='/'
               exact
-              element={<div className='col-span-6'>
-                <TechnicianDashboard technician={technician} />
-              </div>} />
-            <Route path="/repair" element={<div className='col-span-6'>
-              <TechnicianDashboard technician={technician} />
-            </div>} />
-
-            <Route path="/servicing" element={<div className='col-span-6'>
-              <TechnicianDashboard technician={technician} />
-            </div>} />
-
-            <Route path="/vehicles" element={<div className='col-span-6'>
-              <TechnicianDashboard technician={technician} />
-            </div>} />
-
-            
-
-
+              element={<TechnicianDashboard technician={technician} />} />
+            <Route path="/repair" element={<Repair technician={technician} />} />
+            <Route path="/servicing" element={<Servicing technician={technician} />} />
+            <Route path="/vehicles" element={<Vehicles />} />
           </Routes>
         </div>
         :
         <TechnicianLogin setFullName={setFullName} setPassword={setPassword} handleLogin={handleLogin} error={error} loading={loading} />}
-  
-
-
-
-
-
     </div>
   );
 }
