@@ -30,8 +30,8 @@ gem 'active_model_serializers'
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
-# Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-gem "bcrypt", "~> 3.1.7"
+# Use Active Model has_secure_password
+# gem "bcrypt", "~> 3.1.7"
 
 gem 'pagy'
 
@@ -49,13 +49,21 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+# Use Rack Attack for throttling
+gem 'rack-attack'
+
+# Use Rswag for Swagger documentation
+gem 'rswag-api'
+gem 'rswag-ui'
+gem 'rswag-specs'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "byebug", platforms: %i[ mri mingw x64_mingw ]
+  gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
 
 group :development do
-gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
+  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 
@@ -71,4 +79,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem "rspec-rails"
 end

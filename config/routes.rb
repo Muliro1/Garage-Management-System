@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
-  # Root route
-  root "application#index"
+  # Swagger UI and API documentation
+  mount Rswag::Ui::Engine => '/swagger'
+  mount Rswag::Api::Engine => '/api-docs'
+  
+  # Root route - redirect to Swagger UI
+  root to: redirect('/swagger')
+  
+  # API welcome endpoint
+  get '/api', to: "application#index"
   
   # resources for users
   resources :users , only: [:index,:show, :create, :update, :destroy] do
