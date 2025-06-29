@@ -6,7 +6,7 @@
     "description": "API documentation for the Garage Management System"
   },
   "paths": {
-    "/": {
+    "/api": {
       "get": {
         "summary": "Get API status",
         "tags": [

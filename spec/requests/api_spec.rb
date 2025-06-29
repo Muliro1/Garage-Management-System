@@ -1,7 +1,7 @@
 require 'swagger_helper'
 
 RSpec.describe 'API', type: :request, swagger_doc: 'v1/swagger.json' do
-  path '/' do
+  path '/api' do
     get 'Get API status' do
       tags 'API Status'
       produces 'application/json'
