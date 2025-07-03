@@ -112,6 +112,8 @@ GEM
       xpath (~> 3.2)
     case_transform (0.2)
       activesupport
+    childprocess (5.1.0)
+      logger (~> 1.5)
     concurrent-ruby (1.3.5)
     connection_pool (2.5.3)
     crass (1.0.6)
@@ -139,6 +141,12 @@ GEM
       addressable (~> 2.8)
       bigdecimal (~> 3.1)
     jsonapi-renderer (0.2.2)
+    launchy (3.1.1)
+      addressable (~> 2.8)
+      childprocess (~> 5.0)
+      logger (~> 1.6)
+    letter_opener (1.10.0)
+      launchy (>= 2.2, < 4)
     logger (1.7.0)
     loofah (2.24.1)
       crass (~> 1.0.2)
@@ -304,6 +312,7 @@ DEPENDENCIES
   debug
   faker!
   jbuilder
+  letter_opener
   pagy
   pg (~> 1.1)
   puma (~> 6.0)

@@ -41,18 +41,23 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-  config.action_mailer.delivery_method = :smtp
+  # Use letter_opener for development (opens emails in browser)
+  config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.perform_deliveries = true
 
-  config.action_mailer.smtp_settings = {
-  address:              'smtp.gmail.com',
-  port:                 587,
-  domain:               'gmail.com',
-  user_name:            'Michael Muliro',
-  password:             'nihilpraeteroptimum',
-  authentication:       'plain',
-  enable_starttls_auto: true,
-  open_timeout:         5,
-  read_timeout:         5 }
+  # Uncomment and configure if you want to use real SMTP
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+  #   address:              'smtp.gmail.com',
+  #   port:                 587,
+  #   domain:               'gmail.com',
+  #   user_name:            ENV['GMAIL_USERNAME'], # Your Gmail address
+  #   password:             ENV['GMAIL_APP_PASSWORD'], # Gmail app password
+  #   authentication:       'plain',
+  #   enable_starttls_auto: true,
+  #   open_timeout:         5,
+  #   read_timeout:         5
+  # }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
