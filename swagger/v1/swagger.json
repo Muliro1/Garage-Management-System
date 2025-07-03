@@ -308,7 +308,7 @@
   },
   "servers": [
     {
-      "url": "http://localhost:3000",
+      "url": "https://garage-management-backend-15de.onrender.com",
       "description": "Development server"
     },
     {
