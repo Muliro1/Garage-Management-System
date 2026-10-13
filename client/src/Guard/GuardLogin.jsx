@@ -1,13 +1,14 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { formatErrors, hasErrors } from '../utils/formatErrors';
 
 function GuardLogin({ fullName, setPassword, setFullName, handleSubmit, password, error }) {
   return (
       <div className="auth-form-container bg-slate-100">
           <h2 className="text-center text-3xl font-black">Guard Login</h2>
-          {error.length > 0 && (
-              <p className='text-red-500 pb-4 font-bold italic' key={error}>{error}</p>
-          )}
+          {hasErrors(error) && formatErrors(error).map((msg) => (
+              <p className='text-red-500 pb-4 font-bold italic text-center' key={msg}>{msg}</p>
+          ))}
           <div className="m-auto bg-slate-300  rounded-xl">
               <form className=" m-auto bg-slate-300 p-16 rounded-xl " onSubmit={handleSubmit}>
                   <label className="text-center" htmlFor="email">Fullname</label><br></br>

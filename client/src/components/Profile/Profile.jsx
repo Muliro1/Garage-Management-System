@@ -12,6 +12,7 @@ import Logout from '@mui/icons-material/Logout';
 import { Button} from '@mui/material';
 import {Lock } from '@mui/icons-material';
 import profileImg from '../assets/images/slider-img/slider-2.jpg';
+import { clearAllAuthSessions } from '../../utils/authStorage';
 
 export default function Profile() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -27,8 +28,8 @@ export default function Profile() {
 });
 
 function handleLogout() {
-  localStorage.clear()
-  window.location.reload()
+  clearAllAuthSessions();
+  window.location.href = '/user';
 }
 
   return (

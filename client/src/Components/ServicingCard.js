@@ -1,10 +1,11 @@
 import React from 'react';
+import { API_ENDPOINTS } from '../config';
 
 const ServicingCard = ({ vehicle,term,setTerm }) => {
   // const tags = image.tags.split(',');
   const Serviceprice=3500
   const ServiceCar=()=>{
-    fetch(`http://127.0.0.1:3000/vehicles/${vehicle.id}`,{
+    fetch(`${API_ENDPOINTS.VEHICLES}/${vehicle.id}`,{
       method:"PATCH",
       headers:{"content-type":"application/json"},
     body:JSON.stringify({

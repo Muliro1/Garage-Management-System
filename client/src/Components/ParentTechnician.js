@@ -1,121 +1,96 @@
-import React, { useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import TechnicianLogin from './TechnicianLogin';
-import TechnicianSignup from './TechnicianSignup';
 import TechnicianDashboard from './TechnicianDashboard';
 import Repair from './Repair';
 import Servicing from './Servicing';
 import Vehicles from './Vehicles';
 import { API_ENDPOINTS } from '../config';
+import { loadAuthSession, saveAuthSession } from '../utils/authStorage';
+import { formatErrors } from '../utils/formatErrors';
 
 function ParentTechnician() {
-  const [logged, setLogged] = useState(false)
-  const [loading, setLoading]= useState(false)
-  const [technician, setTechnician] = useState([])
-  const [fullName, setFullName] = useState('')
-  const [password, setPassword] = useState('')
-  const [error, setError] = useState([])
-  const [signed, setSigned] = useState(false)
+  const [logged, setLogged] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [technician, setTechnician] = useState(null);
+  const [hydrated, setHydrated] = useState(false);
+  const [fullName, setFullName] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState([]);
 
-  // localStorage.clear()
-
-  React.useEffect(() => {
-    const data = localStorage.getItem('TECHNICIAN')
-    const login = localStorage.getItem('LOGGED')
-    //const signup = localStorage.getItem('SIGNED')
-    if (data && login) {
-      setLogged(JSON.parse(login))
-      setTechnician(JSON.parse(data))
+  useEffect(() => {
+    const session = loadAuthSession('technician');
+    if (session.logged && session.data) {
+      setLogged(true);
+      setTechnician(session.data);
     }
-  }, [])
+    setHydrated(true);
+  }, []);
 
-  React.useEffect(() => {
-    localStorage.setItem('LOGGED', JSON.stringify(logged))
-    localStorage.setItem('TECHNICIAN', JSON.stringify(technician))
-    localStorage.setItem('SIGNED', JSON.stringify(signed))
+  useEffect(() => {
+    if (!hydrated) return;
+    saveAuthSession('technician', { logged, data: technician });
+  }, [logged, technician, hydrated]);
 
-  }, [logged,technician,signed])
-  
-  function handleLogin(e, setFullName, setPassword, props) {
-    setLoading(true)
-    e.preventDefault()
+  function handleLogin(e) {
+    setLoading(true);
+    setError([]);
+    e.preventDefault();
     fetch(API_ENDPOINTS.TECHNICIAN_LOGIN, {
       method: 'POST',
-      headers: { 'content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        name:fullName,
-        password:password
-      })
-    }
-    )
+        name: fullName,
+        password,
+      }),
+    })
       .then((r) => {
         if (r.ok) {
-          r.json().then((data) => {
-            setTechnician(data)
-            setLoading(false)
-            setLogged(true)
-          } )
-        } else {
-          r.json().then((error) =>setError(error.errors))
+          return r.json().then((data) => {
+            setTechnician(data);
+            setLogged(true);
+            setLoading(false);
+          });
         }
-      }
-      )
-      
-    e.target.reset()
-    setFullName('')
-    setPassword('')
+        return r.json().then((body) => {
+          setError(formatErrors(body.errors ?? body.error ?? 'Login failed'));
+          setLoading(false);
+        });
+      })
+      .catch(() => {
+        setError(['Unable to reach server. Is the API running?']);
+        setLoading(false);
+      });
+
+    e.target.reset();
+    setFullName('');
+    setPassword('');
   }
 
-  function handleSignUp(e, setFullName, setPassword, props) {
-    setLoading(true)
-    e.preventDefault()
-    fetch(API_ENDPOINTS.TECHNICIAN_SIGNUP, {
-      method: 'POST',
-      headers: { 'content-Type': 'application/json' },
-      body: JSON.stringify({
-        name:fullName,
-        password:password
-      })
-    }
-    )
-      .then((r) => {
-        if (r.ok) {
-          r.json().then((data) => {
-            setTechnician(data)
-            setLoading(false)
-            setSigned(true)
-            //props.history.push('/technician-login')
-          } )
-        } else {
-          r.json().then((error) =>setError(error.errors))
-        }
-      }
-      )
-      
-    e.target.reset()
-    setFullName('')
-    setPassword('')
+  if (!hydrated) {
+    return null;
+  }
 
+  if (!logged) {
+    return (
+      <TechnicianLogin
+        setFullName={setFullName}
+        setPassword={setPassword}
+        handleLogin={handleLogin}
+        error={error}
+        loading={loading}
+      />
+    );
   }
 
   return (
-    <div>
-     
-      {logged ?
-        <div>
-          <TechnicianDashboard technician={technician} />
-          <Routes>
-            <Route path='/'
-              exact
-              element={<TechnicianDashboard technician={technician} />} />
-            <Route path="/repair" element={<Repair technician={technician} />} />
-            <Route path="/servicing" element={<Servicing technician={technician} />} />
-            <Route path="/vehicles" element={<Vehicles />} />
-          </Routes>
-        </div>
-        :
-        <TechnicianLogin setFullName={setFullName} setPassword={setPassword} handleLogin={handleLogin} error={error} loading={loading} />}
-    </div>
+    <Routes>
+      <Route path="/technician" element={<TechnicianDashboard technician={technician} />} />
+      <Route path="/technician/repair" element={<Repair technician={technician} />} />
+      <Route path="/technician/servicing" element={<Servicing technician={technician} />} />
+      <Route path="/technician/vehicles" element={<Vehicles />} />
+      <Route path="*" element={<Navigate to="/technician" replace />} />
+    </Routes>
   );
 }
 

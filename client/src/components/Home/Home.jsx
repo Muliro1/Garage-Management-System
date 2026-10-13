@@ -21,11 +21,11 @@ const Home = () => {
       </div>
       <div className="middle">
         <img src={mechanic} alt="mechanic" />
-        <div class="sect1">
+        <div className="sect1">
             <hr/>
-            <h2 class="head">Cut the Hustle</h2>
-            <p class="sect2">In this current tough economic <br/> situations,living is already a hustle. <br/> Why then should you worry about <br/> how you should move to live better?</p>
-            <button id="sect3"> learn more <HiArrowSmRight/>
+            <h2 className="head">Cut the Hustle</h2>
+            <p className="sect2">In this current tough economic <br/> situations,living is already a hustle. <br/> Why then should you worry about <br/> how you should move to live better?</p>
+            <button id="sect3" type="button"> learn more <HiArrowSmRight/>
             </button>
         </div>
       </div>

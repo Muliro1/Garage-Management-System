@@ -1,5 +1,6 @@
 import React,{ useState} from 'react'
 import "./ServiceForm.css"
+import { API_ENDPOINTS } from '../../config';
 
 const ServiceForm = ({user,refresh,setRefresh}) => {
     const [make, setMake] = useState("");
@@ -52,7 +53,8 @@ const ServiceForm = ({user,refresh,setRefresh}) => {
           user_id: user.id
         };
     
-        fetch("http://127.0.0.1:3000/vehicles",{
+        if (!user?.id) return;
+        fetch(API_ENDPOINTS.VEHICLES,{
           method: "POST",
           headers: {
             "Content-Type": "application/json",

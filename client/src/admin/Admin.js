@@ -1,158 +1,162 @@
 import AdminLogin from './AdminLogin';
 import AdminSignup from './AdminSignup';
 import React, { useEffect, useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Outlet, Navigate } from 'react-router-dom';
 import AdminClients from './adminDashboard/AdminClients';
 import AdminDashboard from './adminDashboard/AdminDashboard';
 import AdminMechanics from './adminDashboard/AdminMechanics';
 import Aside from './adminDashboard/aside/Aside';
-import AdminCars from './adminDashboard/AdminCars'
+import AdminCars from './adminDashboard/AdminCars';
 import AdminGuards from './adminDashboard/AdminGuards';
 import AdminInventories from './adminDashboard/AdminInventories';
-import { useHistory } from 'react-router-dom';
-import { PropaneSharp } from '@mui/icons-material';
 import { API_ENDPOINTS } from '../config';
+import { loadAuthSession, saveAuthSession } from '../utils/authStorage';
+import { formatErrors } from '../utils/formatErrors';
+
+function AdminShell() {
+  return (
+    <div className="grid grid-cols-7">
+      <Aside />
+      <div className="col-span-6">
+        <Outlet />
+      </div>
+    </div>
+  );
+}
 
 function Admin() {
-  const [logged, setLogged] = useState(false)
-  const [loading, setLoading]= useState(false)
-  const [admin, setAdmin] = useState([])
-  const [fullName, setFullName] = useState('')
-  const [password, setPassword] = useState('')
-  const [error, setError] = useState([])
-  const [signed, setSigned] = useState(false)
-
-  // localStorage.clear()
+  const [logged, setLogged] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [admin, setAdmin] = useState(null);
+  const [hydrated, setHydrated] = useState(false);
+  const [fullName, setFullName] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState([]);
 
   useEffect(() => {
-    const data = localStorage.getItem('ADMIN')
-    const login = localStorage.getItem('LOGGED')
-    //const signup = localStorage.getItem('SIGNED')
-    if (data && login) {
-      setLogged(JSON.parse(login))
-      setAdmin(JSON.parse(data))
+    const session = loadAuthSession('admin');
+    if (session.logged && session.data) {
+      setLogged(true);
+      setAdmin(session.data);
     }
-  }, [])
+    setHydrated(true);
+  }, []);
 
   useEffect(() => {
-    localStorage.setItem('LOGGED', JSON.stringify(logged))
-    localStorage.setItem('ADMIN', JSON.stringify(admin))
-    localStorage.setItem('SIGNED', JSON.stringify(signed))
+    if (!hydrated) return;
+    saveAuthSession('admin', { logged, data: admin });
+  }, [logged, admin, hydrated]);
 
-  }, [logged,admin,signed])
-  
-  function handleLogin(e, setFullName, setPassword, props) {
-    setLoading(true)
-    e.preventDefault()
+  function handleLogin(e) {
+    setLoading(true);
+    setError([]);
+    e.preventDefault();
     fetch(API_ENDPOINTS.ADMIN_LOGIN, {
       method: 'POST',
-      headers: { 'content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        full_name:fullName,
-        password:password
-      })
-    }
-    )
+        full_name: fullName,
+        password,
+      }),
+    })
       .then((r) => {
         if (r.ok) {
-          r.json().then((data) => {
-            setAdmin(data)
-            setLoading(false)
-            setLogged(true)
-          } )
-        } else {
-          r.json().then((error) =>setError(error.errors))
+          return r.json().then((data) => {
+            setAdmin(data);
+            setLogged(true);
+            setLoading(false);
+          });
         }
-      }
-      )
-      
-    e.target.reset()
-    setFullName('')
-    setPassword('')
+        return r.json().then((body) => {
+          setError(formatErrors(body.errors ?? body.error ?? 'Login failed'));
+          setLoading(false);
+        });
+      })
+      .catch(() => {
+        setError(['Unable to reach server. Is the API running?']);
+        setLoading(false);
+      });
+
+    e.target.reset();
+    setFullName('');
+    setPassword('');
   }
 
-  function handleSignUp(e, setFullName, setPassword, props) {
-    setLoading(true)
-    e.preventDefault()
+  function handleSignUp(e) {
+    setLoading(true);
+    setError([]);
+    e.preventDefault();
     fetch(API_ENDPOINTS.ADMIN_SIGNUP, {
       method: 'POST',
-      headers: { 'content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        full_name:fullName,
-        password:password
-      })
-    }
-    )
+        full_name: fullName,
+        password,
+      }),
+    })
       .then((r) => {
         if (r.ok) {
-          r.json().then((data) => {
-            setAdmin(data)
-            setLoading(false)
-            setSigned(true)
-            //props.history.push('/admin-login')
-          } )
-        } else {
-          r.json().then((error) =>setError(error.errors))
+          return r.json().then((data) => {
+            setAdmin(data);
+            setLogged(true);
+            setLoading(false);
+          });
         }
-      }
-      )
-      
-    e.target.reset()
-    setFullName('')
-    setPassword('')
+        return r.json().then((body) => {
+          setError(formatErrors(body.errors ?? body.error ?? 'Signup failed'));
+          setLoading(false);
+        });
+      })
+      .catch(() => {
+        setError(['Unable to reach server. Is the API running?']);
+        setLoading(false);
+      });
 
+    e.target.reset();
+    setFullName('');
+    setPassword('');
+  }
+
+  if (!hydrated) {
+    return null;
+  }
+
+  if (!logged) {
+    return (
+      <AdminLogin
+        setFullName={setFullName}
+        setPassword={setPassword}
+        handleLogin={handleLogin}
+        error={error}
+        loading={loading}
+      />
+    );
   }
 
   return (
-    <div>
-     
-      {logged ?
-        <div className='grid grid-cols-7'>
-          <Aside />
-          <Routes>
-            <Route path='/'
-              exact
-              element={<div className='col-span-6'>
-                <AdminDashboard admin={admin} />
-              </div>} />
-            <Route path="/clients" element={<div className='col-span-6'>
-              <AdminClients admin={admin} />
-            </div>} />
-
-            <Route path="/mechanics" element={<div className='col-span-6'>
-              <AdminMechanics admin={admin} />
-            </div>} />
-
-            <Route path="/partsinstock" element={<div className='col-span-6'>
-              <AdminInventories />
-            </div>} />
-
-            <Route path="/carsingarage" element={<div className='col-span-6'>
-              <AdminCars admin={admin} />
-            </div>} />
-
-            <Route path="/guards" element={<div className='col-span-6'>
-              <AdminGuards />
-            </div>} />
-            
-
-            <Route path="/adminsignup" element={<div className='col-span-6'>
-              <AdminSignup handleSignup={handleSignUp} error={error} setFullName={setFullName} setPassword={setPassword}/>
-            </div>} />
-            
-
-
-          </Routes>
-        </div>
-        :
-        <AdminLogin setFullName={setFullName} setPassword={setPassword} handleLogin={handleLogin} error={error} loading={loading} />}
-  
-
-
-
-
-
-    </div>
+    <Routes>
+      <Route path="/admin" element={<AdminShell />}>
+        <Route index element={<AdminDashboard admin={admin} />} />
+        <Route path="clients" element={<AdminClients admin={admin} />} />
+        <Route path="mechanics" element={<AdminMechanics admin={admin} />} />
+        <Route path="partsinstock" element={<AdminInventories />} />
+        <Route path="carsingarage" element={<AdminCars admin={admin} />} />
+        <Route path="guards" element={<AdminGuards />} />
+        <Route
+          path="adminsignup"
+          element={
+            <AdminSignup
+              handleSignup={handleSignUp}
+              error={error}
+              setFullName={setFullName}
+              setPassword={setPassword}
+              loading={loading}
+            />
+          }
+        />
+        <Route path="*" element={<Navigate to="/admin" replace />} />
+      </Route>
+    </Routes>
   );
 }
 

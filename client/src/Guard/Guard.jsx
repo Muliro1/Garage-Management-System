@@ -1,72 +1,79 @@
 import React, { useState, useEffect } from 'react';
 import GuardLogin from './GuardLogin';
 import GuardVehicles from './GuardVehicles';
+import { API_ENDPOINTS } from '../config';
+import { loadAuthSession, saveAuthSession } from '../utils/authStorage';
+import { formatErrors } from '../utils/formatErrors';
 
 function Guard() {
-    const [logged, setLogged] = useState(false)
-    const [fullname, setFullName] = useState('');
-    const [password, setPassword] = useState('');
-    const [guard, setGuard] = useState([]);
-    const [error, setError] = useState([]);
-    useEffect(() => {
-        const data = localStorage.getItem('GUARD')
-        const login = localStorage.getItem('LOGGED')
-        if (data && login) {
-            setLogged(JSON.parse(login))
-            setGuard(JSON.parse(data))
-        }
-    }, [])
+  const [logged, setLogged] = useState(false);
+  const [fullname, setFullName] = useState('');
+  const [password, setPassword] = useState('');
+  const [guard, setGuard] = useState(null);
+  const [hydrated, setHydrated] = useState(false);
+  const [error, setError] = useState([]);
 
-    useEffect(() => {
-        localStorage.setItem('LOGGED', JSON.stringify(logged))
-        localStorage.setItem('GUARD', JSON.stringify(guard))
-
-    }, [logged, guard])
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        fetch('http://127.0.0.1:3000/guards/login', {
-            method: 'POST',
-            headers: { 'content-Type': 'application/json' },
-            body: JSON.stringify({
-                full_name: fullname,
-                password: password
-            })
-        }
-        )
-            .then((r) => {
-                if (r.ok) {
-                    r.json().then((data) => {
-                        setGuard(data)
-                        setLogged(true)
-                    })
-                } else {
-                    r.json().then((error) => setError(error.errors))
-                }
-            }
-            )
-
-        e.target.reset()
-        setFullName('')
-        setPassword('')
-
-
+  useEffect(() => {
+    const session = loadAuthSession('guard');
+    if (session.logged && session.data) {
+      setLogged(true);
+      setGuard(session.data);
     }
+    setHydrated(true);
+  }, []);
 
-  return (
-      <>
-          {logged ?
-              <>
-               
-                  <GuardVehicles guard={guard} />
-              </> : <GuardLogin fullname={fullname} error={error} setFullName={setFullName} setPassword={setPassword} handleSubmit={handleSubmit} password={password} />
-          }
-      </>
-  )
+  useEffect(() => {
+    if (!hydrated) return;
+    saveAuthSession('guard', { logged, data: guard });
+  }, [logged, guard, hydrated]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setError([]);
+    fetch(API_ENDPOINTS.GUARD_LOGIN, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        full_name: fullname,
+        password,
+      }),
+    })
+      .then((r) => {
+        if (r.ok) {
+          return r.json().then((data) => {
+            setGuard(data);
+            setLogged(true);
+          });
+        }
+        return r.json().then((body) => {
+          setError(formatErrors(body.errors ?? body.error ?? 'Login failed'));
+        });
+      })
+      .catch(() => {
+        setError(['Unable to reach server. Is the API running?']);
+      });
+
+    e.target.reset();
+    setFullName('');
+    setPassword('');
+  };
+
+  if (!hydrated) {
+    return null;
+  }
+
+  return logged ? (
+    <GuardVehicles guard={guard} />
+  ) : (
+    <GuardLogin
+      fullName={fullname}
+      error={error}
+      setFullName={setFullName}
+      setPassword={setPassword}
+      handleSubmit={handleSubmit}
+      password={password}
+    />
+  );
 }
 
 export default Guard;
-
-
-
-

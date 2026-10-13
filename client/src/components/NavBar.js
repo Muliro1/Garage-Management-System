@@ -25,7 +25,7 @@ const Navbar = () => {
             <li>User</li>
           </Link>
 
-          <Link to='/Admin' className='Admin'>
+          <Link to='/admin' className='Admin'>
             <li>Admin</li>
           </Link>
 

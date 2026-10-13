@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink,Outlet } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 function Aside() {
     return (
@@ -64,7 +64,6 @@ function Aside() {
 
 
             </div>
-            <Outlet/>
         </div>
     )
 }

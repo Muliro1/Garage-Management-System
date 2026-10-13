@@ -1,86 +1,79 @@
-import React, { useState,useEffect } from "react";
-import Header from "../Header/Header";
-import Router from "../../routers/Router";
-import Login from "../Login/Login";
-
+import React, { useState, useEffect } from 'react';
+import Header from '../Header/Header';
+import UserRoutes from '../../routers/Router';
+import Login from '../Login/Login';
+import { API_ENDPOINTS } from '../../config';
+import { loadAuthSession, saveAuthSession } from '../../utils/authStorage';
+import { formatErrors } from '../../utils/formatErrors';
 
 const User = () => {
   const [user, setUser] = useState(null);
   const [logged, setLogged] = useState(false);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [hydrated, setHydrated] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [error, setError] = useState([]);
-  
+
   useEffect(() => {
-    const data = localStorage.getItem('USER')
-    const login = localStorage.getItem('LOGGED')
-    if (data && login) {
-      setLogged(JSON.parse(login))
-      setUser(JSON.parse(data))
+    const session = loadAuthSession('user');
+    if (session.logged && session.data) {
+      setLogged(true);
+      setUser(session.data);
     }
-  }, [])
+    setHydrated(true);
+  }, []);
 
   useEffect(() => {
-    localStorage.setItem('LOGGED', JSON.stringify(logged))
-    localStorage.setItem('USER', JSON.stringify(user))
-
-  }, [logged,user])
-
-
-  // useEffect(() => {
-  //   fetch("http://127.0.0.1:3000/profile").then((r) => {
-  //     if (r.ok) {
-  //       r.json().then((data) => setUser(data));
-  //     }
-  //   });
-  // }, []);
-  // console.log(user)
+    if (!hydrated) return;
+    saveAuthSession('user', { logged, data: user });
+  }, [logged, user, hydrated]);
 
   const handleLogin = (e) => {
     e.preventDefault();
-    fetch("http://127.0.0.1:3000/login", {
-      method: "POST",
-      headers: { "content-Type": "application/json" },
-      body: JSON.stringify({
-        email: email,
-        password: password,
-      }),
-    }).then((r) => {
-      if (r.ok) {
-        r.json().then((data) => {
-          setUser(data);
-          setLogged(true);
+    setError([]);
+    fetch(API_ENDPOINTS.LOGIN, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password }),
+    })
+      .then((r) => {
+        if (r.ok) {
+          return r.json().then((data) => {
+            setUser(data);
+            setLogged(true);
+            setEmail('');
+            setPassword('');
+          });
+        }
+        return r.json().then((body) => {
+          setError(formatErrors(body.errors ?? body.error ?? 'Login failed'));
         });
-      } else {
-        r.json().then((error) => setError(error.errors));
-      }
-    });
-
-    e.target.reset();
-    setEmail("");
-    setPassword("");
+      })
+      .catch(() => {
+        setError(['Unable to reach server. Is the API running?']);
+      });
   };
 
-  return (
+  if (!hydrated) {
+    return null;
+  }
+
+  return logged ? (
     <>
-      {logged ? (
-        <>
-          <Header user={user}/>
-          <Router user={user} />
-        </>
-      ) : (
-        <Login
-         setUser={setUser}
-         setLogged={setLogged}
-          email={email}
-          setEmail={setEmail}
-          password={password}
-          setPassword={setPassword}
-          error={error}
-          handleLogin={handleLogin}
-        />
-      )}
+      <Header user={user} />
+      <UserRoutes user={user} />
     </>
+  ) : (
+    <Login
+      setUser={setUser}
+      setLogged={setLogged}
+      email={email}
+      setEmail={setEmail}
+      password={password}
+      setPassword={setPassword}
+      error={error}
+      handleLogin={handleLogin}
+    />
   );
 };
 

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { API_ENDPOINTS } from '../config';
+import { clearAuthSession } from '../utils/authStorage';
 
 function TechnicianDashboard({ technician }) {
     const [vehicles, setVehicles] = useState([])
@@ -12,8 +13,8 @@ function TechnicianDashboard({ technician }) {
     }, [])
 
     function handleLogout() {
-        localStorage.clear()
-        window.location.reload()
+        clearAuthSession('technician');
+        window.location.href = '/technician';
     }
 
     return (

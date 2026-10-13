@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import GuardVehicle from './GuardVehicle';
+import { clearAuthSession } from '../utils/authStorage';
+import { API_ENDPOINTS } from '../config';
 
 function GuardVehicles({guard}) {
   const [vehicles, setVehicles] = useState([])
@@ -9,7 +11,7 @@ function GuardVehicles({guard}) {
 
   // fetching all vehicles
   useEffect(() => {
-    fetch('http://127.0.0.1:3000/vehicles')
+    fetch(API_ENDPOINTS.VEHICLES)
       .then((r) => r.json())
       .then((data) => setVehicles(data))
 
@@ -42,8 +44,8 @@ function GuardVehicles({guard}) {
   }
 
   function handleLogout() {
-    localStorage.clear()
-    window.location.reload()
+    clearAuthSession('guard');
+    window.location.href = '/guard';
   }
 
   return (

@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import PostService from '../PostService/PostService';
 import "./ServiceContainer.css"
+import { API_ENDPOINTS } from '../../config';
 
 const ServiceContainer = ({user,refresh}) => {
   const [access, getAccess] = useState([]);
@@ -8,17 +9,19 @@ const ServiceContainer = ({user,refresh}) => {
 
 
     useEffect(() => {
-      fetch("http://127.0.0.1:3000/vehicles")
+      if (!user?.id) {
+        getAccess([]);
+        return;
+      }
+      fetch(API_ENDPOINTS.VEHICLES)
         .then((r) => r.json())
         .then((data) => {
-          data.map((vehicle) => {
-            if (vehicle.user.id === user.id) {
-              ownerCars.push(vehicle)
-              getAccess(ownerCars)
-            }
-          })
+          const owned = data.filter(
+            (vehicle) => vehicle.user?.id === user.id,
+          );
+          getAccess(owned);
         });
-    }, [refresh]);
+    }, [refresh, user?.id]);
   
 
     function handleDeleteService(deletedServices) {

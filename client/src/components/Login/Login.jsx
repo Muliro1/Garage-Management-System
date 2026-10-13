@@ -14,6 +14,7 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Register from "../Register/Register"
 import { NavLink } from 'react-router-dom';
+import { formatErrors, hasErrors } from '../../utils/formatErrors';
 
 function Copyright(props) {
   return (
@@ -57,9 +58,9 @@ const [register, setRegister] = React.useState(false);
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          {error.length > 0 && (
-                        <p className='paragraphError' key={error}>{error }</p>
-                    ) }
+          {hasErrors(error) && formatErrors(error).map((msg) => (
+                        <p className='paragraphError' key={msg}>{msg}</p>
+                    ))}
           <Box component="form" onSubmit={handleLogin} noValidate sx={{ mt: 1 }}>
             <TextField
              value={email}
